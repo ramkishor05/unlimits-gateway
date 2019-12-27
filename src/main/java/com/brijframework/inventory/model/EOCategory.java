@@ -9,40 +9,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="CATEGORY")
-public  class EOCategory implements Serializable{
+public class EOCategory implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	@Column(name="CATEGORY_ID")
+
+	@Column(name = "CATEGORY_ID")
 	private String categoryId;
-	
-	@Column(name="NAME")
+
+	@Column(name = "NAME")
 	private String name;
-	
-	@Column(name="DESC")
+
+	@Column(name = "DESC")
 	private String description;
-	
-	@Column(name="TYPE")
+
+	@Column(name = "TYPE")
 	private String type;
 
 	@ManyToOne
-	@JoinColumn(name="InvAppID",nullable=false)
+	@JoinColumn(name = "InvAppID", nullable = false)
 	private EOInvApp eoInvApp;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "CategoryGroupID",nullable=false)
-	private EOCategoryGroup categoryGroup;
+	@JoinColumn(name = "category_group_id", nullable = false)
+	private EOCategoryGroup eoCategoryGroup;
 
 	public long getId() {
 		return id;
@@ -81,7 +79,7 @@ public  class EOCategory implements Serializable{
 	}
 
 	public void setType(String type) {
-		this.type= type;
+		this.type = type;
 	}
 
 	public EOInvApp getEoInvApp() {
@@ -92,14 +90,12 @@ public  class EOCategory implements Serializable{
 		this.eoInvApp = eoInvApp;
 	}
 
-	public EOCategoryGroup getCategoryGroup() {
-		return categoryGroup;
+	public EOCategoryGroup getEoCategoryGroup() {
+		return eoCategoryGroup;
 	}
 
-	public void setCategoryGroup(EOCategoryGroup categoryGroup) {
-		this.categoryGroup = categoryGroup;
+	public void setEoCategoryGroup(EOCategoryGroup categoryGroup) {
+		this.eoCategoryGroup = categoryGroup;
 	}
 
-	
-	
 }

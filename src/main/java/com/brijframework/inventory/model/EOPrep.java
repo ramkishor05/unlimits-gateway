@@ -4,6 +4,9 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
@@ -22,6 +25,10 @@ public class EOPrep extends EOItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	public long id;
 
 	public double qnt;
 
@@ -42,10 +49,65 @@ public class EOPrep extends EOItem {
 	@OneToMany(mappedBy = "eoPrep")
 	public Set<EORecipe> eoRecipeArray = new LinkedHashSet<>();
 
-	public long id;
-
 	public String logURL() {
 		return this.eoImgDetail != null ? this.eoImgDetail.url : "";
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public double getQnt() {
+		return qnt;
+	}
+
+	public void setQnt(double qnt) {
+		this.qnt = qnt;
+	}
+
+	public EOInvApp getEoInvApp() {
+		return eoInvApp;
+	}
+
+	public void setEoInvApp(EOInvApp eoInvApp) {
+		this.eoInvApp = eoInvApp;
+	}
+
+	public EOImgDetail getEoImgDetail() {
+		return eoImgDetail;
+	}
+
+	public void setEoImgDetail(EOImgDetail eoImgDetail) {
+		this.eoImgDetail = eoImgDetail;
+	}
+
+	public Set<EOPrepLocation> getEoPrepLocationArray() {
+		return eoPrepLocationArray;
+	}
+
+	public void setEoPrepLocationArray(Set<EOPrepLocation> eoPrepLocationArray) {
+		this.eoPrepLocationArray = eoPrepLocationArray;
+	}
+
+	public Set<EOPrepCountFreq> getEoPrepCountFreqArray() {
+		return eoPrepCountFreqArray;
+	}
+
+	public void setEoPrepCountFreqArray(Set<EOPrepCountFreq> eoPrepCountFreqArray) {
+		this.eoPrepCountFreqArray = eoPrepCountFreqArray;
+	}
+
+	public Set<EORecipe> getEoRecipeArray() {
+		return eoRecipeArray;
+	}
+
+	public void setEoRecipeArray(Set<EORecipe> eoRecipeArray) {
+		this.eoRecipeArray = eoRecipeArray;
+	}
+
+	
 }

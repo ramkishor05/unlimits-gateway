@@ -1,7 +1,6 @@
 package com.brijframework.inventory.model;
 
 import java.io.Serializable;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -30,11 +29,11 @@ public class EOCategoryGroup implements Serializable{
 	public String typeID;
 	
 	@ManyToOne
-	@JoinColumn(name="InvAppID",nullable=false)
+	@JoinColumn(name="InvAppID", nullable=false)
     public EOInvUnit eoInvApp;
 	
 	@OneToMany(mappedBy="eoCategoryGroup")
-	public Set<EOCategory> eoCategoryArray=new LinkedHashSet<>();
+	public Set<EOCategory> eoCategoryArray;
 	
 
 	public String getCategoryID() {

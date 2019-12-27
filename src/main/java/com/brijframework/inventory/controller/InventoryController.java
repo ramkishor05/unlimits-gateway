@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.inventory.bean.UIInventory;
-import com.brijframework.inventory.model.EOInventory;
-import com.brijframework.inventory.repository.InventoryRepository;
 import com.brijframework.inventory.service.InventoryService;
 
 @RestController

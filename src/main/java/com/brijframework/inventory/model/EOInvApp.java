@@ -5,33 +5,19 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class EOInvApp implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-/*	@SuppressWarnings("unchecked")
-	@Override
-	public <T> T postCreate() {
-		super.postCreate();
-		List<EOLKCountFreq> eolkCountFreqs = (List<EOLKCountFreq>) DBDataProcessor.getProcessor()
-				.getAllObject(EOLKCountFreq.class);
-		for (EOLKCountFreq eolkCountFreq : eolkCountFreqs) {
-			MapBean<String, Object> map = new MapBean<>(eolkCountFreq.objectMap());
-			map.put("eoInvApp", this);
-			this.addToRel("eoCountFreqArray", map);
-		}
-		List<EOLKUnitGroup> eolkUnitGroups = (List<EOLKUnitGroup>) DBDataProcessor.getProcessor().getAllObject(EOLKUnitGroup.class);
-		for (EOLKUnitGroup eolkUnitGroup : eolkUnitGroups) {
-			EOInvUnitGroup eoInvUnitGroup = this.addToRel("eoUnitGroupArray", eolkUnitGroup.objectMapWithKeys("typeID~shortDesc~longDesc~friendlyName"));
-			for (EOLKUnit eolkUnit : eolkUnitGroup.eoUnitArray) {
-				eoInvUnitGroup.addToRel("eoUnitArray", eolkUnit.objectMapWithKeys("typeID~shortDesc~longDesc~friendlyName"));
-			}
-		}
-		return (T) this;
-	}*/
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	public long id;
 
 	@OneToMany(mappedBy = "eoInvApp")
 	public Set<EOCountFreq> eoCountFreqArray = new LinkedHashSet<>();
@@ -60,5 +46,86 @@ public class EOInvApp implements Serializable {
 	@OneToMany(mappedBy = "eoInvApp")
 	public Set<EOLocation> eoLocationArray = new LinkedHashSet<>();
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Set<EOCountFreq> getEoCountFreqArray() {
+		return eoCountFreqArray;
+	}
+
+	public void setEoCountFreqArray(Set<EOCountFreq> eoCountFreqArray) {
+		this.eoCountFreqArray = eoCountFreqArray;
+	}
+
+	public Set<EOInvUnitGroup> getEoUnitGroupArray() {
+		return eoUnitGroupArray;
+	}
+
+	public void setEoUnitGroupArray(Set<EOInvUnitGroup> eoUnitGroupArray) {
+		this.eoUnitGroupArray = eoUnitGroupArray;
+	}
+
+	public Set<EOProduct> getEoProductArray() {
+		return eoProductArray;
+	}
+
+	public void setEoProductArray(Set<EOProduct> eoProductArray) {
+		this.eoProductArray = eoProductArray;
+	}
+
+	public Set<EOIngr> getEoIngrArray() {
+		return eoIngrArray;
+	}
+
+	public void setEoIngrArray(Set<EOIngr> eoIngrArray) {
+		this.eoIngrArray = eoIngrArray;
+	}
+
+	public Set<EOPrep> getEoPrepArray() {
+		return eoPrepArray;
+	}
+
+	public void setEoPrepArray(Set<EOPrep> eoPrepArray) {
+		this.eoPrepArray = eoPrepArray;
+	}
+
+	public Set<EOCategory> getEoCategoryArray() {
+		return eoCategoryArray;
+	}
+
+	public void setEoCategoryArray(Set<EOCategory> eoCategoryArray) {
+		this.eoCategoryArray = eoCategoryArray;
+	}
+
+	public Set<EOCategoryGroup> getEoCategoryGroupArray() {
+		return eoCategoryGroupArray;
+	}
+
+	public void setEoCategoryGroupArray(Set<EOCategoryGroup> eoCategoryGroupArray) {
+		this.eoCategoryGroupArray = eoCategoryGroupArray;
+	}
+
+	public Set<EOStorage> getEoStorageArray() {
+		return eoStorageArray;
+	}
+
+	public void setEoStorageArray(Set<EOStorage> eoStorageArray) {
+		this.eoStorageArray = eoStorageArray;
+	}
+
+	public Set<EOLocation> getEoLocationArray() {
+		return eoLocationArray;
+	}
+
+	public void setEoLocationArray(Set<EOLocation> eoLocationArray) {
+		this.eoLocationArray = eoLocationArray;
+	}
+
+	
 
 }

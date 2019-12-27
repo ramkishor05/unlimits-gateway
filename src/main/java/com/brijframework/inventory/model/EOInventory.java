@@ -1,9 +1,12 @@
 package com.brijframework.inventory.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
@@ -15,6 +18,10 @@ public class EOInventory implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	public long id;
+	
 	private Date busiDate;
 	private boolean isPosted;
 	private double totalCost; // in cents
@@ -24,6 +31,8 @@ public class EOInventory implements Serializable {
 	private long numWarnings;
 	private boolean isDirty; // set this to dirty if delivery / menu mix is added / updated / deleted
 
+	@OneToOne
+	@JoinColumn(name = "countFreqId", nullable = true)
 	private EOCountFreq countFreq;
 	
 	@OneToOne
@@ -108,6 +117,14 @@ public class EOInventory implements Serializable {
 
 	public void setOpeningInv(EOInventory openingInv) {
 		this.openingInv = openingInv;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	

@@ -41,8 +41,89 @@ public class EOLocation implements Serializable{
 	
 	@OneToMany(mappedBy="eoLocation")
 	public Set<EOProdLocation> eoProdLocations=new LinkedHashSet<>();
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getIdenNo() {
+		return idenNo;
+	}
+
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
+	}
+
+	public float getDisplayOrder() {
+		return displayOrder;
+	}
+
+	public void setDisplayOrder(float displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public EOInvApp getEoInvApp() {
+		return eoInvApp;
+	}
+
+	public void setEoInvApp(EOInvApp eoInvApp) {
+		this.eoInvApp = eoInvApp;
+	}
+
+	public EOStorage getEoStorage() {
+		return eoStorage;
+	}
+
+	public void setEoStorage(EOStorage eoStorage) {
+		this.eoStorage = eoStorage;
+	}
+
+	public Set<EOIngrLocation> getEoIngrLocations() {
+		return eoIngrLocations;
+	}
+
+	public void setEoIngrLocations(Set<EOIngrLocation> eoIngrLocations) {
+		this.eoIngrLocations = eoIngrLocations;
+	}
+
+	public Set<EOPrepLocation> getEoPrepLocations() {
+		return eoPrepLocations;
+	}
+
+	public void setEoPrepLocations(Set<EOPrepLocation> eoPrepLocations) {
+		this.eoPrepLocations = eoPrepLocations;
+	}
+
+	public Set<EOProdLocation> getEoProdLocations() {
+		return eoProdLocations;
+	}
+
+	public void setEoProdLocations(Set<EOProdLocation> eoProdLocations) {
+		this.eoProdLocations = eoProdLocations;
+	}
 	
 
+	
 
     
 }

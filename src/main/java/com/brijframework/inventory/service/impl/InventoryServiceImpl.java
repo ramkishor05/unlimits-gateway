@@ -26,8 +26,8 @@ public class InventoryServiceImpl implements InventoryService{
 	public UIInventory saveInventory(UIInventory inventory) {
 		Date busiDate=new Date();
 		EOInventory eoInventory = inventoryMapper.mapToDAO(inventory);
-		EOInventory lastInventory = inventoryRepository.lastInventory(busiDate, inventory.getCountFreq());
-		eoInventory.setOpeningInv(lastInventory);
+		/*EOInventory lastInventory = inventoryRepository.findFirstByOrderByBusiDateAscAndCountFreqId(busiDate, inventory.getCountFreq());
+		eoInventory.setOpeningInv(lastInventory);*/
 		return inventoryMapper.mapToDTO(eoInventory);
 	}
 

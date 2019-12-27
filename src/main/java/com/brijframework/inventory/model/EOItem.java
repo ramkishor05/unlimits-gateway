@@ -29,5 +29,39 @@ public abstract class EOItem implements Serializable{
 	@Lob
 	public String instructions;
 	public float unitCost; // in cents - can be 1.25 cents as this is average
+
+	public String getIdenNo() {
+		return idenNo;
+	}
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getInstructions() {
+		return instructions;
+	}
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
+	}
+	public float getUnitCost() {
+		return unitCost;
+	}
+	public void setUnitCost(float unitCost) {
+		this.unitCost = unitCost;
+	}
+	
+	
+	
 	
 }
