@@ -25,16 +25,16 @@ public class EOCategoryGroup implements Serializable {
 	@Column(name = "ID")
 	private long id;
 
-	@Column(name = "CATEGORY_ID")
+	@Column(name = "CATEGORY_GRP_ID")
 	private String categoryId;
 
-	@Column(name = "NAME")
+	@Column(name = "CATEGORY_GRP_NAME")
 	private String name;
 
-	@Column(name = "DESC")
+	@Column(name = "CATEGORY_GRP_DESC")
 	private String description;
 
-	@Column(name = "TYPE")
+	@Column(name = "CATEGORY_GRP_TYPE_ID")
 	private String type;
 	
 	@ManyToOne

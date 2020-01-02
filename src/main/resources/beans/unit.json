@@ -1,0 +1,86 @@
+[
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "TSP",
+			"shortDesc": "Tsp",
+			"longDesc": "Tsp",
+			"friendlyName": "Volume ( Tsp }",
+			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "TBSP",
+			"shortDesc": "Tbsp",
+			"longDesc": "Tbsp",
+			"friendlyName": "Volume ( Tbsp }",
+			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "PINT",
+			"shortDesc": "Pt",
+			"longDesc": "Pint",
+			"friendlyName": "Volume ( Pint }",
+			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "QUART",
+			"shortDesc": "Qrt",
+			"longDesc": "Quart",
+			"friendlyName": "Volume ( Quart }",
+			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "GALLON",
+			"shortDesc": "Gl",
+			"longDesc": "Gallon",
+			"friendlyName": "Volume ( Gallon }",
+			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "KILOGRAM",
+			"shortDesc": "K G",
+			"longDesc": "Kilo Gram",
+			"friendlyName": " Weight ( Gallon }",
+			"eoUnitGroup": "eoLKUnitGroup_SOLID"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "GRAM",
+			"shortDesc": "Gr",
+			"longDesc": "Gram",
+			"friendlyName": " Weight ( Gram }",
+			"eoUnitGroup": "eoLKUnitGroup_SOLID"
+		}
+	}
+]

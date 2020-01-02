@@ -20,7 +20,7 @@ public class EOInventoryApp implements Serializable {
 	public long id;
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOCountFreq> eoCountFreqArray = new LinkedHashSet<>();
+	public Set<EOInvCountFreq> eoCountFreqArray = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
 	public Set<EOInvUnitGroup> eoUnitGroupArray = new LinkedHashSet<>();
@@ -54,11 +54,11 @@ public class EOInventoryApp implements Serializable {
 		this.id = id;
 	}
 
-	public Set<EOCountFreq> getEoCountFreqArray() {
+	public Set<EOInvCountFreq> getEoCountFreqArray() {
 		return eoCountFreqArray;
 	}
 
-	public void setEoCountFreqArray(Set<EOCountFreq> eoCountFreqArray) {
+	public void setEoCountFreqArray(Set<EOInvCountFreq> eoCountFreqArray) {
 		this.eoCountFreqArray = eoCountFreqArray;
 	}
 

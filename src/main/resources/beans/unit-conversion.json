@@ -1,0 +1,30 @@
+[
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "KG_TO_GR",
+			"baseQnt":1,
+			"rptQnt":0.0001
+		},
+		"relationship":{
+		   "eoBaseUnit":"eoLKUnit_GR",
+		   "eoRptUnit":"eoLKUnit_KG"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeID": "GR_TO_KG",
+			"baseQnt":1000,
+			"rptQnt":1
+		},
+		"relationship":{
+		   "eoBaseUnit":"eoLKUnit_GR",
+		   "eoRptUnit":"eoLKUnit_KG"
+		}
+	}
+]

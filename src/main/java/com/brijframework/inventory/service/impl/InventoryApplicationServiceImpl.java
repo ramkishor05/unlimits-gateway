@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.brijframework.inventory.bean.UIInventoryApplication;
 import com.brijframework.inventory.contants.CountFreq;
 import com.brijframework.inventory.mapper.InventoryApplicationMapper;
-import com.brijframework.inventory.model.EOCountFreq;
+import com.brijframework.inventory.model.EOInvCountFreq;
 import com.brijframework.inventory.model.EOInventoryApp;
 import com.brijframework.inventory.repository.CountFreqRepository;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
@@ -31,7 +31,7 @@ public class InventoryApplicationServiceImpl implements InventoryApplicationServ
 		EOInventoryApp eoInventoryApp=new EOInventoryApp();
 		InventoryApplicationRepository.save(eoInventoryApp);
 		for(CountFreq countFreq:CountFreq.values()) {
-    		EOCountFreq eoCountFreq=new EOCountFreq(); 
+    		EOInvCountFreq eoCountFreq=new EOInvCountFreq(); 
     		eoCountFreq.setInventoryApp(eoInventoryApp);
     		eoCountFreq.setDescription(countFreq.getDesc());
     		eoCountFreq.setTypeId(countFreq.getTypeId());

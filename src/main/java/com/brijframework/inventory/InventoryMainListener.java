@@ -5,8 +5,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import com.brijframework.inventory.contants.CountFreq;
-import com.brijframework.inventory.model.EOCountFreq;
 import com.brijframework.inventory.repository.CountFreqRepository;
 
 @Component

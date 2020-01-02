@@ -4,12 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.brijframework.inventory.model.EOCountFreq;
+import com.brijframework.inventory.model.EOInvCountFreq;
 
 @Repository
 @Transactional
-public interface CountFreqRepository extends JpaRepository<EOCountFreq, Long>{
+public interface CountFreqRepository extends JpaRepository<EOInvCountFreq, Long>{
 	
-	EOCountFreq findOneByTypeId(String typeId);
+	EOInvCountFreq findOneByTypeId(String typeId);
 
 }

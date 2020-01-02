@@ -9,8 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class EOCategory implements Serializable {
 
 	/**
@@ -26,13 +28,13 @@ public class EOCategory implements Serializable {
 	@Column(name = "CATEGORY_ID")
 	private String categoryId;
 
-	@Column(name = "NAME")
+	@Column(name = "CATEGORY_NAME")
 	private String name;
 
-	@Column(name = "DESC")
+	@Column(name = "CATEGORY_DESC")
 	private String description;
 
-	@Column(name = "TYPE")
+	@Column(name = "CATEGORY_TYPE_ID")
 	private String type;
 
 	@JoinColumn(name = "APP_ID", nullable = false)
@@ -40,7 +42,7 @@ public class EOCategory implements Serializable {
 	private EOInventoryApp inventoryApp;
 
 	@ManyToOne
-	@JoinColumn(name = "GROUP_ID", nullable = false)
+	@JoinColumn(name = "CATEGORY_GROUP_ID", nullable = false)
 	private EOCategoryGroup categoryGroup;
 
 	public long getId() {

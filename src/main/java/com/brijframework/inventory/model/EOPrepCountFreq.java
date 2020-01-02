@@ -24,7 +24,7 @@ public class EOPrepCountFreq implements Serializable {
 
 	@OneToOne
 	@JoinColumn(name = "CountFreqID")
-	public EOCountFreq eoCountFreq;
+	public EOInvCountFreq eoCountFreq;
 
 	public long getId() {
 		return id;
@@ -42,11 +42,11 @@ public class EOPrepCountFreq implements Serializable {
 		this.eoPrep = eoPrep;
 	}
 
-	public EOCountFreq getEoCountFreq() {
+	public EOInvCountFreq getEoCountFreq() {
 		return eoCountFreq;
 	}
 
-	public void setEoCountFreq(EOCountFreq eoCountFreq) {
+	public void setEoCountFreq(EOInvCountFreq eoCountFreq) {
 		this.eoCountFreq = eoCountFreq;
 	}
 

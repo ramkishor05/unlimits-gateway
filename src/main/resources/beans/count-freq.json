@@ -1,0 +1,43 @@
+[
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeId": "DAILY",
+			"name": "Daily",
+			"description": "Count daily time duraction"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeId": "WEEKLY",
+			"name": "Weekly",
+			"description": "Count weekly time duraction"
+		}
+	}
+	,
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeId": "MONTHLY",
+			"name": "Monthly",
+			"description": "Count Monthly time duraction"
+		}
+	},
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"typeId": "PERIOD",
+			"name": "Period",
+			"description": "Count Period time duraction"
+		}
+	}
+]
