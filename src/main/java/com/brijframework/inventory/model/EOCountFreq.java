@@ -10,25 +10,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class EOCountFreq implements Serializable{
+public class EOCountFreq implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 
-	public String typeID;
+	public String typeId;
 	public String name;
 	public String description;
 	public float displayOrder;
-
 	public boolean active;
-	
+
 	@ManyToOne
-	@JoinColumn(name="InvAppID", nullable=false)
-	public EOInvApp eoInvApp;
+	@JoinColumn(name = "InvAppID", nullable = false)
+	public EOInventoryApp inventoryApp;
 
 	public long getId() {
 		return id;
@@ -38,12 +36,12 @@ public class EOCountFreq implements Serializable{
 		this.id = id;
 	}
 
-	public String getTypeID() {
-		return typeID;
+	public String getTypeId() {
+		return typeId;
 	}
 
-	public void setTypeID(String typeID) {
-		this.typeID = typeID;
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
 	}
 
 	public String getName() {
@@ -78,13 +76,12 @@ public class EOCountFreq implements Serializable{
 		this.active = active;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
-	
-	
+
 }

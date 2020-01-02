@@ -24,11 +24,11 @@ public class EOPrepLocation implements Serializable{
 	public float displayOrder;
 	@ManyToOne
 	@JoinColumn(name="PrepID")
-	public EOPrep eoPrep;
+	public EOPrep prep;
 	
 	@ManyToOne
 	@JoinColumn(name="LocationID")
-	public EOLocation eoLocation;
+	public EOLocation location;
 
 	public long getId() {
 		return id;
@@ -46,23 +46,22 @@ public class EOPrepLocation implements Serializable{
 		this.displayOrder = displayOrder;
 	}
 
-	public EOPrep getEoPrep() {
-		return eoPrep;
+	public EOPrep getPrep() {
+		return prep;
 	}
 
-	public void setEoPrep(EOPrep eoPrep) {
-		this.eoPrep = eoPrep;
+	public void setPrep(EOPrep prep) {
+		this.prep = prep;
 	}
 
-	public EOLocation getEoLocation() {
-		return eoLocation;
+	public EOLocation getLocation() {
+		return location;
 	}
 
-	public void setEoLocation(EOLocation eoLocation) {
-		this.eoLocation = eoLocation;
+	public void setLocation(EOLocation location) {
+		this.location = location;
 	}
-	
-	
+
 	
 }
 

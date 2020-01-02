@@ -20,10 +20,10 @@ public class EOIngrCountFreq implements Serializable {
 
 	@OneToOne
 	@JoinColumn(name = "IngrID")
-	public EOIngr eoIngr;
+	public EOIngredient ingredient;
 	@OneToOne
 	@JoinColumn(name = "CountFreqID")
-	public EOCountFreq eoCountFreq;
+	public EOCountFreq countFreq;
 
 	public long getId() {
 		return id;
@@ -33,20 +33,20 @@ public class EOIngrCountFreq implements Serializable {
 		this.id = id;
 	}
 
-	public EOIngr getEoIngr() {
-		return eoIngr;
+	public EOIngredient getIngredient() {
+		return ingredient;
 	}
 
-	public void setEoIngr(EOIngr eoIngr) {
-		this.eoIngr = eoIngr;
+	public void setIngredient(EOIngredient ingredient) {
+		this.ingredient = ingredient;
 	}
 
-	public EOCountFreq getEoCountFreq() {
-		return eoCountFreq;
+	public EOCountFreq getCountFreq() {
+		return countFreq;
 	}
 
-	public void setEoCountFreq(EOCountFreq eoCountFreq) {
-		this.eoCountFreq = eoCountFreq;
+	public void setCountFreq(EOCountFreq countFreq) {
+		this.countFreq = countFreq;
 	}
 
 }

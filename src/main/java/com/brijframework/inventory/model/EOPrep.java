@@ -25,22 +25,22 @@ public class EOPrep extends EOItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 
 	public double qnt;
 
 	@ManyToOne
 	@JoinColumn(name = "InvAppID")
-	public EOInvApp eoInvApp;
+	public EOInventoryApp inventoryApp;
 
 	@OneToOne
 	@JoinColumn(name = "imgID", nullable = true)
 	public EOImgDetail eoImgDetail;
 
-	@OneToMany(mappedBy = "eoPrep")
+	@OneToMany(mappedBy = "prep")
 	public Set<EOPrepLocation> eoPrepLocationArray = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "eoPrep")
@@ -69,12 +69,12 @@ public class EOPrep extends EOItem {
 		this.qnt = qnt;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
 	public EOImgDetail getEoImgDetail() {
@@ -109,5 +109,4 @@ public class EOPrep extends EOItem {
 		this.eoRecipeArray = eoRecipeArray;
 	}
 
-	
 }

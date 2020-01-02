@@ -3,6 +3,7 @@ package com.brijframework.inventory.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,36 +13,51 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class EOCategoryGroup implements Serializable{
+public class EOCategoryGroup implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	public long id;
-	
-	public String categoryID;
-	public String name;
-	public String description;
-	public String typeID;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
+	private long id;
+
+	@Column(name = "CATEGORY_ID")
+	private String categoryId;
+
+	@Column(name = "NAME")
+	private String name;
+
+	@Column(name = "DESC")
+	private String description;
+
+	@Column(name = "TYPE")
+	private String type;
 	
 	@ManyToOne
-	@JoinColumn(name="InvAppID", nullable=false)
-    public EOInvUnit eoInvApp;
-	
-	@OneToMany(mappedBy="eoCategoryGroup")
-	public Set<EOCategory> eoCategoryArray;
-	
+	@JoinColumn(name = "APP_ID", nullable = false)
+	public EOInventoryApp inventoryApp;
 
-	public String getCategoryID() {
-		return categoryID;
+	@OneToMany(mappedBy = "categoryGroup")
+	public Set<EOCategory> categoryArray;
+
+	public long getId() {
+		return id;
 	}
 
-	public void setCategoryID(String categoryID) {
-		this.categoryID = categoryID;
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getName() {
@@ -60,28 +76,28 @@ public class EOCategoryGroup implements Serializable{
 		this.description = description;
 	}
 
-	public String getTypeID() {
-		return typeID;
+	public String getType() {
+		return type;
 	}
 
-	public void setTypeID(String typeID) {
-		this.typeID = typeID;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public EOInvUnit getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvUnit eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
-	public Set<EOCategory> getEoCategoryArray() {
-		return eoCategoryArray;
+	public Set<EOCategory> getCategoryArray() {
+		return categoryArray;
 	}
 
-	public void setEoCategoryArray(Set<EOCategory> eoCategoryArray) {
-		this.eoCategoryArray = eoCategoryArray;
+	public void setCategoryArray(Set<EOCategory> categoryArray) {
+		this.categoryArray = categoryArray;
 	}
-	
+
 }

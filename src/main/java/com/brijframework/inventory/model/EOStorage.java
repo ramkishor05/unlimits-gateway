@@ -30,9 +30,59 @@ public class EOStorage implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="InvAppID",nullable=false)
-    public EOInvApp eoInvApp;
+    public EOInventoryApp inventoryApp;
 	
 	@OneToMany(mappedBy="eoStorage")
 	public Set<EOLocation> eoLocationArray=new LinkedHashSet<>();
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public float getDisplayOrder() {
+		return displayOrder;
+	}
+
+	public void setDisplayOrder(float displayOrder) {
+		this.displayOrder = displayOrder;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
+	}
+
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
+	}
+
+	public Set<EOLocation> getEoLocationArray() {
+		return eoLocationArray;
+	}
+
+	public void setEoLocationArray(Set<EOLocation> eoLocationArray) {
+		this.eoLocationArray = eoLocationArray;
+	}
+	
+	
 	
 }

@@ -20,6 +20,7 @@ public class EOCategory implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private long id;
 
 	@Column(name = "CATEGORY_ID")
@@ -34,13 +35,13 @@ public class EOCategory implements Serializable {
 	@Column(name = "TYPE")
 	private String type;
 
+	@JoinColumn(name = "APP_ID", nullable = false)
 	@ManyToOne
-	@JoinColumn(name = "InvAppID", nullable = false)
-	private EOInvApp eoInvApp;
+	private EOInventoryApp inventoryApp;
 
 	@ManyToOne
-	@JoinColumn(name = "category_group_id", nullable = false)
-	private EOCategoryGroup eoCategoryGroup;
+	@JoinColumn(name = "GROUP_ID", nullable = false)
+	private EOCategoryGroup categoryGroup;
 
 	public long getId() {
 		return id;
@@ -50,12 +51,12 @@ public class EOCategory implements Serializable {
 		this.id = id;
 	}
 
-	public String getCategoryID() {
+	public String getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryID(String categoryID) {
-		this.categoryId = categoryID;
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getName() {
@@ -82,20 +83,20 @@ public class EOCategory implements Serializable {
 		this.type = type;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
-	public EOCategoryGroup getEoCategoryGroup() {
-		return eoCategoryGroup;
+	public EOCategoryGroup getCategoryGroup() {
+		return categoryGroup;
 	}
 
-	public void setEoCategoryGroup(EOCategoryGroup categoryGroup) {
-		this.eoCategoryGroup = categoryGroup;
+	public void setCategoryGroup(EOCategoryGroup categoryGroup) {
+		this.categoryGroup = categoryGroup;
 	}
 
 }

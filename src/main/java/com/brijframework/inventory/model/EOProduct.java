@@ -24,9 +24,9 @@ public class EOProduct extends EOItem {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 
 	public double price;
@@ -37,10 +37,10 @@ public class EOProduct extends EOItem {
 
 	@ManyToOne
 	@JoinColumn(name = "InvAppID")
-	public EOInvApp eoInvApp;
+	public EOInventoryApp inventoryApp;
 
-	@ManyToOne
-	@JoinColumn(name = "category_id" )
+	@OneToOne
+	@JoinColumn(name = "category_id")
 	public EOCategory eoCategory;
 
 	@OneToMany(mappedBy = "eoProduct")
@@ -49,7 +49,7 @@ public class EOProduct extends EOItem {
 	@OneToMany(mappedBy = "eoProduct")
 	public Set<EOProductDetail> eoProductDetailArray = new LinkedHashSet<>();
 
-	@OneToMany(mappedBy = "eoProduct")
+	@OneToMany(mappedBy = "product")
 	public Set<EOProdLocation> eoProdLocationArray = new LinkedHashSet<>();
 
 	public String logURL() {
@@ -80,12 +80,12 @@ public class EOProduct extends EOItem {
 		this.eoImgDetail = eoImgDetail;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
 	public EOCategory getEoCategory() {
@@ -119,6 +119,5 @@ public class EOProduct extends EOItem {
 	public void setEoProdLocationArray(Set<EOProdLocation> eoProdLocationArray) {
 		this.eoProdLocationArray = eoProdLocationArray;
 	}
-	
-	
+
 }

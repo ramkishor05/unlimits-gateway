@@ -10,37 +10,44 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class EOPrepCountFreq implements Serializable{
+public class EOPrepCountFreq implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
-	
+
 	@OneToOne
-	@JoinColumn(name="PrepID")
-	public EOPrep  eoPrep;
+	@JoinColumn(name = "PrepID")
+	public EOPrep eoPrep;
+
 	@OneToOne
-	@JoinColumn(name="CountFreqID")
+	@JoinColumn(name = "CountFreqID")
 	public EOCountFreq eoCountFreq;
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public EOPrep getEoPrep() {
 		return eoPrep;
 	}
+
 	public void setEoPrep(EOPrep eoPrep) {
 		this.eoPrep = eoPrep;
 	}
+
 	public EOCountFreq getEoCountFreq() {
 		return eoCountFreq;
 	}
+
 	public void setEoCountFreq(EOCountFreq eoCountFreq) {
 		this.eoCountFreq = eoCountFreq;
 	}
-	
-	
+
 }

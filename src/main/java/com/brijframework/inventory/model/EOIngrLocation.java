@@ -24,13 +24,14 @@ public class EOIngrLocation implements Serializable{
 	public long id;
     
 	public float displayOrder;
-	@ManyToOne
-	@JoinColumn(name="IngrID")
-	public EOIngr eoIngr;
 	
 	@ManyToOne
-	@JoinColumn(name="LocationID")
-	public EOLocation eoLocation;
+	@JoinColumn(name="INGR_ID")
+	public EOIngredient ingredient;
+	
+	@ManyToOne
+	@JoinColumn(name="LOCATION_ID")
+	public EOLocation location;
 
 	public long getId() {
 		return id;
@@ -48,20 +49,20 @@ public class EOIngrLocation implements Serializable{
 		this.displayOrder = displayOrder;
 	}
 
-	public EOIngr getEoIngr() {
-		return eoIngr;
+	public EOIngredient getIngredient() {
+		return ingredient;
 	}
 
-	public void setEoIngr(EOIngr eoIngr) {
-		this.eoIngr = eoIngr;
+	public void setIngredient(EOIngredient ingredient) {
+		this.ingredient = ingredient;
 	}
 
-	public EOLocation getEoLocation() {
-		return eoLocation;
+	public EOLocation getLocation() {
+		return location;
 	}
 
-	public void setEoLocation(EOLocation eoLocation) {
-		this.eoLocation = eoLocation;
+	public void setLocation(EOLocation location) {
+		this.location = location;
 	}
 
 	

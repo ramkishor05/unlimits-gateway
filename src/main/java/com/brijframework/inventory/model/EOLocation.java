@@ -13,34 +13,33 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class EOLocation implements Serializable{
-   
-	
+public class EOLocation implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 	public String idenNo;
 	public float displayOrder;
 	public String name;
 	public boolean active;
-	
+
 	@ManyToOne
-	@JoinColumn(name="InvAppID",nullable=false)
-    public EOInvApp eoInvApp;
-	
+	@JoinColumn(name = "InvAppID", nullable = false)
+	public EOInventoryApp inventoryApp;
+
 	@ManyToOne
-	@JoinColumn(name="StorageID",nullable=false)
+	@JoinColumn(name = "StorageID", nullable = false)
 	public EOStorage eoStorage;
-	
-	@OneToMany(mappedBy="eoLocation")
-	public Set<EOIngrLocation> eoIngrLocations=new LinkedHashSet<>();
-	
-	@OneToMany(mappedBy="eoLocation")
-	public Set<EOPrepLocation> eoPrepLocations=new LinkedHashSet<>();
-	
-	@OneToMany(mappedBy="eoLocation")
-	public Set<EOProdLocation> eoProdLocations=new LinkedHashSet<>();
+
+	@OneToMany(mappedBy = "location")
+	public Set<EOIngrLocation> ingrLocations = new LinkedHashSet<>();
+
+	@OneToMany(mappedBy = "location")
+	public Set<EOPrepLocation> prepLocations = new LinkedHashSet<>();
+
+	@OneToMany(mappedBy = "location")
+	public Set<EOProdLocation> prodLocations = new LinkedHashSet<>();
 
 	public long getId() {
 		return id;
@@ -82,12 +81,12 @@ public class EOLocation implements Serializable{
 		this.active = active;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
 	public EOStorage getEoStorage() {
@@ -98,32 +97,30 @@ public class EOLocation implements Serializable{
 		this.eoStorage = eoStorage;
 	}
 
-	public Set<EOIngrLocation> getEoIngrLocations() {
-		return eoIngrLocations;
+	public Set<EOIngrLocation> getIngrLocations() {
+		return ingrLocations;
 	}
 
-	public void setEoIngrLocations(Set<EOIngrLocation> eoIngrLocations) {
-		this.eoIngrLocations = eoIngrLocations;
+	public void setIngrLocations(Set<EOIngrLocation> ingrLocations) {
+		this.ingrLocations = ingrLocations;
 	}
 
-	public Set<EOPrepLocation> getEoPrepLocations() {
-		return eoPrepLocations;
+	public Set<EOPrepLocation> getPrepLocations() {
+		return prepLocations;
 	}
 
-	public void setEoPrepLocations(Set<EOPrepLocation> eoPrepLocations) {
-		this.eoPrepLocations = eoPrepLocations;
+	public void setPrepLocations(Set<EOPrepLocation> prepLocations) {
+		this.prepLocations = prepLocations;
 	}
 
-	public Set<EOProdLocation> getEoProdLocations() {
-		return eoProdLocations;
+	public Set<EOProdLocation> getProdLocations() {
+		return prodLocations;
 	}
 
-	public void setEoProdLocations(Set<EOProdLocation> eoProdLocations) {
-		this.eoProdLocations = eoProdLocations;
+	public void setProdLocations(Set<EOProdLocation> prodLocations) {
+		this.prodLocations = prodLocations;
 	}
+
 	
 
-	
-
-    
 }

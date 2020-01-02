@@ -19,22 +19,22 @@ public class EOInvUnitGroup implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long id;
 
 	public String typeID;
 	public String shortDesc;
 	public String longDesc;
 	public String friendlyName;
-	
+
 	@ManyToOne
-	@JoinColumn(name="InvAppID")
-    public EOInvApp eoInvApp;
-	
-	@OneToMany(mappedBy="eoUnitGroup")
-	public Set<EOInvUnit> eoUnitArray=new LinkedHashSet<>();
+	@JoinColumn(name = "InvAppID")
+	public EOInventoryApp inventoryApp;
+
+	@OneToMany(mappedBy = "eoUnitGroup")
+	public Set<EOInvUnit> eoUnitArray = new LinkedHashSet<>();
 
 	public long getId() {
 		return id;
@@ -76,12 +76,12 @@ public class EOInvUnitGroup implements Serializable {
 		this.friendlyName = friendlyName;
 	}
 
-	public EOInvApp getEoInvApp() {
-		return eoInvApp;
+	public EOInventoryApp getInventoryApp() {
+		return inventoryApp;
 	}
 
-	public void setEoInvApp(EOInvApp eoInvApp) {
-		this.eoInvApp = eoInvApp;
+	public void setInventoryApp(EOInventoryApp inventoryApp) {
+		this.inventoryApp = inventoryApp;
 	}
 
 	public Set<EOInvUnit> getEoUnitArray() {
@@ -91,6 +91,5 @@ public class EOInvUnitGroup implements Serializable {
 	public void setEoUnitArray(Set<EOInvUnit> eoUnitArray) {
 		this.eoUnitArray = eoUnitArray;
 	}
-	
-	
+
 }
