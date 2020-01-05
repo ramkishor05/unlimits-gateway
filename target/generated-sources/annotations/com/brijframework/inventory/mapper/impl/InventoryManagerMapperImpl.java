@@ -2,7 +2,7 @@ package com.brijframework.inventory.mapper.impl;
 
 import com.brijframework.inventory.bean.UIInventoryManager;
 import com.brijframework.inventory.mapper.InventoryManagerMapper;
-import com.brijframework.inventory.model.EOCountFreq;
+import com.brijframework.inventory.model.EOGlobalCountFreq;
 import com.brijframework.inventory.model.EOInventoryManager;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-02T23:32:09+0530",
+    date = "2020-01-05T23:46:26+0530",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_211 (Oracle Corporation)"
 )
 @Component
@@ -53,7 +53,7 @@ public class InventoryManagerMapperImpl implements InventoryManagerMapper {
 
         EOInventoryManager eOInventoryManager = new EOInventoryManager();
 
-        eOInventoryManager.setCountFreq( uIInventoryManagerToEOCountFreq( eoRoleDTO ) );
+        eOInventoryManager.setCountFreq( uIInventoryManagerToEOGlobalCountFreq( eoRoleDTO ) );
         eOInventoryManager.setBusiDate( eoRoleDTO.getBusiDate() );
         eOInventoryManager.setPosted( eoRoleDTO.isPosted() );
         eOInventoryManager.setTotalCost( eoRoleDTO.getTotalCost() );
@@ -85,23 +85,23 @@ public class InventoryManagerMapperImpl implements InventoryManagerMapper {
         return uIInventoryManager;
     }
 
-    protected EOCountFreq uIInventoryManagerToEOCountFreq(UIInventoryManager uIInventoryManager) {
+    protected EOGlobalCountFreq uIInventoryManagerToEOGlobalCountFreq(UIInventoryManager uIInventoryManager) {
         if ( uIInventoryManager == null ) {
             return null;
         }
 
-        EOCountFreq eOCountFreq = new EOCountFreq();
+        EOGlobalCountFreq eOGlobalCountFreq = new EOGlobalCountFreq();
 
-        eOCountFreq.setId( uIInventoryManager.getCountFreq() );
+        eOGlobalCountFreq.setId( uIInventoryManager.getCountFreq() );
 
-        return eOCountFreq;
+        return eOGlobalCountFreq;
     }
 
     private long eoRoleCountFreqId(EOInventoryManager eOInventoryManager) {
         if ( eOInventoryManager == null ) {
             return 0L;
         }
-        EOCountFreq countFreq = eOInventoryManager.getCountFreq();
+        EOGlobalCountFreq countFreq = eOInventoryManager.getCountFreq();
         if ( countFreq == null ) {
             return 0L;
         }

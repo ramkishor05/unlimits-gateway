@@ -33,7 +33,7 @@ public class EOInventoryManager implements Serializable {
 
 	@OneToOne
 	@JoinColumn(name = "countFreqId", nullable = true)
-	private EOInvCountFreq countFreq;
+	private EOGlobalCountFreq countFreq;
 	
 	@OneToOne
 	@JoinColumn(name = "EOOpeningInvID", nullable = true)
@@ -103,11 +103,11 @@ public class EOInventoryManager implements Serializable {
 		this.isDirty = isDirty;
 	}
 
-	public EOInvCountFreq getCountFreq() {
+	public EOGlobalCountFreq getCountFreq() {
 		return countFreq;
 	}
 
-	public void setCountFreq(EOInvCountFreq countFreq) {
+	public void setCountFreq(EOGlobalCountFreq countFreq) {
 		this.countFreq = countFreq;
 	}
 

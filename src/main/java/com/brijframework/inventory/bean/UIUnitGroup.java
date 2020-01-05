@@ -3,40 +3,40 @@ package com.brijframework.inventory.bean;
 import java.io.Serializable;
 import java.util.List;
 
-import com.brijframework.inventory.model.EOInvUnit;
-import com.brijframework.inventory.model.EOInvUnitGroup;
-
 public class UIUnitGroup implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public long uniqueID;
-	public String typeID;
+	public long id;
+	public String typeId;
 	public String shortDesc;
 	public String longDesc;
 	public String friendlyName;
+	private long inventoryAppId;
 
-	public List<UIRptUnit> unitArray;
+	public List<UIUnit> unitArray;
 
-	private EOInvUnitGroup invUnitGroup;
-
-	public UIUnitGroup(EOInvUnitGroup invUnitGroup) {
-		this.invUnitGroup = invUnitGroup;
+	public long getId() {
+		return id;
 	}
 
-	public long getUniqueID() {
-		return uniqueID;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public void setUniqueID(long uniqueID) {
-		this.uniqueID = uniqueID;
+	public String getTypeId() {
+		return typeId;
 	}
 
-	public String getTypeID() {
-		return typeID;
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
 	}
 
-	public void setTypeID(String typeID) {
-		this.typeID = typeID;
+	public long getInventoryAppId() {
+		return inventoryAppId;
+	}
+
+	public void setInventoryAppId(long inventoryAppId) {
+		this.inventoryAppId = inventoryAppId;
 	}
 
 	public String getShortDesc() {
@@ -63,88 +63,11 @@ public class UIUnitGroup implements Serializable {
 		this.friendlyName = friendlyName;
 	}
 
-	public List<UIRptUnit> getUnitArray() {
+	public List<UIUnit> getUnitArray() {
 		return unitArray;
 	}
 
-	public void setUnitArray(List<UIRptUnit> unitArray) {
+	public void setUnitArray(List<UIUnit> unitArray) {
 		this.unitArray = unitArray;
 	}
-
-	public EOInvUnitGroup getInvUnitGroup() {
-		return invUnitGroup;
-	}
-
-	public void setInvUnitGroup(EOInvUnitGroup invUnitGroup) {
-		this.invUnitGroup = invUnitGroup;
-	}
-	
-	
-	
-}
-
-class UIRptUnit implements Serializable {
-	private static final long serialVersionUID = 1L;
-	public long uniqueID;
-	public String typeID;
-	public String shortDesc;
-	public String longDesc;
-	public String friendlyName;
-
-	EOInvUnit eoInvUnit;
-	
-	public UIRptUnit(EOInvUnit eoInvUnit) {
-		this.eoInvUnit = eoInvUnit;
-	}
-
-	public long getUniqueID() {
-		return uniqueID;
-	}
-
-	public void setUniqueID(long uniqueID) {
-		this.uniqueID = uniqueID;
-	}
-
-	public String getTypeID() {
-		return typeID;
-	}
-
-	public void setTypeID(String typeID) {
-		this.typeID = typeID;
-	}
-
-	public String getShortDesc() {
-		return shortDesc;
-	}
-
-	public void setShortDesc(String shortDesc) {
-		this.shortDesc = shortDesc;
-	}
-
-	public String getLongDesc() {
-		return longDesc;
-	}
-
-	public void setLongDesc(String longDesc) {
-		this.longDesc = longDesc;
-	}
-
-	public String getFriendlyName() {
-		return friendlyName;
-	}
-
-	public void setFriendlyName(String friendlyName) {
-		this.friendlyName = friendlyName;
-	}
-
-	public EOInvUnit getEoInvUnit() {
-		return eoInvUnit;
-	}
-
-	public void setEoInvUnit(EOInvUnit eoInvUnit) {
-		this.eoInvUnit = eoInvUnit;
-	}
-	
-	
-
 }

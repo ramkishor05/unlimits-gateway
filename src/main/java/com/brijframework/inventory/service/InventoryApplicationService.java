@@ -3,6 +3,7 @@ package com.brijframework.inventory.service;
 import java.util.List;
 
 import com.brijframework.inventory.bean.UIInventoryApplication;
+import com.brijframework.inventory.bean.UIInventoryApplicationDetail;
 
 public interface InventoryApplicationService {
 
@@ -13,4 +14,6 @@ public interface InventoryApplicationService {
 	boolean deleteInventoryApp(long id);
 
 	List<UIInventoryApplication> getInventoryAppList();
+
+	UIInventoryApplicationDetail getInventoryAppDetail(long id);
 }

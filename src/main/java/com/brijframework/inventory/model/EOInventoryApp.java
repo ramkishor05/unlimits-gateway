@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,37 +15,43 @@ import javax.persistence.OneToMany;
 public class EOInventoryApp implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	public long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+	@Column(name = "APP_ID", nullable = false)
+	private long appid;
+
+	@Column(name = "CUST_ID", nullable = false)
+	private long custId;
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOInvCountFreq> eoCountFreqArray = new LinkedHashSet<>();
+	public Set<EOGlobalCountFreq> countFreqs = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOInvUnitGroup> eoUnitGroupArray = new LinkedHashSet<>();
+	public Set<EOGlobalUnitGroup> unitGroups = new LinkedHashSet<>();
+	
+	@OneToMany(mappedBy = "inventoryApp")
+	public Set<EOGlobalCategoryGroup> categoryGroups = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOProduct> eoProductArray = new LinkedHashSet<>();
+	public Set<EOGlobalStorage> storages = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOIngredient> eoIngrArray = new LinkedHashSet<>();
+	public Set<EOGlobalCategory> categories = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOPrep> eoPrepArray = new LinkedHashSet<>();
+	public Set<EOGlobalLocation> locations = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOCategory> eoCategoryArray = new LinkedHashSet<>();
+	public Set<EOGlobalProduct> products = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOCategoryGroup> eoCategoryGroupArray = new LinkedHashSet<>();
+	public Set<EOGlobalIngredient> ingredients = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOStorage> eoStorageArray = new LinkedHashSet<>();
-
-	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOLocation> eoLocationArray = new LinkedHashSet<>();
+	public Set<EOGlobalPreparation> preps = new LinkedHashSet<>();
 
 	public long getId() {
 		return id;
@@ -54,78 +61,92 @@ public class EOInventoryApp implements Serializable {
 		this.id = id;
 	}
 
-	public Set<EOInvCountFreq> getEoCountFreqArray() {
-		return eoCountFreqArray;
+	public long getAppid() {
+		return appid;
 	}
 
-	public void setEoCountFreqArray(Set<EOInvCountFreq> eoCountFreqArray) {
-		this.eoCountFreqArray = eoCountFreqArray;
+	public void setAppid(long appid) {
+		this.appid = appid;
 	}
 
-	public Set<EOInvUnitGroup> getEoUnitGroupArray() {
-		return eoUnitGroupArray;
+	public long getCustId() {
+		return custId;
 	}
 
-	public void setEoUnitGroupArray(Set<EOInvUnitGroup> eoUnitGroupArray) {
-		this.eoUnitGroupArray = eoUnitGroupArray;
+	public void setCustId(long custId) {
+		this.custId = custId;
 	}
 
-	public Set<EOProduct> getEoProductArray() {
-		return eoProductArray;
+	public Set<EOGlobalCountFreq> getCountFreqs() {
+		return countFreqs;
 	}
 
-	public void setEoProductArray(Set<EOProduct> eoProductArray) {
-		this.eoProductArray = eoProductArray;
+	public void setCountFreqs(Set<EOGlobalCountFreq> countFreqs) {
+		this.countFreqs = countFreqs;
 	}
 
-	public Set<EOIngredient> getEoIngrArray() {
-		return eoIngrArray;
+	public Set<EOGlobalUnitGroup> getUnitGroups() {
+		return unitGroups;
 	}
 
-	public void setEoIngrArray(Set<EOIngredient> eoIngrArray) {
-		this.eoIngrArray = eoIngrArray;
+	public void setUnitGroups(Set<EOGlobalUnitGroup> unitGroups) {
+		this.unitGroups = unitGroups;
 	}
 
-	public Set<EOPrep> getEoPrepArray() {
-		return eoPrepArray;
+	public Set<EOGlobalProduct> getProducts() {
+		return products;
 	}
 
-	public void setEoPrepArray(Set<EOPrep> eoPrepArray) {
-		this.eoPrepArray = eoPrepArray;
+	public void setProducts(Set<EOGlobalProduct> products) {
+		this.products = products;
 	}
 
-	public Set<EOCategory> getEoCategoryArray() {
-		return eoCategoryArray;
+	public Set<EOGlobalIngredient> getIngredients() {
+		return ingredients;
 	}
 
-	public void setEoCategoryArray(Set<EOCategory> eoCategoryArray) {
-		this.eoCategoryArray = eoCategoryArray;
+	public void setIngredients(Set<EOGlobalIngredient> ingredients) {
+		this.ingredients = ingredients;
 	}
 
-	public Set<EOCategoryGroup> getEoCategoryGroupArray() {
-		return eoCategoryGroupArray;
+	public Set<EOGlobalPreparation> getPreps() {
+		return preps;
 	}
 
-	public void setEoCategoryGroupArray(Set<EOCategoryGroup> eoCategoryGroupArray) {
-		this.eoCategoryGroupArray = eoCategoryGroupArray;
+	public void setPreps(Set<EOGlobalPreparation> preps) {
+		this.preps = preps;
 	}
 
-	public Set<EOStorage> getEoStorageArray() {
-		return eoStorageArray;
+	public Set<EOGlobalCategory> getCategories() {
+		return categories;
 	}
 
-	public void setEoStorageArray(Set<EOStorage> eoStorageArray) {
-		this.eoStorageArray = eoStorageArray;
+	public void setCategories(Set<EOGlobalCategory> categories) {
+		this.categories = categories;
 	}
 
-	public Set<EOLocation> getEoLocationArray() {
-		return eoLocationArray;
+	public Set<EOGlobalCategoryGroup> getCategoryGroups() {
+		return categoryGroups;
 	}
 
-	public void setEoLocationArray(Set<EOLocation> eoLocationArray) {
-		this.eoLocationArray = eoLocationArray;
+	public void setCategoryGroups(Set<EOGlobalCategoryGroup> categoryGroups) {
+		this.categoryGroups = categoryGroups;
 	}
 
-	
+	public Set<EOGlobalStorage> getStorages() {
+		return storages;
+	}
+
+	public void setStorages(Set<EOGlobalStorage> storages) {
+		this.storages = storages;
+	}
+
+	public Set<EOGlobalLocation> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(Set<EOGlobalLocation> locations) {
+		this.locations = locations;
+	}
 
 }

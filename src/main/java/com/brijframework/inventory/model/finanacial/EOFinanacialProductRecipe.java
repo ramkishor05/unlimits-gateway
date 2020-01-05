@@ -1,0 +1,71 @@
+package com.brijframework.inventory.model.finanacial;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+public class EOFinanacialProductRecipe implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	
+	private float qnt;
+	
+	@OneToOne
+	@JoinColumn(name="INGREDIENT_ID")
+	private EOFinanacialIngredient ingredient;
+	
+	@ManyToOne
+	@JoinColumn(name="PREPARATION_ID")
+	private EOFinanacialPreparation preparation;
+	
+	@ManyToOne
+	@JoinColumn(name="PRODUCT_ID", nullable=false)
+	private EOFinanacialProduct product;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public float getQnt() {
+		return qnt;
+	}
+
+	public void setQnt(float qnt) {
+		this.qnt = qnt;
+	}
+
+	public EOFinanacialPreparation getPreparation() {
+		return preparation;
+	}
+
+	public void setPreparation(EOFinanacialPreparation preparation) {
+		this.preparation = preparation;
+	}
+	
+	public void setIngredient(EOFinanacialIngredient ingredient) {
+		this.ingredient = ingredient;
+	}
+	
+	public EOFinanacialIngredient getIngredient() {
+		return ingredient;
+	}
+
+}

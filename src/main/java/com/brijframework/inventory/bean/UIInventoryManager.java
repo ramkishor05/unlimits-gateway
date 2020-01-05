@@ -12,6 +12,15 @@ public class UIInventoryManager {
 	private double totalInvValue;
 	private long numWarnings;
 	private long countFreq;
+	private long inventoryAppId;
+
+	public long getInventoryAppId() {
+		return inventoryAppId;
+	}
+
+	public void setInventoryAppId(long inventoryAppId) {
+		this.inventoryAppId = inventoryAppId;
+	}
 	
 	public Date getBusiDate() {
 		return busiDate;
