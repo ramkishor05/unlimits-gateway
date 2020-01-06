@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.brijframework.inventory.model.EOGlobalIngredient;
+import com.brijframework.inventory.model.global.EOGlobalIngredient;
 
 @Entity
 public class EOFinanacialIngredient implements Serializable {

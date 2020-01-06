@@ -2,13 +2,18 @@ package com.brijframework.inventory.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.brijframework.inventory.model.global.EOGlobalCountFreq;
 
 @Entity
 public class EOInventoryManager implements Serializable {
@@ -34,6 +39,12 @@ public class EOInventoryManager implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "countFreqId", nullable = true)
 	private EOGlobalCountFreq countFreq;
+	
+	@OneToMany(mappedBy = "inventory")
+	public Set<EOInventoryItemDetail> itemDetailList;
+	
+	@OneToMany(mappedBy = "inventory")
+	public Set<EOInventoryFinsDetail> finsDetailList;
 	
 	@OneToOne
 	@JoinColumn(name = "EOOpeningInvID", nullable = true)

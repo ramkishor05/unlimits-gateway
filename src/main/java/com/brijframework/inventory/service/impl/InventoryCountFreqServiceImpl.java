@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.inventory.bean.UICountFreq;
 import com.brijframework.inventory.mapper.InventoryCountFreqMapper;
-import com.brijframework.inventory.model.EOGlobalCountFreq;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalCountFreq;
 import com.brijframework.inventory.repository.InventoryCountFreqRepository;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
 import com.brijframework.inventory.service.InventoryCountFreqService;

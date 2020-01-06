@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.inventory.bean.UIPreparation;
 import com.brijframework.inventory.mapper.InventoryPreparationMapper;
-import com.brijframework.inventory.model.EOGlobalPreparation;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalPreparation;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
 import com.brijframework.inventory.repository.InventoryPreparationRepository;
 import com.brijframework.inventory.service.InventoryPreparationService;

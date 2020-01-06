@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.brijframework.inventory.bean.UICategory;
-import com.brijframework.inventory.model.EOGlobalCategory;
+import com.brijframework.inventory.model.global.EOGlobalCategory;
 
 @Mapper(componentModel = "spring", implementationPackage = "com.brijframework.inventory.mapper.impl")
 public interface InventoryCategoryMapper  extends GenericMapper<EOGlobalCategory, UICategory>{

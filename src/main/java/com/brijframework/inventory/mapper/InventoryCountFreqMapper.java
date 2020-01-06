@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.brijframework.inventory.bean.UICountFreq;
-import com.brijframework.inventory.model.EOGlobalCountFreq;
+import com.brijframework.inventory.model.global.EOGlobalCountFreq;
 
 @Mapper(componentModel = "spring", implementationPackage = "com.brijframework.inventory.mapper.impl")
 public interface InventoryCountFreqMapper  extends GenericMapper<EOGlobalCountFreq, UICountFreq>{

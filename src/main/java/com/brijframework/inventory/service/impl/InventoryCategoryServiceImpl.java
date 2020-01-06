@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.inventory.bean.UICategory;
 import com.brijframework.inventory.mapper.InventoryCategoryMapper;
-import com.brijframework.inventory.model.EOGlobalCategory;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalCategory;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
 import com.brijframework.inventory.repository.InventoryCategoryRepository;
 import com.brijframework.inventory.service.InventoryCategoryService;

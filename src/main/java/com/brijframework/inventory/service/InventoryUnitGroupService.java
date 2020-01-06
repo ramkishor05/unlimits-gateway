@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.brijframework.inventory.bean.UIUnit;
 import com.brijframework.inventory.bean.UIUnitGroup;
-import com.brijframework.inventory.model.EOGlobalUnitGroup;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalUnitGroup;
 
 public interface InventoryUnitGroupService {
 

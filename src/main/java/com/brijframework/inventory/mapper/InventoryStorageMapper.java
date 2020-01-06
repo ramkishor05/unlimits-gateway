@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.brijframework.inventory.bean.UIStorage;
-import com.brijframework.inventory.model.EOGlobalStorage;
+import com.brijframework.inventory.model.global.EOGlobalStorage;
 
 @Mapper(componentModel = "spring", implementationPackage = "com.brijframework.inventory.mapper.impl")
 public interface InventoryStorageMapper  extends GenericMapper<EOGlobalStorage, UIStorage>{

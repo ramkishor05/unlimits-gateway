@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.brijframework.inventory.model.EOGlobalPreparation;
+import com.brijframework.inventory.model.global.EOGlobalPreparation;
 
 @Entity
 @Table

@@ -11,6 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.brijframework.inventory.model.global.EOGlobalCategory;
+import com.brijframework.inventory.model.global.EOGlobalCategoryGroup;
+import com.brijframework.inventory.model.global.EOGlobalCountFreq;
+import com.brijframework.inventory.model.global.EOGlobalIngredient;
+import com.brijframework.inventory.model.global.EOGlobalLocation;
+import com.brijframework.inventory.model.global.EOGlobalPreparation;
+import com.brijframework.inventory.model.global.EOGlobalProduct;
+import com.brijframework.inventory.model.global.EOGlobalStorage;
+import com.brijframework.inventory.model.global.EOGlobalUnitGroup;
+
 @Entity
 public class EOInventoryApp implements Serializable {
 

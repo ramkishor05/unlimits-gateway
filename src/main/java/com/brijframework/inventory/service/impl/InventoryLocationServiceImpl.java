@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.inventory.bean.UILocation;
 import com.brijframework.inventory.mapper.InventoryLocationMapper;
-import com.brijframework.inventory.model.EOGlobalLocation;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalLocation;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
 import com.brijframework.inventory.repository.InventoryLocationRepository;
 import com.brijframework.inventory.service.InventoryLocationService;

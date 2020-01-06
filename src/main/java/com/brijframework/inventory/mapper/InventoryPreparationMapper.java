@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.brijframework.inventory.bean.UIPreparation;
-import com.brijframework.inventory.model.EOGlobalPreparation;
+import com.brijframework.inventory.model.global.EOGlobalPreparation;
 
 @Mapper(componentModel = "spring", implementationPackage = "com.brijframework.inventory.mapper.impl")
 public interface InventoryPreparationMapper  extends GenericMapper<EOGlobalPreparation, UIPreparation>{

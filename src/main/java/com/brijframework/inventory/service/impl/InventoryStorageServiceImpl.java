@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.inventory.bean.UIStorage;
 import com.brijframework.inventory.mapper.InventoryStorageMapper;
-import com.brijframework.inventory.model.EOGlobalStorage;
 import com.brijframework.inventory.model.EOInventoryApp;
+import com.brijframework.inventory.model.global.EOGlobalStorage;
 import com.brijframework.inventory.repository.InventoryApplicationRepository;
 import com.brijframework.inventory.repository.InventoryStorageRepository;
 import com.brijframework.inventory.service.InventoryStorageService;

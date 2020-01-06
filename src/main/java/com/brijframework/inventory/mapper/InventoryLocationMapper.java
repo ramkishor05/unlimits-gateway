@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.brijframework.inventory.bean.UILocation;
-import com.brijframework.inventory.model.EOGlobalLocation;
+import com.brijframework.inventory.model.global.EOGlobalLocation;
 
 @Mapper(componentModel = "spring", implementationPackage = "com.brijframework.inventory.mapper.impl")
 public interface InventoryLocationMapper  extends GenericMapper<EOGlobalLocation, UILocation>{

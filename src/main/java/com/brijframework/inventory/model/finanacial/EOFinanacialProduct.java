@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import com.brijframework.inventory.model.EOGlobalProduct;
+import com.brijframework.inventory.model.global.EOGlobalProduct;
 
 @Entity
 public class EOFinanacialProduct implements Serializable{
