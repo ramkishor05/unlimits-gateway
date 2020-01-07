@@ -16,7 +16,6 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.brijframework.inventory.model.EOInventoryApp;
-import com.brijframework.inventory.model.EOMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -40,7 +39,7 @@ public class EOGlobalPreparation extends EOGlobalItem {
 
 	@OneToOne
 	@JoinColumn(name = "imgID", nullable = true)
-	public EOMediaDetail imgDetail;
+	public EOGlobalMediaDetail imgDetail;
 
 	@OneToMany(mappedBy = "preparation")
 	public Set<EOGlobalPreparationLocation> locations;
@@ -79,11 +78,11 @@ public class EOGlobalPreparation extends EOGlobalItem {
 		this.inventoryApp = inventoryApp;
 	}
 
-	public EOMediaDetail getImgDetail() {
+	public EOGlobalMediaDetail getImgDetail() {
 		return imgDetail;
 	}
 
-	public void setImgDetail(EOMediaDetail imgDetail) {
+	public void setImgDetail(EOGlobalMediaDetail imgDetail) {
 		this.imgDetail = imgDetail;
 	}
 

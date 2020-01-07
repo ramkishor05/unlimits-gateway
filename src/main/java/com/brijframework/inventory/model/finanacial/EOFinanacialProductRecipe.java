@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.brijframework.inventory.model.EOInventoryIngredient;
+import com.brijframework.inventory.model.EOInventoryPreparation;
+
 @Entity
 public class EOFinanacialProductRecipe implements Serializable{
 
@@ -26,11 +29,11 @@ public class EOFinanacialProductRecipe implements Serializable{
 	
 	@OneToOne
 	@JoinColumn(name="INGREDIENT_ID")
-	private EOFinanacialIngredient ingredient;
+	private EOInventoryIngredient ingredient;
 	
 	@ManyToOne
 	@JoinColumn(name="PREPARATION_ID")
-	private EOFinanacialPreparation preparation;
+	private EOInventoryPreparation preparation;
 	
 	@ManyToOne
 	@JoinColumn(name="PRODUCT_ID", nullable=false)
@@ -52,19 +55,19 @@ public class EOFinanacialProductRecipe implements Serializable{
 		this.qnt = qnt;
 	}
 
-	public EOFinanacialPreparation getPreparation() {
+	public EOInventoryPreparation getPreparation() {
 		return preparation;
 	}
 
-	public void setPreparation(EOFinanacialPreparation preparation) {
+	public void setPreparation(EOInventoryPreparation preparation) {
 		this.preparation = preparation;
 	}
 	
-	public void setIngredient(EOFinanacialIngredient ingredient) {
+	public void setIngredient(EOInventoryIngredient ingredient) {
 		this.ingredient = ingredient;
 	}
 	
-	public EOFinanacialIngredient getIngredient() {
+	public EOInventoryIngredient getIngredient() {
 		return ingredient;
 	}
 

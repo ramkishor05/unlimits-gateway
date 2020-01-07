@@ -17,8 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.brijframework.inventory.model.EOInventoryApp;
-import com.brijframework.inventory.model.EOManufacturer;
-import com.brijframework.inventory.model.EOMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -45,11 +43,11 @@ public class EOGlobalProduct extends EOGlobalItem {
 
 	@OneToOne
 	@JoinColumn(name = "imgID")
-	public EOMediaDetail imgDetail;
+	public EOGlobalMediaDetail imgDetail;
 
 	@OneToOne
 	@JoinColumn(name = "manufacturer_id")
-	public EOManufacturer manufacturer;
+	public EOGlobalManufacturer manufacturer;
 
 	@ManyToOne
 	@JoinColumn(name = "InvAppID")
@@ -119,19 +117,19 @@ public class EOGlobalProduct extends EOGlobalItem {
 		MRP = mRP;
 	}
 
-	public EOMediaDetail getImgDetail() {
+	public EOGlobalMediaDetail getImgDetail() {
 		return imgDetail;
 	}
 
-	public void setImgDetail(EOMediaDetail imgDetail) {
+	public void setImgDetail(EOGlobalMediaDetail imgDetail) {
 		this.imgDetail = imgDetail;
 	}
 
-	public void setManufacturer(EOManufacturer manufacturer) {
+	public void setManufacturer(EOGlobalManufacturer manufacturer) {
 		this.manufacturer = manufacturer;
 	}
 
-	public EOManufacturer getManufacturer() {
+	public EOGlobalManufacturer getManufacturer() {
 		return manufacturer;
 	}
 

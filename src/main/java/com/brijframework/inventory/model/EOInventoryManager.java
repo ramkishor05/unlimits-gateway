@@ -2,7 +2,6 @@ package com.brijframework.inventory.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -42,6 +41,9 @@ public class EOInventoryManager implements Serializable {
 	
 	@OneToMany(mappedBy = "inventory")
 	public Set<EOInventoryItemDetail> itemDetailList;
+	
+	@OneToMany(mappedBy = "inventory")
+	public Set<EOInventoryPrepDetail> prepDetailList;
 	
 	@OneToMany(mappedBy = "inventory")
 	public Set<EOInventoryFinsDetail> finsDetailList;

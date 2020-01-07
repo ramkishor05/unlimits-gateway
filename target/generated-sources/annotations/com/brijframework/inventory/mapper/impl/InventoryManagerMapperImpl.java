@@ -2,8 +2,8 @@ package com.brijframework.inventory.mapper.impl;
 
 import com.brijframework.inventory.bean.UIInventoryManager;
 import com.brijframework.inventory.mapper.InventoryManagerMapper;
-import com.brijframework.inventory.model.EOGlobalCountFreq;
 import com.brijframework.inventory.model.EOInventoryManager;
+import com.brijframework.inventory.model.global.EOGlobalCountFreq;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-06T19:58:38+0530",
+    date = "2020-01-07T18:40:31+0530",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_111 (Oracle Corporation)"
 )
 @Component
