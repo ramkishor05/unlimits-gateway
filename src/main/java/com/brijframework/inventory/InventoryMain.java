@@ -21,4 +21,6 @@ public class InventoryMain
     {
     	SpringApplication.run(InventoryMain.class, args);
     }
+	
+	
 }

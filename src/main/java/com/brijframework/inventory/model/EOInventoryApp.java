@@ -17,7 +17,7 @@ import com.brijframework.inventory.model.global.EOGlobalCountFreq;
 import com.brijframework.inventory.model.global.EOGlobalIngredient;
 import com.brijframework.inventory.model.global.EOGlobalLocation;
 import com.brijframework.inventory.model.global.EOGlobalPreparation;
-import com.brijframework.inventory.model.global.EOGlobalProduct;
+import com.brijframework.inventory.model.global.EOCustProduct;
 import com.brijframework.inventory.model.global.EOGlobalStorage;
 import com.brijframework.inventory.model.global.EOGlobalUnitGroup;
 
@@ -55,7 +55,7 @@ public class EOInventoryApp implements Serializable {
 	public Set<EOGlobalLocation> locations = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
-	public Set<EOGlobalProduct> products = new LinkedHashSet<>();
+	public Set<EOCustProduct> products = new LinkedHashSet<>();
 
 	@OneToMany(mappedBy = "inventoryApp")
 	public Set<EOGlobalIngredient> ingredients = new LinkedHashSet<>();
@@ -103,11 +103,11 @@ public class EOInventoryApp implements Serializable {
 		this.unitGroups = unitGroups;
 	}
 
-	public Set<EOGlobalProduct> getProducts() {
+	public Set<EOCustProduct> getProducts() {
 		return products;
 	}
 
-	public void setProducts(Set<EOGlobalProduct> products) {
+	public void setProducts(Set<EOCustProduct> products) {
 		this.products = products;
 	}
 

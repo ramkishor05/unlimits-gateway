@@ -2,6 +2,7 @@ package com.brijframework.inventory.model.global;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
@@ -13,10 +14,19 @@ public abstract class EOGlobalItem implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="IDEN_NO")
 	private String idenNo;
+	
+	@Column(name="NAME")
 	private String name;
+	
+	@Column(name="LOGO_URL")
 	private String logoUrl;
+	
+	@Column(name="DESCRIPTION")
 	private String description;
+	
+	@Column(name="TYPE_ID")
 	private String typeId;
 
 	public void setLogoUrl(String logoUrl) {

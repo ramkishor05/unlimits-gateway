@@ -36,14 +36,14 @@ public class InventoryApplicationController {
 		return inventoryApplicationService.saveInventoryApp(inventoryApplication);
 	}
 	
-	@GetMapping("/{id}")
-	public UIInventoryApplication getInventory(@PathVariable("id") long id) {
-		return inventoryApplicationService.getInventoryApp(id);
+	@GetMapping("/{appId}")
+	public UIInventoryApplication getInventory(@PathVariable("appId") long appId) {
+		return inventoryApplicationService.getInventoryApp(appId);
 	}
 	
-	@GetMapping("/{id}/detail")
-	public UIInventoryApplicationDetail getInventoryDetail(@PathVariable("id") long id) {
-		return inventoryApplicationService.getInventoryAppDetail(id);
+	@GetMapping("/{appId}/detail")
+	public UIInventoryApplicationDetail getInventoryDetail(@PathVariable("appId") long appId) {
+		return inventoryApplicationService.getInventoryAppDetail(appId);
 	}
 	
 	

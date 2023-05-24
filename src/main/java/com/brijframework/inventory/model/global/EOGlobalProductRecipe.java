@@ -33,7 +33,7 @@ public  class EOGlobalProductRecipe implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name="ProductID")
-	private EOGlobalProduct product;
+	private EOCustProduct product;
 
 	public long getId() {
 		return id;
@@ -51,11 +51,11 @@ public  class EOGlobalProductRecipe implements Serializable{
 		this.qnt = qnt;
 	}
 
-	public EOGlobalProduct getProduct() {
+	public EOCustProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(EOGlobalProduct product) {
+	public void setProduct(EOCustProduct product) {
 		this.product = product;
 	}
 

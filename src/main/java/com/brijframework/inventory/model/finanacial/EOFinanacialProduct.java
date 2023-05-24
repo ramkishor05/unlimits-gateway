@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import com.brijframework.inventory.model.global.EOGlobalProduct;
+import com.brijframework.inventory.model.global.EOCustProduct;
 
 @Entity
 public class EOFinanacialProduct implements Serializable{
@@ -30,7 +30,7 @@ public class EOFinanacialProduct implements Serializable{
 	private Date busiDate;
 	
 	@JoinColumn(name="PRODUCT_ID")
-	private EOGlobalProduct product;
+	private EOCustProduct product;
 	
 	@OneToMany(mappedBy = "product")
 	public List<EOFinanacialProductRecipe> productRecipes;
@@ -59,11 +59,11 @@ public class EOFinanacialProduct implements Serializable{
 		this.busiDate = busiDate;
 	}
 
-	public EOGlobalProduct getProduct() {
+	public EOCustProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(EOGlobalProduct product) {
+	public void setProduct(EOCustProduct product) {
 		this.product = product;
 	}
 

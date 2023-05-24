@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +19,16 @@ import com.brijframework.inventory.service.InventoryProductService;
 public class InventoryProductController {
 
 	@Autowired
-	InventoryProductService inventoryProductService;
+	private InventoryProductService inventoryProductService;
 	
 	@PostMapping("/{inventoryAppId}")
-	public UIProduct addProduct(@PathVariable("inventoryAppId") long inventoryAppId,@RequestBody UIProduct countFreq) {
-		return inventoryProductService.saveProduct(inventoryAppId,countFreq);
+	public UIProduct addProduct(@PathVariable("inventoryAppId") long inventoryAppId,@RequestBody UIProduct product) {
+		return inventoryProductService.saveProduct(inventoryAppId,product);
+	}
+	
+	@PutMapping("/{inventoryAppId}")
+	public UIProduct updateProduct(@PathVariable("inventoryAppId") long inventoryAppId,@RequestBody UIProduct product) {
+		return inventoryProductService.updateProduct(inventoryAppId,product);
 	}
 	
 	@GetMapping("/{inventoryAppId}")

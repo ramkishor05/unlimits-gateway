@@ -19,7 +19,7 @@ import com.brijframework.inventory.model.EOInventoryApp;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "idenNo" }) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EOGlobalIngredient extends EOGlobalItem {
 
 	private static final long serialVersionUID = 1L;

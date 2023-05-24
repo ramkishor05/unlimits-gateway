@@ -24,7 +24,7 @@ public class EOGlobalProductLocation implements Serializable{
 	public float displayOrder;
 	@ManyToOne
 	@JoinColumn(name="ProductID")
-	public EOGlobalProduct product;
+	public EOCustProduct product;
 	
 	@ManyToOne
 	@JoinColumn(name="LocationID")
@@ -46,11 +46,11 @@ public class EOGlobalProductLocation implements Serializable{
 		this.displayOrder = displayOrder;
 	}
 
-	public EOGlobalProduct getProduct() {
+	public EOCustProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(EOGlobalProduct product) {
+	public void setProduct(EOCustProduct product) {
 		this.product = product;
 	}
 

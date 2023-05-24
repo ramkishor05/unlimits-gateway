@@ -7,20 +7,32 @@ import java.util.List;
 public class UIProduct implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private long id;
+	private Long id;
 	private String idenNo;
+	private String title;
 	private String name;
-	private String logoUrl;
 	private String description;
-	private long imgDetailId;
-	private long inventoryAppId;
-	public long categoryId;
+	private String logoUrl;
 
-	public double price;
+	private Long imgDetailId;
+	
+	private Long inventoryAppId;
+	private Long categoryId;
+	
 	private Date expDate;
 	private Date mfrDate;
-	private double MRP;
-	private String title;
+	
+	// for purchase items
+	private Double unitPrice;
+	private Double purchasePrice;
+	
+	// for sale items
+	private Double retailPrice;
+	private Double wholePrice;
+	
+	private Long stockQuantity;
+	
+	private Long saleQuantity;
 
 	public UIManufacturer manufacturer;
 
@@ -32,11 +44,11 @@ public class UIProduct implements Serializable {
 
 	public List<UIProdLocation> productLocations;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -48,12 +60,28 @@ public class UIProduct implements Serializable {
 		this.idenNo = idenNo;
 	}
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getLogoUrl() {
@@ -64,12 +92,28 @@ public class UIProduct implements Serializable {
 		this.logoUrl = logoUrl;
 	}
 
-	public String getDescription() {
-		return description;
+	public Long getImgDetailId() {
+		return imgDetailId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setImgDetailId(Long imgDetailId) {
+		this.imgDetailId = imgDetailId;
+	}
+
+	public Long getInventoryAppId() {
+		return inventoryAppId;
+	}
+
+	public void setInventoryAppId(Long inventoryAppId) {
+		this.inventoryAppId = inventoryAppId;
+	}
+
+	public Long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public Date getExpDate() {
@@ -88,52 +132,52 @@ public class UIProduct implements Serializable {
 		this.mfrDate = mfrDate;
 	}
 
-	public double getMRP() {
-		return MRP;
+	public Double getUnitPrice() {
+		return unitPrice;
 	}
 
-	public void setMRP(double mRP) {
-		MRP = mRP;
+	public void setUnitPrice(Double unitPrice) {
+		this.unitPrice = unitPrice;
 	}
 
-	public long getImgDetailId() {
-		return imgDetailId;
+	public Double getPurchasePrice() {
+		return purchasePrice;
 	}
 
-	public void setImgDetailId(long imgDetailId) {
-		this.imgDetailId = imgDetailId;
+	public void setPurchasePrice(Double purchasePrice) {
+		this.purchasePrice = purchasePrice;
 	}
 
-	public double getPrice() {
-		return price;
+	public Double getRetailPrice() {
+		return retailPrice;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setRetailPrice(Double retailPrice) {
+		this.retailPrice = retailPrice;
 	}
 
-	public String getTitle() {
-		return title;
+	public Double getWholePrice() {
+		return wholePrice;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setWholePrice(Double wholePrice) {
+		this.wholePrice = wholePrice;
 	}
 
-	public void setInventoryAppId(long inventoryAppId) {
-		this.inventoryAppId = inventoryAppId;
+	public Long getStockQuantity() {
+		return stockQuantity;
 	}
 
-	public Long getInventoryAppId() {
-		return inventoryAppId;
+	public void setStockQuantity(Long stockQuantity) {
+		this.stockQuantity = stockQuantity;
 	}
 
-	public long getCategoryId() {
-		return categoryId;
+	public Long getSaleQuantity() {
+		return saleQuantity;
 	}
 
-	public void setCategoryId(long categoryId) {
-		this.categoryId = categoryId;
+	public void setSaleQuantity(Long saleQuantity) {
+		this.saleQuantity = saleQuantity;
 	}
 
 	public UIManufacturer getManufacturer() {

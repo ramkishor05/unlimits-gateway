@@ -20,7 +20,7 @@ public class EOGlobalProductCountFreq implements Serializable{
 	
 	@OneToOne
 	@JoinColumn(name="ProductID")
-	public EOGlobalProduct  eoProduct;
+	public EOCustProduct  eoProduct;
 	
 	@OneToOne
 	@JoinColumn(name="CountFreqID")
@@ -32,10 +32,10 @@ public class EOGlobalProductCountFreq implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-	public EOGlobalProduct getEoProduct() {
+	public EOCustProduct getEoProduct() {
 		return eoProduct;
 	}
-	public void setEoProduct(EOGlobalProduct eoProduct) {
+	public void setEoProduct(EOCustProduct eoProduct) {
 		this.eoProduct = eoProduct;
 	}
 	public EOGlobalCountFreq getEoCountFreq() {

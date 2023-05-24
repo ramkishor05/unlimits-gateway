@@ -19,4 +19,6 @@ public interface InventoryProductService {
 
 	UIProduct getProduct(long inventoryAppId, String typeId);
 
+	UIProduct updateProduct(long inventoryAppId, UIProduct product);
+
 }

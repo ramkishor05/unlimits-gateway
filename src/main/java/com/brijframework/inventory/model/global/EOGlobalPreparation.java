@@ -19,7 +19,7 @@ import com.brijframework.inventory.model.EOInventoryApp;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "idenNo" }) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EOGlobalPreparation extends EOGlobalItem {
 
 	/**

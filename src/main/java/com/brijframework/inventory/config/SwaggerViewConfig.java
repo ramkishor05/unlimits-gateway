@@ -32,7 +32,7 @@ public class SwaggerViewConfig {
 	}
 
 	private ApiKey apiKey() {
-		return new ApiKey("APIKey", "authorization", "header");
+		return new ApiKey("APIKey", "Authorization", "header");
 	}
 
 	private SecurityContext securityContext() {

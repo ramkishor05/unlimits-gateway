@@ -26,7 +26,7 @@ public class EOGlobalProductVariant implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_ID")
-	public EOGlobalProduct product;
+	public EOCustProduct product;
 
 	public long getId() {
 		return id;
@@ -68,11 +68,11 @@ public class EOGlobalProductVariant implements Serializable{
 		this.size = size;
 	}
 
-	public EOGlobalProduct getProduct() {
+	public EOCustProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(EOGlobalProduct product) {
+	public void setProduct(EOCustProduct product) {
 		this.product = product;
 	}
 
