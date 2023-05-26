@@ -51,10 +51,10 @@ public class EOCustProduct extends EOGlobalItem {
 	private Double wholePrice;
 	
 	@Column(name="STOCK_QTN")
-	private Long stockQuantity;
+	private Long stockQnt;
 	
 	@Column(name="SALE_QTN")
-	private Long saleQuantity;
+	private Long saleQnt;
 	
 	@Column(name="EXPIRY_DATE")
 	private Date expDate;
@@ -137,21 +137,21 @@ public class EOCustProduct extends EOGlobalItem {
 	public void setWholePrice(Double wholePrice) {
 		this.wholePrice = wholePrice;
 	}
-
-	public Long getStockQuantity() {
-		return stockQuantity;
+	
+	public Long getStockQnt() {
+		return stockQnt;
 	}
 
-	public void setStockQuantity(Long stockQuantity) {
-		this.stockQuantity = stockQuantity;
+	public void setStockQnt(Long stockQnt) {
+		this.stockQnt = stockQnt;
 	}
 
-	public Long getSaleQuantity() {
-		return saleQuantity;
+	public Long getSaleQnt() {
+		return saleQnt;
 	}
 
-	public void setSaleQuantity(Long saleQuantity) {
-		this.saleQuantity = saleQuantity;
+	public void setSaleQnt(Long saleQnt) {
+		this.saleQnt = saleQnt;
 	}
 
 	public Date getExpDate() {

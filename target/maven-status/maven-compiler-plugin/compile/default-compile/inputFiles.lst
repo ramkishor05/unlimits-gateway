@@ -59,6 +59,8 @@ D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\service\InventoryCountFreqService.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\UIIngrSummary.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalCountFreq.java
+D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\service\InventoryProductStockService.java
+D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\product\UIProductStock.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\feignclient\ApplicationClient.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\service\InventoryPreparationService.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\UIManufacturer.java
@@ -76,7 +78,6 @@ D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalPreparationLocation.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\mapper\InventoryApplicationMapper.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalPreparationRecipe.java
-D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\product\ProductStock.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\finanacial\EOFinanacialProductRecipe.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\UIIngrLocation.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalPreparation.java
@@ -104,6 +105,7 @@ D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalCategoryGroup.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\EOInventoryIngredient.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\repository\InventoryPreparationRepository.java
+D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\mapper\InventoryProductStockMapper.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\UICategoryGroup.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\controller\InventoryStorageController.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalManufacturer.java
@@ -126,6 +128,7 @@ D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\model\global\EOGlobalIngredientLocation.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\controller\InventoryLocationController.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\useraccount\LoginRequest.java
+D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\service\impl\InventoryProductStockServiceImpl.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\service\impl\InventoryCountFreqServiceImpl.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\application\EOAppFeatureDTO.java
 D:\projects\project-brijframework-ecommerce\project-brijframework-inventory\src\main\java\com\brijframework\inventory\bean\UILocation.java

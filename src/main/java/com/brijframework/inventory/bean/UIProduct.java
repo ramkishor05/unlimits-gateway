@@ -30,9 +30,9 @@ public class UIProduct implements Serializable {
 	private Double retailPrice;
 	private Double wholePrice;
 	
-	private Long stockQuantity;
+	private Long stockQnt;
 	
-	private Long saleQuantity;
+	private Long saleQnt;
 
 	public UIManufacturer manufacturer;
 
@@ -164,20 +164,21 @@ public class UIProduct implements Serializable {
 		this.wholePrice = wholePrice;
 	}
 
-	public Long getStockQuantity() {
-		return stockQuantity;
+
+	public Long getStockQnt() {
+		return stockQnt;
 	}
 
-	public void setStockQuantity(Long stockQuantity) {
-		this.stockQuantity = stockQuantity;
+	public void setStockQnt(Long stockQnt) {
+		this.stockQnt = stockQnt;
 	}
 
-	public Long getSaleQuantity() {
-		return saleQuantity;
+	public Long getSaleQnt() {
+		return saleQnt;
 	}
 
-	public void setSaleQuantity(Long saleQuantity) {
-		this.saleQuantity = saleQuantity;
+	public void setSaleQnt(Long saleQnt) {
+		this.saleQnt = saleQnt;
 	}
 
 	public UIManufacturer getManufacturer() {

@@ -1,8 +1,11 @@
 package com.brijframework.inventory.service.impl;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,8 +56,25 @@ public class InventoryProductServiceImpl implements InventoryProductService {
 	public UIProduct saveProduct(EOInventoryApp eoInventoryApp,UIProduct Product) {
 		EOCustProduct eoProduct=inventoryProductMapper.mapToDAO(Product);
 		eoProduct.setInventoryApp(eoInventoryApp);
+		eoProduct.setIdenNo(getIdenNo());
 		inventoryProductRepository.save(eoProduct);
 		return inventoryProductMapper.mapToDTO(eoProduct);
+	}
+	
+	private static final long LIMIT = 10000000000L;
+	private static long last = 0;
+
+	public static long getID() {
+	  // 10 digits.
+	  long id = System.currentTimeMillis() % LIMIT;
+	  if ( id <= last ) {
+	    id = (last + 1) % LIMIT;
+	  }
+	  return last = id;
+	}
+
+	private static String getIdenNo() {
+		return String.format("PO#%010d",getID());
 	}
 	
 	@Override
@@ -71,6 +91,8 @@ public class InventoryProductServiceImpl implements InventoryProductService {
 		EOCustProduct eoGlobalProduct = findProduct.get();
 		BeanUtils.copyProperties(product, eoGlobalProduct);
 		eoGlobalProduct.setInventoryApp(eoInventoryApp);
+        eoGlobalProduct.setIdenNo(StringUtils.isEmpty(eoGlobalProduct.getIdenNo()) ?  getIdenNo() : eoGlobalProduct.getIdenNo());
+        //eoGlobalProduct.setIdenNo(getIdenNo());
 		inventoryProductRepository.save(eoGlobalProduct);
 		return inventoryProductMapper.mapToDTO(eoGlobalProduct);
 	}

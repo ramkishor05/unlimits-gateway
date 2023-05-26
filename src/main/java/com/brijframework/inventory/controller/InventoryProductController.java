@@ -15,7 +15,7 @@ import com.brijframework.inventory.bean.UIProduct;
 import com.brijframework.inventory.service.InventoryProductService;
 
 @RestController
-@RequestMapping("inventory/product")
+@RequestMapping("/api/inventory/product")
 public class InventoryProductController {
 
 	@Autowired
