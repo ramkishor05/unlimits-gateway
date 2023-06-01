@@ -11,11 +11,11 @@
 	</parent>
 
 	<groupId>com.brijframework</groupId>
-	<artifactId>project-brijframework-inventory</artifactId>
+	<artifactId>project-brijframework-production</artifactId>
 	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>project-brijframework-inventory</name>
+	<name>project-brijframework-production</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -135,7 +135,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.brijframework.inventory.InventoryMain</mainClass>
+					<mainClass>com.brijframework.production.ProductionMainApp</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>

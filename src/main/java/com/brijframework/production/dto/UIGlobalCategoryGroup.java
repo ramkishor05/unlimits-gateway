@@ -1,0 +1,79 @@
+package com.brijframework.production.dto;
+
+import java.io.Serializable;
+import java.util.List;
+
+public class UIGlobalCategoryGroup implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long id;
+	private String categoryId;
+	private String name;
+	private String description;
+	private String typeId;
+	private long inventoryAppId;
+	
+	private List<UICategory> categoryArray;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
+	}
+
+	public long getInventoryAppId() {
+		return inventoryAppId;
+	}
+
+	public void setInventoryAppId(long inventoryAppId) {
+		this.inventoryAppId = inventoryAppId;
+	}
+
+	public List<UICategory> getCategoryArray() {
+		return categoryArray;
+	}
+
+	public void setCategoryArray(List<UICategory> categoryArray) {
+		this.categoryArray = categoryArray;
+	}
+	
+	
+	
+}

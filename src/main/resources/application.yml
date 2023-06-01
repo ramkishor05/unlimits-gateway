@@ -1,6 +1,6 @@
 # HTTP Server (Tomcat) Port
 server: 
-  port: 4444
+  port: 3333
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
@@ -9,19 +9,19 @@ error:
     enabled: true
 spring:
    application:
-     name: project-brijframework-inventory
+     name: project-brijframework-production
    main:
      allow-bean-definition-overriding: true
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://localhost:3306/brijframework-inventory
+     url: jdbc:mysql://localhost:3306/brijframework-production
      username: root
      password: root
      show-sql: true
    jpa: 
      hibernate: 
        dialect: org.hibernate.dialect.MySQLDialect
-       ddl-auto: update
+       ddl-auto: create
        format_sql: true
        show_sql: true
        naming: 
