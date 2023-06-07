@@ -19,7 +19,7 @@ public class EOEntityObject implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private long id;
+	private Long id;
 	
 	@Column(name = "CREATED_UID")
 	private String createdUid;
@@ -39,11 +39,11 @@ public class EOEntityObject implements Serializable {
 	@Column(name = "ORDER_SEQUENCE")
 	private Float orderSequence;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

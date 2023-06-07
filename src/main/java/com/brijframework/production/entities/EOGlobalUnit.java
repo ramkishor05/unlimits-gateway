@@ -1,7 +1,7 @@
 package com.brijframework.production.entities;
 
-import static com.brijframework.production.contants.Constants.DISPLAY_NAME;
-import static com.brijframework.production.contants.Constants.EOGLOBAL_MEDIA_DETAIL;
+import static com.brijframework.production.contants.Constants.*;
+import static com.brijframework.production.contants.Constants.EOGLOBAL_UNIT;
 import static com.brijframework.production.contants.Constants.GROUP_ID;
 import static com.brijframework.production.contants.Constants.LONG_DESC;
 import static com.brijframework.production.contants.Constants.NAME;
@@ -19,7 +19,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = EOGLOBAL_MEDIA_DETAIL, uniqueConstraints = { @UniqueConstraint(columnNames = {GROUP_ID, NAME }) })
+@Table(name = EOGLOBAL_UNIT, uniqueConstraints = { @UniqueConstraint(columnNames = {GROUP_ID, NAME }) })
 public class EOGlobalUnit extends EOEntityObject{
 	/**
 	 * 

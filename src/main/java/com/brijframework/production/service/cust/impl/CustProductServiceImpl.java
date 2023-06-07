@@ -98,8 +98,7 @@ public class CustProductServiceImpl implements CustProductService {
 
 	@Override
 	public List<UICustProduct> getProductList(long inventoryAppId) {
-		// TODO Auto-generated method stub
-		return null;
+		return inventoryProductMapper.mapToDTO(inventoryProductRepository.findAllByCustProductionAppId(inventoryAppId));
 	}
 
 	@Override

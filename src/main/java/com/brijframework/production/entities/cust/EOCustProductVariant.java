@@ -24,7 +24,7 @@ import com.brijframework.production.entities.EOGlobalItem;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_PRODUCT_VARIANT, uniqueConstraints = {
 		@UniqueConstraint (columnNames = { 
-		CUST_PRODUCT_ID, IDEN_NO })})
+				CUST_PROD_APP_ID,CUST_PRODUCT_ID, IDEN_NO })})
 public class EOCustProductVariant extends EOGlobalItem{
 
 	/**

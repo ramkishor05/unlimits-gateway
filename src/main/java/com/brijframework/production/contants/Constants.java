@@ -26,6 +26,8 @@ public class Constants {
 	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.impl";
 
 	//for entity
+	public static final String EOGLOBAL_UNIT = "EOGLOBAL_UNIT";
+
 	public static final String EOCUST_CATEGORY_GROUP = "EOCUST_CATEGORY_Group";
 	public static final String EOCUST_CATEGORY = "EOCUST_CATEGORY";
 	public static final String CUST_PROD_APP_ID = "CUST_PROD_APP_ID";
@@ -34,7 +36,7 @@ public class Constants {
 	public static final String GTIN = "GTIN";
 	public static final String MPN = "MPN";
 	public static final String NAME = "NAME";
-	public static final String DESC = "DESC";
+	public static final String DESC = "DESCS";
 	public static final String TYPE_ID = "TYPE_ID";
 	public static final String TYPE="TYPE";
 	public static final String URL="URL";
