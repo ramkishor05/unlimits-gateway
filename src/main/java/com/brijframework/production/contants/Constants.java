@@ -1,6 +1,8 @@
 package com.brijframework.production.contants;
 
 public class Constants {
+	public static final String CUST_APP_ID = "custAppId";
+	public static final String CUST_APP_ID_URI = "{custAppId}";
 
 	public static final String SPRING = "spring";
 	public static final String CUST_PROD_APP_ID_ENTITY = "custProductionApp.id";
