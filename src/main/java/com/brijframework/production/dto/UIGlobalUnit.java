@@ -3,12 +3,15 @@ package com.brijframework.production.dto;
 import java.io.Serializable;
 
 public class UIGlobalUnit implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
 	public long id;
 	public String typeId;
 	public String shortDesc;
 	public String longDesc;
-	public String friendlyName;
+	public String displayName;
+	public String name;
 	public long unitGroupId;
 
 	public long getId() {
@@ -43,12 +46,20 @@ public class UIGlobalUnit implements Serializable {
 		this.longDesc = longDesc;
 	}
 
-	public String getFriendlyName() {
-		return friendlyName;
+	public String getDisplayName() {
+		return displayName;
 	}
 
-	public void setFriendlyName(String friendlyName) {
-		this.friendlyName = friendlyName;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public long getUnitGroupId() {
