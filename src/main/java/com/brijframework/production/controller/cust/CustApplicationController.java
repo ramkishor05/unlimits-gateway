@@ -1,4 +1,4 @@
-package com.brijframework.production.controller;
+package com.brijframework.production.controller.cust;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,25 +13,25 @@ import com.brijframework.production.dto.cust.UICustProductionAppDetail;
 import com.brijframework.production.service.cust.CustProductionAppService;
 
 @RestController
-@RequestMapping("cust/production/app")
-public class InventoryApplicationController {
+@RequestMapping("api/cust/app")
+public class CustApplicationController {
 
 	@Autowired
-	CustProductionAppService inventoryApplicationService;
+	CustProductionAppService custApplicationService;
 	
 	@PostMapping
 	public UICustProductionApp addInventory(@RequestBody UICustProductionApp inventoryApplication) {
-		return inventoryApplicationService.saveInventoryApp(inventoryApplication);
+		return custApplicationService.saveInventoryApp(inventoryApplication);
 	}
 	
 	@GetMapping("/{appId}")
 	public UICustProductionApp getInventory(@PathVariable("appId") long appId) {
-		return inventoryApplicationService.getInventoryApp(appId);
+		return custApplicationService.getInventoryApp(appId);
 	}
 	
 	@GetMapping("/{appId}/detail")
 	public UICustProductionAppDetail getInventoryDetail(@PathVariable("appId") long appId) {
-		return inventoryApplicationService.getInventoryAppDetail(appId);
+		return custApplicationService.getInventoryAppDetail(appId);
 	}
 	
 	

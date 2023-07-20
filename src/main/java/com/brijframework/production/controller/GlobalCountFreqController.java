@@ -14,8 +14,8 @@ import com.brijframework.production.dto.UIGlobalCountFreq;
 import com.brijframework.production.service.GlobalCountFreqService;
 
 @RestController
-@RequestMapping("global/countfreq")
-public class InventoryCountFreqController {
+@RequestMapping("/api/global/countfreq")
+public class GlobalCountFreqController {
 
 	@Autowired
 	GlobalCountFreqService inventoryCountFreqService;

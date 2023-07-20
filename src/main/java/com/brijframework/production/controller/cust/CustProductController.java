@@ -1,4 +1,4 @@
-package com.brijframework.production.controller;
+package com.brijframework.production.controller.cust;
 
 import java.util.List;
 

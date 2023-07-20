@@ -14,8 +14,8 @@ import com.brijframework.production.dto.UIGlobalCategoryGroup;
 import com.brijframework.production.service.GlobalCategoryGroupService;
 
 @RestController
-@RequestMapping("inventory/categorygroup")
-public class InventoryCategoryGroupController {
+@RequestMapping("api/global/categorygroup")
+public class GlobalCategoryGroupController {
 
 	@Autowired
 	GlobalCategoryGroupService inventoryCategoryGroupService;
