@@ -10,6 +10,7 @@ com\brijframework\production\repository\cust\CustLocationRepository.class
 com\brijframework\production\mapper\GlobalUnitGroupMapper.class
 com\brijframework\production\dto\UIProductVariant.class
 com\brijframework\production\entities\cust\EOCustProductDetail.class
+com\brijframework\production\service\impl\GlobalCategoryServiceIMpl.class
 com\brijframework\production\dto\UIProductRecipe.class
 com\brijframework\production\dto\cust\UICustIngredient.class
 com\brijframework\production\controller\InventoryIngredientController.class
@@ -20,8 +21,10 @@ com\brijframework\production\dto\UIPrepCountFreq.class
 com\brijframework\production\dto\UICategory.class
 com\brijframework\production\service\cust\impl\CustCategoryServiceImpl.class
 com\brijframework\production\repository\cust\CustIngredientRepository.class
+com\brijframework\production\controller\CustProductController.class
 com\brijframework\production\mapper\cust\CustProductionAppDetailMapper.class
 com\brijframework\production\repository\GlobalUnitGroupRepository.class
+com\brijframework\production\controller\GlobalUnitGroupController.class
 com\brijframework\production\service\impl\GlobalUnitGroupServiceImpl.class
 com\brijframework\production\dto\UIGlobalUnitGroup.class
 com\brijframework\production\dto\UIIngrSummary.class
@@ -45,11 +48,13 @@ com\brijframework\production\mapper\GlobalCategoryGroupMapper.class
 com\brijframework\production\entities\EOGlobalUnitGroup.class
 com\brijframework\production\service\cust\CustProductService.class
 com\brijframework\production\controller\InventoryPreparationController.class
+com\brijframework\production\service\GlobalUnitService.class
 com\brijframework\production\mapper\cust\CustIngredientMapper.class
 com\brijframework\production\entities\cust\EOCustStorage.class
 com\brijframework\production\mapper\impl\CustIngredientMapperImpl.class
 com\brijframework\production\entities\cust\EOCustProductionApp.class
 com\brijframework\production\dto\UICategorySummary.class
+com\brijframework\production\dto\UIGlobalCategory.class
 com\brijframework\production\entities\cust\EOCustPreparation.class
 com\brijframework\production\repository\cust\CustPreparationRepository.class
 com\brijframework\production\mapper\GenericMapper.class
@@ -60,7 +65,9 @@ com\brijframework\production\mapper\GlobalCountFreqMapper.class
 com\brijframework\production\repository\cust\CustProductRepository.class
 com\brijframework\production\controller\InventoryApplicationController.class
 com\brijframework\production\entities\cust\EOCustUnit.class
+com\brijframework\production\mapper\impl\GlobalCategoryMapperImpl.class
 com\brijframework\production\entities\EOGlobalManufacturer.class
+com\brijframework\production\repository\GlobalCategoryRepository.class
 com\brijframework\production\repository\GlobalUnitRepository.class
 com\brijframework\production\dto\UIIngrLocation.class
 com\brijframework\production\dto\UIPrepSummary.class
@@ -71,8 +78,8 @@ com\brijframework\production\dto\UIInventoryManager.class
 com\brijframework\production\entities\EOEntityObject.class
 com\brijframework\production\controller\InventoryStorageController.class
 com\brijframework\production\service\cust\impl\CustIngredientServiceImpl.class
+com\brijframework\production\service\impl\GlobalUnitServiceImpl.class
 com\brijframework\production\dto\UIProductDetail.class
-com\brijframework\production\controller\InventoryProductController.class
 com\brijframework\production\mapper\impl\GlobalUnitGroupMapperImpl.class
 com\brijframework\production\controller\InventoryCategoryGroupController.class
 com\brijframework\production\dto\UIManufacturer.class
@@ -80,7 +87,6 @@ com\brijframework\production\mapper\impl\CustCategoryMapperImpl.class
 com\brijframework\production\controller\InventoryLocationController.class
 com\brijframework\production\entities\cust\EOCustProductRecipe.class
 com\brijframework\production\mapper\impl\CustLocationMapperImpl.class
-com\brijframework\production\controller\InventoryCategoryController.class
 com\brijframework\production\controller\InventoryCountFreqController.class
 com\brijframework\production\mapper\impl\CustProductMapperImpl.class
 com\brijframework\production\dto\cust\UICustStorage.class
@@ -96,15 +102,18 @@ com\brijframework\production\dto\cust\UICustProductionAppDetail.class
 com\brijframework\production\mapper\cust\CustPreparationMapper.class
 com\brijframework\production\entities\EOGlobalMediaDetail.class
 com\brijframework\production\ProductionMainConfig.class
+com\brijframework\production\dto\UIComman.class
 com\brijframework\production\entities\cust\EOCustCategory.class
 com\brijframework\production\dto\UIProductSummary.class
 com\brijframework\production\dto\UIPrepRecipe.class
 com\brijframework\production\entities\cust\EOCustProduct.class
 com\brijframework\production\entities\cust\EOCustIngredientLocation.class
+com\brijframework\production\mapper\GlobalCategoryMapper.class
 com\brijframework\production\mapper\impl\CustStorageMapperImpl.class
 com\brijframework\production\service\impl\GlobalCountFreqServiceImpl.class
 com\brijframework\production\mapper\impl\GlobalCategoryGroupMapperImpl.class
 com\brijframework\production\repository\cust\CustProductionAppRepository.class
+com\brijframework\production\controller\GlobalCategoryController.class
 com\brijframework\production\entities\EOGlobalUnit.class
 com\brijframework\production\mapper\impl\GlobalUnitMapperImpl.class
 com\brijframework\production\mapper\cust\CustStorageMapper.class
@@ -114,8 +123,8 @@ com\brijframework\production\dto\UIPrepLocation.class
 com\brijframework\production\repository\GlobalCategoryGroupRepository.class
 com\brijframework\production\entities\EOGlobalCategory.class
 com\brijframework\production\entities\EOGlobalItem.class
+com\brijframework\production\controller\GlobalUnitController.class
 com\brijframework\production\ProductionMainListener.class
-com\brijframework\production\controller\InventoryUnitGroupController.class
 com\brijframework\production\entities\cust\EOCustLocation.class
 com\brijframework\production\contants\CountFreq.class
 com\brijframework\production\mapper\impl\GlobalCountFreqMapperImpl.class
@@ -129,3 +138,4 @@ com\brijframework\production\entities\cust\EOCustCountFreq.class
 com\brijframework\production\entities\cust\EOCustPreparationCountFreq.class
 com\brijframework\production\repository\GlobalCountFreqRepository.class
 com\brijframework\production\service\cust\CustStorageService.class
+com\brijframework\production\service\GlobalCategoryService.class

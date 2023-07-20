@@ -16,10 +16,10 @@ import com.brijframework.production.mapper.GlobalUnitMapper;
 import com.brijframework.production.repository.GlobalUnitGroupRepository;
 import com.brijframework.production.repository.GlobalUnitRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
-import com.brijframework.production.service.GlobalUnitGroupService;
+import com.brijframework.production.service.GlobalUnitService;
 
 @Service
-public class GlobalUnitGroupServiceImpl implements GlobalUnitGroupService {
+public class GlobalUnitServiceImpl implements GlobalUnitService {
 	
 	@Autowired
 	CustProductionAppRepository inventoryApplicationRepository;
@@ -35,38 +35,30 @@ public class GlobalUnitGroupServiceImpl implements GlobalUnitGroupService {
 	
 	@Autowired
 	GlobalUnitMapper inventoryUnitMapper;
+
+	@Override
+	public UIGlobalUnit saveUnit(UIGlobalUnit globalUnit) {
+		Optional<EOGlobalUnitGroup> findById = inventoryUnitGroupRepository.findById(globalUnit.getUnitGroupId());
+		if(!findById.isPresent()) {
+			findById = inventoryUnitGroupRepository.findById(1l);
+			if(!findById.isPresent()) {
+				return null;
+			}
+		}
+		return saveUnit(findById.get(), globalUnit);
+	}
 	
-		
 	@Override
-	public UIGlobalUnitGroup saveUnitGroup(UIGlobalUnitGroup unitGroup) {
-		EOGlobalUnitGroup eoUnitGroup=inventoryUnitGroupMapper.mapToDAO(unitGroup);
-		inventoryUnitGroupRepository.save(eoUnitGroup);
-		return inventoryUnitGroupMapper.mapToDTO(eoUnitGroup);
+	public UIGlobalUnit saveUnit(EOGlobalUnitGroup eoUnitGroup,UIGlobalUnit unit) {
+		EOGlobalUnit eoUnit=inventoryUnitMapper.mapToDAO(unit);
+		eoUnit.setUnitGroup(eoUnitGroup);
+		inventoryUnitRepository.save(eoUnit);
+		return inventoryUnitMapper.mapToDTO(eoUnit);
 	}
 
 	@Override
-	public UIGlobalUnitGroup getUnitGroup(long id) {
-		return inventoryUnitGroupMapper.mapToDTO(inventoryUnitGroupRepository.getOne(id));
-	}
-
-	@Override
-	public UIGlobalUnitGroup saveUnitGroup(long inventoryAppId, UIGlobalUnitGroup unitGroup) {
-		return null;
-	}
-
-	@Override
-	public UIGlobalUnitGroup saveUnitGroup(EOCustProductionApp eoInventoryApp, UIGlobalUnitGroup unitGroup) {
-		return null;
-	}
-
-	@Override
-	public List<UIGlobalUnitGroup> getUnitGroupList(long inventoryAppId) {
-		return null;
-	}
-
-	@Override
-	public UIGlobalUnitGroup getUnitGroup(long inventoryAppId, String typeId) {
-		return null;
+	public List<UIGlobalUnit> getUnitList() {
+		return inventoryUnitMapper.mapToDTO(inventoryUnitRepository.findAll());
 	}
 
 }
