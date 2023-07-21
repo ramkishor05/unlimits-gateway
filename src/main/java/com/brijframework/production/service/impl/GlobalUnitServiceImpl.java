@@ -3,6 +3,7 @@ package com.brijframework.production.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,11 @@ public class GlobalUnitServiceImpl implements GlobalUnitService {
 
 	@Override
 	public UIGlobalUnit saveUnit(UIGlobalUnit globalUnit) {
+		EOGlobalUnitGroup eoGlobalUnitGroup = getGlobalUnitGroup(globalUnit);
+		return saveUnit(eoGlobalUnitGroup, globalUnit);
+	}
+
+	private EOGlobalUnitGroup getGlobalUnitGroup(UIGlobalUnit globalUnit) {
 		Optional<EOGlobalUnitGroup> findById = inventoryUnitGroupRepository.findById(globalUnit.getUnitGroupId());
 		if(!findById.isPresent()) {
 			findById = inventoryUnitGroupRepository.findById(1l);
@@ -45,7 +51,22 @@ public class GlobalUnitServiceImpl implements GlobalUnitService {
 				return null;
 			}
 		}
-		return saveUnit(findById.get(), globalUnit);
+		EOGlobalUnitGroup eoGlobalUnitGroup = findById.get();
+		return eoGlobalUnitGroup;
+	}
+	
+	@Override
+	public UIGlobalUnit updateUnit(Long id, UIGlobalUnit uiGlobalUnit) {
+		Optional<EOGlobalUnit> findById = inventoryUnitRepository.findById(id);
+		if(!findById.isPresent()) {
+			return null;
+		}
+		EOGlobalUnit eoGlobalUnit = findById.get();
+		BeanUtils.copyProperties(uiGlobalUnit, eoGlobalUnit,"id", "unitGroup");
+		EOGlobalUnitGroup eoGlobalUnitGroup = getGlobalUnitGroup(uiGlobalUnit);
+		eoGlobalUnit.setUnitGroup(eoGlobalUnitGroup);
+		inventoryUnitRepository.save(eoGlobalUnit);
+		return inventoryUnitMapper.mapToDTO(eoGlobalUnit);
 	}
 	
 	@Override

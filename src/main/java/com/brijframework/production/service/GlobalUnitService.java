@@ -13,4 +13,6 @@ public interface GlobalUnitService {
 
 	UIGlobalUnit saveUnit(EOGlobalUnitGroup eoUnitGroup, UIGlobalUnit unit);
 
+	UIGlobalUnit updateUnit(Long id, UIGlobalUnit uiUnit);
+
 }
