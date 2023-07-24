@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframework.production.dto.UICategory;
+import com.brijframework.production.dto.UICustCategory;
 import com.brijframework.production.entities.cust.EOCustCategory;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
 import com.brijframework.production.mapper.cust.CustCategoryMapper;
@@ -27,7 +27,7 @@ public class CustCategoryServiceImpl implements CustCategoryService {
 	CustCategoryMapper inventoryCategoryMapper;
 	
 	@Override
-	public UICategory saveCategory(long inventoryAppId, UICategory unit) {
+	public UICustCategory saveCategory(long inventoryAppId, UICustCategory unit) {
 		Optional<EOCustProductionApp> findById = inventoryApplicationRepository.findById(inventoryAppId);
 		if(!findById.isPresent()) {
 			return null;
@@ -36,7 +36,7 @@ public class CustCategoryServiceImpl implements CustCategoryService {
 	}
 	
 	@Override
-	public UICategory saveCategory(UICategory unit) {
+	public UICustCategory saveCategory(UICustCategory unit) {
 		Optional<EOCustProductionApp> findById = inventoryApplicationRepository.findById(unit.getCustProductionAppId());
 		if(!findById.isPresent()) {
 			return null;
@@ -45,25 +45,25 @@ public class CustCategoryServiceImpl implements CustCategoryService {
 	}
 	
 	@Override
-	public UICategory saveCategory(EOCustProductionApp eoInventoryApp,UICategory unit) {
+	public UICustCategory saveCategory(EOCustProductionApp eoInventoryApp,UICustCategory unit) {
 		EOCustCategory eoCategory=inventoryCategoryMapper.mapToDAO(unit);
 		countFreqRepository.save(eoCategory);
 		return inventoryCategoryMapper.mapToDTO(eoCategory);
 	}
 
 	@Override
-	public UICategory getCategory(long id) {
+	public UICustCategory getCategory(long id) {
 		return inventoryCategoryMapper.mapToDTO(countFreqRepository.getOne(id));
 	}
 
 	@Override
-	public List<UICategory> getCategoryList(long inventoryAppId) {
+	public List<UICustCategory> getCategoryList(long inventoryAppId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UICategory getCategory(long inventoryAppId, String typeId) {
+	public UICustCategory getCategory(long inventoryAppId, String typeId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -2,21 +2,21 @@ package com.brijframework.production.service.cust;
 
 import java.util.List;
 
-import com.brijframework.production.dto.UICategory;
+import com.brijframework.production.dto.UICustCategory;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
 
 public interface CustCategoryService {
 
-	UICategory saveCategory(long inventoryAppId, UICategory unit);
+	UICustCategory saveCategory(long inventoryAppId, UICustCategory uiCustCategory);
 
-	UICategory saveCategory(UICategory unit);
+	UICustCategory saveCategory(UICustCategory uiCustCategory);
 
-	UICategory saveCategory(EOCustProductionApp eoInventoryApp, UICategory unit);
+	UICustCategory saveCategory(EOCustProductionApp eoInventoryApp, UICustCategory uiCustCategory);
 
-	UICategory getCategory(long id);
+	UICustCategory getCategory(long id);
 
-	List<UICategory> getCategoryList(long inventoryAppId);
+	List<UICustCategory> getCategoryList(long inventoryAppId);
 
-	UICategory getCategory(long inventoryAppId, String typeId);
+	UICustCategory getCategory(long inventoryAppId, String typeId);
 
 }

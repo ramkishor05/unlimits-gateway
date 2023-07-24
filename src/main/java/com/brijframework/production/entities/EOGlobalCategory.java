@@ -6,6 +6,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -29,10 +30,14 @@ public class EOGlobalCategory extends EOEntityObject {
 
 	@Column(name = TYPE_ID)
 	private String typeId;
+	
+	@OneToOne
+	@JoinColumn(name = GLB_IMG_ID)
+	public EOGlobalMediaDetail globalMediaDetail;
 
 	@ManyToOne
 	@JoinColumn(name = GROUP_ID, nullable = false)
-	private EOGlobalCategoryGroup categoryGroup;
+	private EOGlobalCategoryGroup globalCategoryGroup;
 
 	public String getName() {
 		return name;
@@ -57,12 +62,20 @@ public class EOGlobalCategory extends EOEntityObject {
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
 	}
-
-	public EOGlobalCategoryGroup getCategoryGroup() {
-		return categoryGroup;
+	
+	public EOGlobalMediaDetail getGlobalMediaDetail() {
+		return globalMediaDetail;
 	}
 
-	public void setCategoryGroup(EOGlobalCategoryGroup categoryGroup) {
-		this.categoryGroup = categoryGroup;
+	public void setGlobalMediaDetail(EOGlobalMediaDetail globalMediaDetail) {
+		this.globalMediaDetail = globalMediaDetail;
+	}
+
+	public EOGlobalCategoryGroup getGlobalCategoryGroup() {
+		return globalCategoryGroup;
+	}
+
+	public void setGlobalCategoryGroup(EOGlobalCategoryGroup globalCategoryGroup) {
+		this.globalCategoryGroup = globalCategoryGroup;
 	}
 }

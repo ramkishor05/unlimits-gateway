@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.brijframework.production.dto.cust.UICustIngredient;
 import com.brijframework.production.dto.cust.UICustStorage;
+import com.brijframework.production.dto.global.UIGlobalCountFreq;
+import com.brijframework.production.dto.global.UIGlobalUnitGroup;
 
 public class UIIngrSummary implements Serializable{
 
@@ -14,7 +16,7 @@ public class UIIngrSummary implements Serializable{
 	
 	public List<UICustIngredient> ingrList;
 	
-	public List<UICategory> categoryList;
+	public List<UICustCategory> categoryList;
 	
 	public List<UICustStorage> storageList;
 	

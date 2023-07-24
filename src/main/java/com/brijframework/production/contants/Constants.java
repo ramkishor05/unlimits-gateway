@@ -8,6 +8,12 @@ public class Constants {
 	public static final String CUST_PROD_APP_ID_ENTITY = "custProductionApp.id";
 	public static final String CUST_PROD_APP_ID_UI = "custProductionAppId";
 	
+	public static final String CUST_IMG_DETAIL_ID_ENTITY = "custImageDetail.id";
+	public static final String CUST_IMG_DETAIL_ID_UI = "custImageDetailId";
+	
+	public static final String CUST_GROUP_ID_ENTITY = "custCategoryGroup.id";
+	public static final String CUST_GROUP_ID_UI = "custCategoryGroupId";
+	
 	public static final String CUST_BASE_UNIT_ID_UI = "custBaseUnitId";
 	public static final String CUST_BASE_UNIT_ID_ENTITY = "custBaseUnit.id";
 	
@@ -24,8 +30,8 @@ public class Constants {
 	public static final String CUST_STORAGE_ID_UI = "custStorageId";
 
 	
-	public static final String COM_BRIJFRAMEWORK_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.impl";
-	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.impl";
+	public static final String COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.global.impl";
+	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.cust.impl";
 
 	//for entity
 	public static final String EOGLOBAL_UNIT = "EOGLOBAL_UNIT";
@@ -43,7 +49,7 @@ public class Constants {
 	public static final String TYPE="TYPE";
 	public static final String URL="URL";
 	public static final String DETAIL="DETAIL";
-	public static final String GLB_CATEGORY_GROUP = "categoryGroup";
+	public static final String GLB_CATEGORY_GROUP = "globalCategoryGroup";
 
 	public static final String CUST_CATEGORY_GROUP = "custCategoryGroup";
 	public static final String EOCUST_COUNT_FREQ = "EOCUST_COUNT_FREQ";

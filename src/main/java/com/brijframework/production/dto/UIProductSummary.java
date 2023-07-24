@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.brijframework.production.dto.cust.UICustLocation;
 import com.brijframework.production.dto.cust.UICustProduct;
+import com.brijframework.production.dto.global.UIGlobalCountFreq;
 
 public class UIProductSummary implements Serializable{
 

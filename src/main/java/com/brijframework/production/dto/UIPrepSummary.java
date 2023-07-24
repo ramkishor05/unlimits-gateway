@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.brijframework.production.dto.cust.UICustPreparation;
 import com.brijframework.production.dto.cust.UICustStorage;
+import com.brijframework.production.dto.global.UIGlobalCountFreq;
 
 public class UIPrepSummary implements Serializable{
 

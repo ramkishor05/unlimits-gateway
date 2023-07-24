@@ -1,5 +1,7 @@
 package com.brijframework.production.dto;
 
+import com.brijframework.production.dto.global.UIGlobalCountFreq;
+
 public class UIPrepCountFreq extends UIGlobalCountFreq {
 	private static final long serialVersionUID = 1L;
 

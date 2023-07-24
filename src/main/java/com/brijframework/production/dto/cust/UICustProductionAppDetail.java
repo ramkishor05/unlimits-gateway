@@ -2,8 +2,8 @@ package com.brijframework.production.dto.cust;
 
 import java.util.Set;
 
-import com.brijframework.production.dto.UIGlobalCountFreq;
-import com.brijframework.production.dto.UIGlobalUnitGroup;
+import com.brijframework.production.dto.global.UIGlobalCountFreq;
+import com.brijframework.production.dto.global.UIGlobalUnitGroup;
 
 public class UICustProductionAppDetail extends UICustProductionApp {
 

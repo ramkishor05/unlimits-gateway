@@ -1,6 +1,5 @@
 package com.brijframework.production.entities;
 
-import static com.brijframework.production.contants.Constants.EOGLOBAL_CATEGORY_GROUP;
 import static com.brijframework.production.contants.Constants.*;
 
 import java.util.Set;
@@ -9,7 +8,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -31,9 +32,13 @@ public class EOGlobalCategoryGroup extends EOEntityObject {
 
 	@Column(name = TYPE_ID)
 	private String typeId;
+	
+	@OneToOne
+	@JoinColumn(name = GLB_IMG_ID)
+	public EOGlobalMediaDetail globalMediaDetail;
 
 	@OneToMany(mappedBy = GLB_CATEGORY_GROUP)
-	public Set<EOGlobalCategory> categoryArray;
+	public Set<EOGlobalCategory> globalCategories;
 
 	public String getName() {
 		return name;
@@ -59,12 +64,20 @@ public class EOGlobalCategoryGroup extends EOEntityObject {
 		this.typeId = typeId;
 	}
 
-	public Set<EOGlobalCategory> getCategoryArray() {
-		return categoryArray;
+	public EOGlobalMediaDetail getGlobalMediaDetail() {
+		return globalMediaDetail;
 	}
 
-	public void setCategoryArray(Set<EOGlobalCategory> categoryArray) {
-		this.categoryArray = categoryArray;
+	public void setGlobalMediaDetail(EOGlobalMediaDetail globalMediaDetail) {
+		this.globalMediaDetail = globalMediaDetail;
+	}
+
+	public Set<EOGlobalCategory> getGlobalCategories() {
+		return globalCategories;
+	}
+
+	public void setGlobalCategories(Set<EOGlobalCategory> globalCategories) {
+		this.globalCategories = globalCategories;
 	}
 
 }

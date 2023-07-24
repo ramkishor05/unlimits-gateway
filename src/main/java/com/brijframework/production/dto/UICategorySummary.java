@@ -3,11 +3,13 @@ package com.brijframework.production.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.brijframework.production.dto.global.UIGlobalCategoryGroup;
+
 public class UICategorySummary {
 
 	public List<UIGlobalCategoryGroup> categoryGroups;
 	
-	public List<UICategory> categoryList;
+	public List<UICustCategory> categoryList;
 
 
 	public List<UIGlobalCategoryGroup> getCategoryGroups() {
@@ -21,11 +23,11 @@ public class UICategorySummary {
 		this.categoryGroups = categoryGroups;
 	}
 
-	public List<UICategory> getCategoryList() {
+	public List<UICustCategory> getCategoryList() {
 		return categoryList;
 	}
 
-	public void setCategoryList(List<UICategory> categoryList) {
+	public void setCategoryList(List<UICustCategory> categoryList) {
 		this.categoryList = categoryList;
 	}
 

@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.production.CommanUtil;
 import com.brijframework.production.dto.cust.UICustProduct;
 import com.brijframework.production.entities.cust.EOCustProduct;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
@@ -19,6 +20,8 @@ import com.brijframework.production.service.cust.CustProductService;
 @Service
 public class CustProductServiceImpl implements CustProductService {
 	
+	private static final String PO = "PO";
+
 	@Autowired
 	CustProductionAppRepository inventoryApplicationRepository;
 	
@@ -50,25 +53,9 @@ public class CustProductServiceImpl implements CustProductService {
 	public UICustProduct saveProduct(EOCustProductionApp eoInventoryApp,UICustProduct Product) {
 		EOCustProduct eoProduct=inventoryProductMapper.mapToDAO(Product);
 		eoProduct.setCustProductionApp(eoInventoryApp);
-		eoProduct.setIdenNo(getIdenNo());
+		eoProduct.setIdenNo(CommanUtil. getIdenNo(PO));
 		inventoryProductRepository.save(eoProduct);
 		return inventoryProductMapper.mapToDTO(eoProduct);
-	}
-	
-	private static final long LIMIT = 10000000000L;
-	private static long last = 0;
-
-	public static long getID() {
-	  // 10 digits.
-	  long id = System.currentTimeMillis() % LIMIT;
-	  if ( id <= last ) {
-	    id = (last + 1) % LIMIT;
-	  }
-	  return last = id;
-	}
-
-	private static String getIdenNo() {
-		return String.format("PO#%010d",getID());
 	}
 	
 	@Override
@@ -85,7 +72,7 @@ public class CustProductServiceImpl implements CustProductService {
 		EOCustProduct eoGlobalProduct = findProduct.get();
 		BeanUtils.copyProperties(product, eoGlobalProduct);
 		eoGlobalProduct.setCustProductionApp(eoInventoryApp);
-        eoGlobalProduct.setIdenNo(StringUtils.isEmpty(eoGlobalProduct.getIdenNo()) ?  getIdenNo() : eoGlobalProduct.getIdenNo());
+        eoGlobalProduct.setIdenNo(StringUtils.isEmpty(eoGlobalProduct.getIdenNo()) ? CommanUtil. getIdenNo(PO) : eoGlobalProduct.getIdenNo());
         //eoGlobalProduct.setIdenNo(getIdenNo());
 		inventoryProductRepository.save(eoGlobalProduct);
 		return inventoryProductMapper.mapToDTO(eoGlobalProduct);
