@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.brijframework.production.contants.DataStatus;
 import com.brijframework.production.dto.global.UIGlobalCategoryGroup;
 import com.brijframework.production.service.global.GlobalCategoryGroupService;
 
@@ -18,20 +19,25 @@ import com.brijframework.production.service.global.GlobalCategoryGroupService;
 public class GlobalCategoryGroupController {
 
 	@Autowired
-	GlobalCategoryGroupService inventoryCategoryGroupService;
+	GlobalCategoryGroupService globalCategoryGroupService;
 	
 	@PostMapping
 	public UIGlobalCategoryGroup addCategoryGroup(@RequestBody UIGlobalCategoryGroup globalCategoryGroup) {
-		return inventoryCategoryGroupService.saveCategoryGroup(globalCategoryGroup);
+		return globalCategoryGroupService.saveCategoryGroup(globalCategoryGroup);
 	}
 	
 	@GetMapping
 	public List<UIGlobalCategoryGroup> getCategoryGroupList() {
-		return inventoryCategoryGroupService.getCategoryGroupList();
+		return globalCategoryGroupService.getCategoryGroupList();
+	}
+	
+	@GetMapping("/{status}")
+	public List<UIGlobalCategoryGroup> getCategoryGroupList(DataStatus  dataStatus) {
+		return globalCategoryGroupService.getCategoryGroupList(dataStatus);
 	}
 	
 	@GetMapping("/{typeId}")
 	public UIGlobalCategoryGroup getCategoryGroupList(@PathVariable("typeId") String typeId) {
-		return inventoryCategoryGroupService.getCategoryGroup(typeId);
+		return globalCategoryGroupService.getCategoryGroup(typeId);
 	}
 }

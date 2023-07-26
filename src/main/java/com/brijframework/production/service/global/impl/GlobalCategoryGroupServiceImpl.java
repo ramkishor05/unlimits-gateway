@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.production.contants.DataStatus;
 import com.brijframework.production.dto.global.UIGlobalCategoryGroup;
 import com.brijframework.production.entities.EOGlobalCategoryGroup;
 import com.brijframework.production.mapper.global.GlobalCategoryGroupMapper;
@@ -34,8 +35,12 @@ public class GlobalCategoryGroupServiceImpl implements GlobalCategoryGroupServic
 
 	@Override
 	public List<UIGlobalCategoryGroup> getCategoryGroupList() {
-		// TODO Auto-generated method stub
-		return null;
+		return inventoryCategoryGroupMapper.mapToDTO(countFreqRepository.findAll());
+	}
+	
+	@Override
+	public List<UIGlobalCategoryGroup> getCategoryGroupList(DataStatus dataStatus) {
+		return inventoryCategoryGroupMapper.mapToDTO(countFreqRepository.findAllBy());
 	}
 
 	@Override
