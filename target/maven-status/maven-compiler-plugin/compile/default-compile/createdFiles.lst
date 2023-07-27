@@ -144,6 +144,7 @@ com\brijframework\production\dto\UIProdLocation.class
 com\brijframework\production\dto\cust\UICustProduct.class
 com\brijframework\production\mapper\global\GlobalCountFreqRequestMapper.class
 com\brijframework\production\controller\global\GlobalCategoryController.class
+com\brijframework\production\contants\DataStatus.class
 com\brijframework\production\service\global\GlobalCategoryGroupService.class
 com\brijframework\production\mapper\global\impl\GlobalCountFreqMapperImpl.class
 com\brijframework\production\entities\cust\EOCustProductVariant.class

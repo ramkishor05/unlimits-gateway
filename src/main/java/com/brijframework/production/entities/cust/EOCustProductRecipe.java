@@ -1,7 +1,6 @@
 package com.brijframework.production.entities.cust;
 
 import static com.brijframework.production.contants.Constants.CUST_INGR_ID;
-import static com.brijframework.production.contants.Constants.CUST_LOCATION_ID;
 import static com.brijframework.production.contants.Constants.CUST_PREP_ID;
 import static com.brijframework.production.contants.Constants.CUST_PRODUCT_ID;
 import static com.brijframework.production.contants.Constants.EOCUST_PRODUCT_RECIPE;

@@ -13,7 +13,7 @@ public interface GlobalCategoryGroupService {
 
 	List<UIGlobalCategoryGroup> getCategoryGroupList();
 
-	UIGlobalCategoryGroup getCategoryGroup( String typeId);
+	List<UIGlobalCategoryGroup> getCategoryGroup( String typeId);
 
 	List<UIGlobalCategoryGroup> getCategoryGroupList(DataStatus dataStatus);
 

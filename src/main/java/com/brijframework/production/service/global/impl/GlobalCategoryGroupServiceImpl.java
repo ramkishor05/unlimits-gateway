@@ -16,7 +16,7 @@ import com.brijframework.production.service.global.GlobalCategoryGroupService;
 public class GlobalCategoryGroupServiceImpl implements GlobalCategoryGroupService {
 	
 	@Autowired
-	private GlobalCategoryGroupRepository countFreqRepository;
+	private GlobalCategoryGroupRepository globalCategoryGroupRepository;
 	
 	@Autowired
 	private GlobalCategoryGroupMapper inventoryCategoryGroupMapper;
@@ -24,29 +24,28 @@ public class GlobalCategoryGroupServiceImpl implements GlobalCategoryGroupServic
 	@Override
 	public UIGlobalCategoryGroup saveCategoryGroup(UIGlobalCategoryGroup unitGroup) {
 		EOGlobalCategoryGroup eoCategoryGroup=inventoryCategoryGroupMapper.mapToDAO(unitGroup);
-		countFreqRepository.save(eoCategoryGroup);
+		globalCategoryGroupRepository.save(eoCategoryGroup);
 		return inventoryCategoryGroupMapper.mapToDTO(eoCategoryGroup);
 	}
 
 	@Override
 	public UIGlobalCategoryGroup getCategoryGroup(long id) {
-		return inventoryCategoryGroupMapper.mapToDTO(countFreqRepository.getOne(id));
+		return inventoryCategoryGroupMapper.mapToDTO(globalCategoryGroupRepository.getOne(id));
 	}
 
 	@Override
 	public List<UIGlobalCategoryGroup> getCategoryGroupList() {
-		return inventoryCategoryGroupMapper.mapToDTO(countFreqRepository.findAll());
+		return inventoryCategoryGroupMapper.mapToDTO(globalCategoryGroupRepository.findAll());
 	}
 	
 	@Override
 	public List<UIGlobalCategoryGroup> getCategoryGroupList(DataStatus dataStatus) {
-		return inventoryCategoryGroupMapper.mapToDTO(countFreqRepository.findAllBy());
+		return inventoryCategoryGroupMapper.mapToDTO(globalCategoryGroupRepository.findAllByStatus(dataStatus.getStatusIds()));
 	}
 
 	@Override
-	public UIGlobalCategoryGroup getCategoryGroup(String typeId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UIGlobalCategoryGroup> getCategoryGroup(String typeId) {
+		return inventoryCategoryGroupMapper.mapToDTO(globalCategoryGroupRepository.findAllByTypeId(typeId));
 	}
 
 }

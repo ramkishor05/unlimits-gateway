@@ -1,7 +1,6 @@
 package com.brijframework.production.dto.cust;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class UICustStorage implements Serializable {
 

@@ -11,7 +11,7 @@ public class UIGlobalCategoryGroup implements Serializable{
 	private long id;
 	private String categoryId;
 	private String name;
-	private String description;
+	private String desc;
 	private String typeId;
 
 	public long getId() {
@@ -38,12 +38,12 @@ public class UIGlobalCategoryGroup implements Serializable{
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public String getTypeId() {

@@ -3,7 +3,6 @@ import static com.brijframework.production.contants.Constants.COM_BRIJFRAMEWORK_
 import static com.brijframework.production.contants.Constants.SPRING;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import com.brijframework.production.dto.global.UIGlobalCategory;
 import com.brijframework.production.entities.EOGlobalCategory;

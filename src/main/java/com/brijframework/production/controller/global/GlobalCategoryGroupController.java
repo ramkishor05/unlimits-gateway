@@ -37,7 +37,7 @@ public class GlobalCategoryGroupController {
 	}
 	
 	@GetMapping("/{typeId}")
-	public UIGlobalCategoryGroup getCategoryGroupList(@PathVariable("typeId") String typeId) {
+	public List<UIGlobalCategoryGroup> getCategoryGroupList(@PathVariable("typeId") String typeId) {
 		return globalCategoryGroupService.getCategoryGroup(typeId);
 	}
 }
