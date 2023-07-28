@@ -12,4 +12,6 @@ public interface GlobalUnitGroupRepository extends JpaRepository<EOGlobalUnitGro
 	
 	EOGlobalUnitGroup findOneByTypeId(String typeId);
 
+	EOGlobalUnitGroup findAllByTypeId(String typeId);
+
 }

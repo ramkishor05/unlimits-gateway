@@ -8,7 +8,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframework.production.CommanUtil;
 import com.brijframework.production.dto.cust.UICustProduct;
 import com.brijframework.production.entities.cust.EOCustProduct;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
@@ -16,6 +15,7 @@ import com.brijframework.production.mapper.cust.CustProductMapper;
 import com.brijframework.production.repository.cust.CustProductRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
 import com.brijframework.production.service.cust.CustProductService;
+import com.brijframework.production.util.CommanUtil;
 
 @Service
 public class CustProductServiceImpl implements CustProductService {

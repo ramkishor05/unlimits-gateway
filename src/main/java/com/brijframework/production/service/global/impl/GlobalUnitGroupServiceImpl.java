@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.production.dto.global.UIGlobalUnitGroup;
 import com.brijframework.production.entities.EOGlobalUnitGroup;
-import com.brijframework.production.entities.cust.EOCustProductionApp;
 import com.brijframework.production.mapper.global.GlobalUnitGroupMapper;
 import com.brijframework.production.mapper.global.GlobalUnitMapper;
 import com.brijframework.production.repository.GlobalUnitGroupRepository;
@@ -19,51 +18,42 @@ import com.brijframework.production.service.global.GlobalUnitGroupService;
 public class GlobalUnitGroupServiceImpl implements GlobalUnitGroupService {
 	
 	@Autowired
-	CustProductionAppRepository inventoryApplicationRepository;
+	CustProductionAppRepository custProductionAppRepository;
 	
 	@Autowired
-	GlobalUnitGroupRepository inventoryUnitGroupRepository;
+	GlobalUnitGroupRepository globalUnitGroupRepository;
 	
 	@Autowired
-	GlobalUnitGroupMapper inventoryUnitGroupMapper;
+	GlobalUnitGroupMapper globalUnitGroupMapper;
 	
 	@Autowired
-	GlobalUnitRepository inventoryUnitRepository;
+	GlobalUnitRepository globalUnitRepository;
 	
 	@Autowired
-	GlobalUnitMapper inventoryUnitMapper;
+	GlobalUnitMapper globalUnitMapper;
 	
 		
 	@Override
 	public UIGlobalUnitGroup saveUnitGroup(UIGlobalUnitGroup unitGroup) {
-		EOGlobalUnitGroup eoUnitGroup=inventoryUnitGroupMapper.mapToDAO(unitGroup);
-		inventoryUnitGroupRepository.save(eoUnitGroup);
-		return inventoryUnitGroupMapper.mapToDTO(eoUnitGroup);
+		EOGlobalUnitGroup eoUnitGroup=globalUnitGroupMapper.mapToDAO(unitGroup);
+		globalUnitGroupRepository.save(eoUnitGroup);
+		return globalUnitGroupMapper.mapToDTO(eoUnitGroup);
 	}
 
 	@Override
 	public UIGlobalUnitGroup getUnitGroup(long id) {
-		return inventoryUnitGroupMapper.mapToDTO(inventoryUnitGroupRepository.getOne(id));
+		return globalUnitGroupMapper.mapToDTO(globalUnitGroupRepository.getOne(id));
+	}
+
+	
+	@Override
+	public List<UIGlobalUnitGroup> getUnitGroupList() {
+		return globalUnitGroupMapper.mapToDTO(globalUnitGroupRepository.findAll());
 	}
 
 	@Override
-	public UIGlobalUnitGroup saveUnitGroup(long inventoryAppId, UIGlobalUnitGroup unitGroup) {
-		return null;
-	}
-
-	@Override
-	public UIGlobalUnitGroup saveUnitGroup(EOCustProductionApp eoInventoryApp, UIGlobalUnitGroup unitGroup) {
-		return null;
-	}
-
-	@Override
-	public List<UIGlobalUnitGroup> getUnitGroupList(long inventoryAppId) {
-		return null;
-	}
-
-	@Override
-	public UIGlobalUnitGroup getUnitGroup(long inventoryAppId, String typeId) {
-		return null;
+	public UIGlobalUnitGroup getUnitGroup(String typeId) {
+		return globalUnitGroupMapper.mapToDTO(globalUnitGroupRepository.findAllByTypeId(typeId));
 	}
 
 }

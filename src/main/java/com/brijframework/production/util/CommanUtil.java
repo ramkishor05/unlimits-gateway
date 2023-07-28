@@ -1,4 +1,4 @@
-package com.brijframework.production;
+package com.brijframework.production.util;
 
 public class CommanUtil {
 
