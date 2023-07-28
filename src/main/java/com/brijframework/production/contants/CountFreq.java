@@ -36,7 +36,7 @@ public enum CountFreq {
 	
 	public UIGlobalCountFreq getCountFreq() {
 		UIGlobalCountFreq countFreq=new UIGlobalCountFreq(); 
-		countFreq.setDescription(this.getDesc());
+		countFreq.setDesc(this.getDesc());
 		countFreq.setTypeId(this.getTypeId());
 		countFreq.setName(this.getName());
 		countFreq.setActive(true);

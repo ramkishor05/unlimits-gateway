@@ -17,4 +17,6 @@ public interface GlobalCategoryGroupService {
 
 	List<UIGlobalCategoryGroup> getCategoryGroupList(DataStatus dataStatus);
 
+	boolean deleteCategoryGroup(Long id);
+
 }

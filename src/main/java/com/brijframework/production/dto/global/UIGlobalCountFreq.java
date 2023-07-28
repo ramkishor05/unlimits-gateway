@@ -9,7 +9,7 @@ public class UIGlobalCountFreq implements Serializable {
 	private long id;
 	private String typeId;
 	private String name;
-	private String description;
+	private String desc;
 	private boolean active;
 	private float displayOrder;
 
@@ -36,13 +36,13 @@ public class UIGlobalCountFreq implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getDescription() {
-		return description;
+	
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public boolean isActive() {

@@ -48,4 +48,12 @@ public class GlobalCategoryGroupServiceImpl implements GlobalCategoryGroupServic
 		return inventoryCategoryGroupMapper.mapToDTO(globalCategoryGroupRepository.findAllByTypeId(typeId));
 	}
 
+	@Override
+	public boolean deleteCategoryGroup(Long id) {
+		EOGlobalCategoryGroup eoGlobalCategoryGroup = globalCategoryGroupRepository.getOne(id);
+		eoGlobalCategoryGroup.setRecordState(false);
+		globalCategoryGroupRepository.save(eoGlobalCategoryGroup);
+		return true;
+	}
+
 }

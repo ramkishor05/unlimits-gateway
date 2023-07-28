@@ -9,7 +9,6 @@ public class UIGlobalCategoryGroup implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private long id;
-	private String categoryId;
 	private String name;
 	private String desc;
 	private String typeId;
@@ -20,14 +19,6 @@ public class UIGlobalCategoryGroup implements Serializable{
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
 	}
 
 	public String getName() {

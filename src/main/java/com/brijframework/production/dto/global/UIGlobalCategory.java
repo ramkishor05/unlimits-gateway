@@ -8,7 +8,7 @@ public class UIGlobalCategory implements Serializable {
 	public long id;
 	public String idenNo;
 	public String name;
-	public String description;
+	public String desc;
 	public String typeId;
 	
 	public long getId() {
@@ -35,12 +35,12 @@ public class UIGlobalCategory implements Serializable {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public String getTypeId() {
