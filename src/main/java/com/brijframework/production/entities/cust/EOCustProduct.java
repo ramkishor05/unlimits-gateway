@@ -50,13 +50,25 @@ public class EOCustProduct extends EOGlobalItem {
 	// for purchase cost
 	@Column(name = PURCHASE_PRICE)
 	private Double purchasePrice;
+	
+	@JoinColumn(name = "PURCHASE_UNIT")
+	@OneToOne
+	private EOCustUnit purchaseUnit;
 
 	// for sale cost
 	@Column(name = RETAIL_PRICE)
 	private Double retailPrice;
+	
+	@JoinColumn(name = "RETAIL_UNIT")
+	@OneToOne
+	private EOCustUnit retailUnit;
 
 	@Column(name = WHOLE_PRICE)
 	private Double wholePrice;
+	
+	@JoinColumn(name = "WHOLE_UNIT")
+	@OneToOne
+	private EOCustUnit wholeUnit;
 
 	@Column(name = STOCK_QTN)
 	private Long stockQnt;
@@ -160,6 +172,30 @@ public class EOCustProduct extends EOGlobalItem {
 
 	public void setMfrDate(Date mfrDate) {
 		this.mfrDate = mfrDate;
+	}
+	
+	public EOCustUnit getPurchaseUnit() {
+		return purchaseUnit;
+	}
+
+	public void setPurchaseUnit(EOCustUnit purchaseUnit) {
+		this.purchaseUnit = purchaseUnit;
+	}
+
+	public EOCustUnit getRetailUnit() {
+		return retailUnit;
+	}
+
+	public void setRetailUnit(EOCustUnit retailUnit) {
+		this.retailUnit = retailUnit;
+	}
+
+	public EOCustUnit getWholeUnit() {
+		return wholeUnit;
+	}
+
+	public void setWholeUnit(EOCustUnit wholeUnit) {
+		this.wholeUnit = wholeUnit;
 	}
 
 	public EOGlobalMediaDetail getGlbImageDetail() {

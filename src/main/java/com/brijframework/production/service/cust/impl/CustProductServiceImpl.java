@@ -8,12 +8,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframework.production.dto.cust.UICustProduct;
 import com.brijframework.production.entities.cust.EOCustProduct;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
-import com.brijframework.production.mapper.cust.CustProductMapper;
+import com.brijframework.production.mapper.cust.CustProductRequestMapper;
+import com.brijframework.production.mapper.cust.CustProductResponseMapper;
 import com.brijframework.production.repository.cust.CustProductRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
+import com.brijframework.production.rest.cust.CustProductRequest;
+import com.brijframework.production.rest.cust.CustProductResponse;
 import com.brijframework.production.service.cust.CustProductService;
 import com.brijframework.production.util.CommanUtil;
 
@@ -23,73 +25,76 @@ public class CustProductServiceImpl implements CustProductService {
 	private static final String PO = "PO";
 
 	@Autowired
-	CustProductionAppRepository inventoryApplicationRepository;
+	CustProductionAppRepository custProductionAppRepository;
 	
 	@Autowired
-	CustProductRepository inventoryProductRepository;
+	CustProductRepository custProductRepository;
 	
 	@Autowired
-	CustProductMapper inventoryProductMapper;
+	CustProductRequestMapper custProductRequestMapper;
+	
+	@Autowired
+	CustProductResponseMapper custProductResponseMapper;
 	
 	@Override
-	public UICustProduct saveProduct(long inventoryAppId, UICustProduct Product) {
-		Optional<EOCustProductionApp> findById = inventoryApplicationRepository.findById(inventoryAppId);
+	public CustProductResponse saveProduct(long custAppId, CustProductRequest custProductRequest) {
+		Optional<EOCustProductionApp> findById = custProductionAppRepository.findById(custAppId);
 		if(!findById.isPresent()) {
 			return null;
 		}
-		return saveProduct(findById.get(), Product);
+		return saveProduct(findById.get(), custProductRequest);
 	}
 	
 	@Override
-	public UICustProduct saveProduct(UICustProduct Product) {
-		Optional<EOCustProductionApp> findById = inventoryApplicationRepository.findById(Product.getCustProductionAppId());
+	public CustProductResponse saveProduct(CustProductRequest custProductRequest) {
+		Optional<EOCustProductionApp> findById = custProductionAppRepository.findById(custProductRequest.getCustProductionAppId());
 		if(!findById.isPresent()) {
 			return null;
 		}
-		return saveProduct(findById.get(), Product);
+		return saveProduct(findById.get(), custProductRequest);
 	}
 	
 	@Override
-	public UICustProduct saveProduct(EOCustProductionApp eoInventoryApp,UICustProduct Product) {
-		EOCustProduct eoProduct=inventoryProductMapper.mapToDAO(Product);
-		eoProduct.setCustProductionApp(eoInventoryApp);
+	public CustProductResponse saveProduct(EOCustProductionApp custProductionApp,CustProductRequest custProductRequest) {
+		EOCustProduct eoProduct=custProductRequestMapper.mapToDAO(custProductRequest);
+		eoProduct.setCustProductionApp(custProductionApp);
 		eoProduct.setIdenNo(CommanUtil. getIdenNo(PO));
-		inventoryProductRepository.save(eoProduct);
-		return inventoryProductMapper.mapToDTO(eoProduct);
+		custProductRepository.save(eoProduct);
+		return custProductResponseMapper.mapToDTO(eoProduct);
 	}
 	
 	@Override
-	public UICustProduct updateProduct(long inventoryAppId, UICustProduct product) {
-		Optional<EOCustProductionApp> findById = inventoryApplicationRepository.findById(inventoryAppId);
+	public CustProductResponse updateProduct(long custAppId, CustProductRequest custProductRequest) {
+		Optional<EOCustProductionApp> findById = custProductionAppRepository.findById(custAppId);
 		if(!findById.isPresent()) {
 			return null;
 		}
 		EOCustProductionApp eoInventoryApp = findById.get();
-		Optional<EOCustProduct> findProduct = inventoryProductRepository.findById(product.getId());
+		Optional<EOCustProduct> findProduct = custProductRepository.findById(custProductRequest.getId());
 		if(!findProduct.isPresent()) {
 			return null;
 		}
 		EOCustProduct eoGlobalProduct = findProduct.get();
-		BeanUtils.copyProperties(product, eoGlobalProduct);
+		BeanUtils.copyProperties(custProductRequest, eoGlobalProduct);
 		eoGlobalProduct.setCustProductionApp(eoInventoryApp);
         eoGlobalProduct.setIdenNo(StringUtils.isEmpty(eoGlobalProduct.getIdenNo()) ? CommanUtil. getIdenNo(PO) : eoGlobalProduct.getIdenNo());
         //eoGlobalProduct.setIdenNo(getIdenNo());
-		inventoryProductRepository.save(eoGlobalProduct);
-		return inventoryProductMapper.mapToDTO(eoGlobalProduct);
+		custProductRepository.save(eoGlobalProduct);
+		return custProductResponseMapper.mapToDTO(eoGlobalProduct);
 	}
 	
 	@Override
-	public UICustProduct getProduct(long id) {
-		return inventoryProductMapper.mapToDTO(inventoryProductRepository.getOne(id));
+	public CustProductResponse getProduct(long id) {
+		return custProductResponseMapper.mapToDTO(custProductRepository.getOne(id));
 	}
 
 	@Override
-	public List<UICustProduct> getProductList(long inventoryAppId) {
-		return inventoryProductMapper.mapToDTO(inventoryProductRepository.findAllByCustProductionAppId(inventoryAppId));
+	public List<CustProductResponse> getProductList(long inventoryAppId) {
+		return custProductResponseMapper.mapToDTO(custProductRepository.findAllByCustProductionAppId(inventoryAppId));
 	}
 
 	@Override
-	public UICustProduct getProduct(long inventoryAppId, String typeId) {
+	public CustProductResponse getProduct(long inventoryAppId, String typeId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

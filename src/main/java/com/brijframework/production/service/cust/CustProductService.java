@@ -2,23 +2,24 @@ package com.brijframework.production.service.cust;
 
 import java.util.List;
 
-import com.brijframework.production.dto.cust.UICustProduct;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
+import com.brijframework.production.rest.cust.CustProductRequest;
+import com.brijframework.production.rest.cust.CustProductResponse;
 
 public interface CustProductService {
 
-	UICustProduct saveProduct(long inventoryAppId, UICustProduct Product);
+	CustProductResponse saveProduct(long inventoryAppId, CustProductRequest Product);
 
-	UICustProduct saveProduct(UICustProduct Product);
+	CustProductResponse saveProduct(CustProductRequest Product);
 
-	UICustProduct saveProduct(EOCustProductionApp eoInventoryApp, UICustProduct Product);
+	CustProductResponse saveProduct(EOCustProductionApp eoInventoryApp, CustProductRequest Product);
 
-	UICustProduct getProduct(long id);
+	CustProductResponse getProduct(long id);
 
-	List<UICustProduct> getProductList(long inventoryAppId);
+	List<CustProductResponse> getProductList(long inventoryAppId);
 
-	UICustProduct getProduct(long inventoryAppId, String typeId);
+	CustProductResponse getProduct(long inventoryAppId, String typeId);
 
-	UICustProduct updateProduct(long inventoryAppId, UICustProduct product);
+	CustProductResponse updateProduct(long inventoryAppId, CustProductRequest product);
 
 }

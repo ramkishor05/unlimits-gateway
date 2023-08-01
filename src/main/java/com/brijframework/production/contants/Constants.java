@@ -7,33 +7,32 @@ public class Constants {
 	public static final String SPRING = "spring";
 	public static final String CUST_PROD_APP_ID_ENTITY = "custProductionApp.id";
 	public static final String CUST_PROD_APP_ID_UI = "custProductionAppId";
-	
+
 	public static final String CUST_IMG_DETAIL_ID_ENTITY = "custImageDetail.id";
 	public static final String CUST_IMG_DETAIL_ID_UI = "custImageDetailId";
-	
+
 	public static final String CUST_GROUP_ID_ENTITY = "custCategoryGroup.id";
 	public static final String CUST_GROUP_ID_UI = "custCategoryGroupId";
-	
+
 	public static final String CUST_BASE_UNIT_ID_UI = "custBaseUnitId";
 	public static final String CUST_BASE_UNIT_ID_ENTITY = "custBaseUnit.id";
-	
+
 	public static final String CUST_REPT_UNIT_ID_UI = "custReptUnitId";
 	public static final String CUST_REPT_UNIT_ID_ENTITY = "custReptUnit.id";
-	
+
 	public static final String CUST_CATEGORY_ID_ENTITY = "custCategory.id";
 	public static final String CUST_CATEGORY_ID_UI = "custCategoryId";
-	
+
 	public static final String GLB_IMAGE_ID_ENTITY = "glbImgDetail.id";
 	public static final String GLB_IMAGE_ID_UI = "glbImgDetailId";
-	
+
 	public static final String CUST_STORAGE_ID_ENTITY = "custStorage.id";
 	public static final String CUST_STORAGE_ID_UI = "custStorageId";
 
-	
 	public static final String COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.global.impl";
 	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.cust.impl";
 
-	//for entity
+	// for entity
 	public static final String EOGLOBAL_UNIT = "EOGLOBAL_UNIT";
 
 	public static final String EOCUST_CATEGORY_GROUP = "EOCUST_CATEGORY_Group";
@@ -46,14 +45,14 @@ public class Constants {
 	public static final String NAME = "NAME";
 	public static final String DESC = "DESCS";
 	public static final String TYPE_ID = "TYPE_ID";
-	public static final String TYPE="TYPE";
-	public static final String URL="URL";
-	public static final String DETAIL="DETAIL";
+	public static final String TYPE = "TYPE";
+	public static final String URL = "URL";
+	public static final String DETAIL = "DETAIL";
 	public static final String GLB_CATEGORY_GROUP = "globalCategoryGroup";
 
 	public static final String CUST_CATEGORY_GROUP = "custCategoryGroup";
 	public static final String EOCUST_COUNT_FREQ = "EOCUST_COUNT_FREQ";
-	public static final String IDEN_NO="IDEN_NO";
+	public static final String IDEN_NO = "IDEN_NO";
 	public static final String EOCUST_INGREDIENT = "EOCUST_INGREDIENT";
 	public static final String CUST_INGREDIENT = "custIngredient";
 	public static final String CUST_CATEGORY_ID = "CUST_CATEGORY_ID";
@@ -67,13 +66,13 @@ public class Constants {
 	public static final String CUST_LOCATION_ID = "CUST_LOCATION_ID";
 	public static final String CUST_LOCATION = "custLocation";
 	public static final String CUST_STORAGE_ID = "CUST_STORAGE_ID";
-	public static final String EOCUST_PREPARATION="EOCUST_PREPARATION";
+	public static final String EOCUST_PREPARATION = "EOCUST_PREPARATION";
 	public static final String CUST_PREPARATION = "custPreparation";
 	public static final String CUST_PREP_ID = "CUST_PREP_ID";
-	public static final String EOCUST_PREPARATION_COUNT_FREQ="EOCUST_PREPARATION_COUNT_FREQ";
-	public static final String EOCUST_PREPARATION_RECIPE="EOCUST_PREPARATION_RECIPE";
+	public static final String EOCUST_PREPARATION_COUNT_FREQ = "EOCUST_PREPARATION_COUNT_FREQ";
+	public static final String EOCUST_PREPARATION_RECIPE = "EOCUST_PREPARATION_RECIPE";
 	public static final String QNT = "QNT";
-	public static final String EOCUST_PREPARATION_LOCATION="EOCUST_PREPARATION_LOCATION";
+	public static final String EOCUST_PREPARATION_LOCATION = "EOCUST_PREPARATION_LOCATION";
 	public static final String EOCUST_PRODUCT = "EOCUST_PRODUCT";
 	public static final String TITLE = "TITLE";
 	public static final String PURCHASE_PRICE = "PURCHASE_PRICE";
@@ -85,9 +84,9 @@ public class Constants {
 	public static final String MRFTR_DATE = "MRFTR_DATE";
 	public static final String CUST_PRODUCT = "custProduct";
 	public static final String GLB_MRF_ID = "GLB_MRF_ID";
-	public static final String EOCUST_PRODUCT_COUNT_FREQ="EOCUST_PRODUCT_COUNT_FREQ";
+	public static final String EOCUST_PRODUCT_COUNT_FREQ = "EOCUST_PRODUCT_COUNT_FREQ";
 	public static final String CUST_PRODUCT_ID = "CUST_PRODUCT_ID";
-	public static final String EOCUST_PRODUCT_DETAIL="EOCUST_PRODUCT_DETAIL";
+	public static final String EOCUST_PRODUCT_DETAIL = "EOCUST_PRODUCT_DETAIL";
 	public static final String CUST_PRODUCT_ID2 = "CUST_PRODUCT_ID";
 	public static final String ATTRIBUTE_VALUE = "ATTRIBUTE_VALUE";
 	public static final String ATTRIBUTE_NAME = "ATTRIBUTE_NAME";
@@ -96,13 +95,13 @@ public class Constants {
 	public static final String CUST_PRODUCTION_APP = "custProductionApp";
 	public static final String CUST_ID = "CUST_ID";
 	public static final String APP_ID = "APP_ID";
-	public static final String EOCUST_PRODUCTION_LOCATION="EOCUST_PRODUCTION_LOCATION";
-	public static final String EOCUST_PRODUCT_LOCATION="EOCUST_PRODUCT_LOCATION";
-	public static final String EOCUST_PRODUCT_RECIPE="EOCUST_PRODUCT_RECIPE";
-	public static final String COLOR="COLOR";
-	public static final String SIZE="SIZE";
-	public static final String EOCUST_PRODUCT_VARIANT="EOCUST_PRODUCT_VARIANT";
-	public static final String EOCUST_STORAGE="EOCUST_STORAGE";
+	public static final String EOCUST_PRODUCTION_LOCATION = "EOCUST_PRODUCTION_LOCATION";
+	public static final String EOCUST_PRODUCT_LOCATION = "EOCUST_PRODUCT_LOCATION";
+	public static final String EOCUST_PRODUCT_RECIPE = "EOCUST_PRODUCT_RECIPE";
+	public static final String COLOR = "COLOR";
+	public static final String SIZE = "SIZE";
+	public static final String EOCUST_PRODUCT_VARIANT = "EOCUST_PRODUCT_VARIANT";
+	public static final String EOCUST_STORAGE = "EOCUST_STORAGE";
 	public static final String CUST_STORAGE = "custStorage";
 	public static final String EOCUST_UNIT = "EOCUST_UNIT";
 	public static final String LOGO_URL = "LOGO_URL";
@@ -112,11 +111,43 @@ public class Constants {
 	public static final String CUST_UNIT_GROUP_ID = "CUST_UNIT_GROUP_ID";
 	public static final String EOCUST_UNIT_GROUP = "EOCUST_UNIT_GROUP";
 	public static final String CUST_UNIT_GROUP = "custUnitGroup";
-	public static final String EOGLOBAL_CATEGORY="EOGLOBAL_CATEGORY";
-	public static final String EOGLOBAL_CATEGORY_GROUP="EOGLOBAL_CATEGORY_GROUP";
-	public static final String EOGLOBAL_COUNT_FREQ="EOGLOBAL_COUNT_FREQ";
-	public static final String EOGLOBAL_MANUFACTURER="EOGLOBAL_MANUFACTURER";
-	public static final String EOGLOBAL_MEDIA_DETAIL="EOGLOBAL_MEDIA_DETAIL";
+	public static final String EOGLOBAL_CATEGORY = "EOGLOBAL_CATEGORY";
+	public static final String EOGLOBAL_CATEGORY_GROUP = "EOGLOBAL_CATEGORY_GROUP";
+	public static final String EOGLOBAL_COUNT_FREQ = "EOGLOBAL_COUNT_FREQ";
+	public static final String EOGLOBAL_MANUFACTURER = "EOGLOBAL_MANUFACTURER";
+	public static final String EOGLOBAL_MEDIA_DETAIL = "EOGLOBAL_MEDIA_DETAIL";
 	public static final String UNIT_GROUP = "unitGroup";
-	public static final String EOGLOBAL_UNIT_GROUP="EOGLOBAL_UNIT_GROUP";
+	public static final String EOGLOBAL_UNIT_GROUP = "EOGLOBAL_UNIT_GROUP";
+
+	public static final String EOCUST_PRODUCT_WHOLE_SALE = "EOCUST_PRODUCT_WHOLE_SALE";
+	public static final String WHOLE_QTN = "WHOLE_QTN";
+	public static final String EOCUST_PRODUCT_RETAIL_SALE = "EOCUST_PRODUCT_RETAIL_SALE";
+	public static final String RETAIL_QTN = "RETAIL_QTN";
+	public static final String PURCHASE_UNIT = "PURCHASE_UNIT";
+	public static final String RETAIL_UNIT = "RETAIL_UNIT";
+	public static final String WHOLE_UNIT = "WHOLE_UNIT";
+
+	public static final String EOCUST_PRODUCT_SALE = "EOCUST_PRODUCT_SALE";
+	public static final String DISCOUNT = "DISCOUNT";
+
+	public static final String CUST_PRODUCT_SALE = "custProductSale";
+
+	public static final String WHOLE_SALE_TOTALS = "WHOLE_SALE_TOTALS";
+
+	public static final String RETAIL_SALE_TOTALS = "RETAIL_SALE_TOTALS";
+
+	public static final String DISCOUNTS = "DISCOUNTS";
+	
+	public static final String CUST_PURCHASE_UNIT_ID_ENTITY = "purchaseUnit.id";
+	public static final String CUST_PURCHASE_UNIT_ID_UI = "purchaseUnitId";
+	
+	public static final String CUST_RETAIL_UNIT_ID_ENTITY = "retailUnit.id";
+	public static final String CUST_RETAIL_UNIT_ID_UI = "retailUnitId";
+	
+	public static final String CUST_WHOLE_UNIT_ID_ENTITY = "wholeUnit.id";
+	public static final String CUST_WHOLE_UNIT_ID_UI = "wholeUnitId";
+	
+	public static final String CUST_PRODUCT_SALE_ID = "CUST_PRODUCT_SALE_ID";
+
+
 }
