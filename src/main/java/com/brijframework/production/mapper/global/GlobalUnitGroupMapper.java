@@ -3,7 +3,7 @@ import static com.brijframework.production.contants.Constants.*;
 import org.mapstruct.Mapper;
 
 import com.brijframework.production.dto.global.UIGlobalUnitGroup;
-import com.brijframework.production.entities.EOGlobalUnitGroup;
+import com.brijframework.production.entities.global.EOGlobalUnitGroup;
 import com.brijframework.production.mapper.GenericMapper;
 
 @Mapper(componentModel = SPRING, implementationPackage = COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL)

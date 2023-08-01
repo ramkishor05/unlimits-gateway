@@ -1,4 +1,4 @@
-package com.brijframework.production.entities;
+package com.brijframework.production.entities.global;
 
 import static com.brijframework.production.contants.Constants.*;
 
@@ -8,6 +8,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import com.brijframework.production.entities.EOEntityObject;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)

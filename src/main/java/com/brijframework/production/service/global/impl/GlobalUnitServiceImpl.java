@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.brijframework.production.dto.global.UIGlobalUnit;
-import com.brijframework.production.entities.EOGlobalUnit;
-import com.brijframework.production.entities.EOGlobalUnitGroup;
+import com.brijframework.production.entities.global.EOGlobalUnit;
+import com.brijframework.production.entities.global.EOGlobalUnitGroup;
 import com.brijframework.production.mapper.global.GlobalUnitGroupMapper;
 import com.brijframework.production.mapper.global.GlobalUnitMapper;
-import com.brijframework.production.repository.GlobalUnitGroupRepository;
-import com.brijframework.production.repository.GlobalUnitRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
+import com.brijframework.production.repository.global.GlobalUnitGroupRepository;
+import com.brijframework.production.repository.global.GlobalUnitRepository;
 import com.brijframework.production.service.global.GlobalUnitService;
 
 @Service

@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @MappedSuperclass
 public class EOEntityObject implements Serializable {
 	/**
@@ -25,12 +28,14 @@ public class EOEntityObject implements Serializable {
 	private String createdUid;
 	
 	@Column(name = "CREATED_AT")
+	@CreationTimestamp
 	private Date createdAt;
 	
 	@Column(name = "UPDATED_UID")
 	private String updatedUid;
 
 	@Column(name = "UPDATED_AT")
+	@UpdateTimestamp
 	private Date updatedAt;
 	
 	@Column(name = "RECORD_STATUS")

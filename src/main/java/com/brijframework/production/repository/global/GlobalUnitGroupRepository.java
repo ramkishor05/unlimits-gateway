@@ -1,10 +1,10 @@
-package com.brijframework.production.repository;
+package com.brijframework.production.repository.global;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.brijframework.production.entities.EOGlobalUnitGroup;
+import com.brijframework.production.entities.global.EOGlobalUnitGroup;
 
 @Repository
 @Transactional

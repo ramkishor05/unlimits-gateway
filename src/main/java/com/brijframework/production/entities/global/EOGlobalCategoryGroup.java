@@ -1,21 +1,25 @@
-package com.brijframework.production.entities;
+package com.brijframework.production.entities.global;
+
+import static com.brijframework.production.contants.Constants.*;
+
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import static com.brijframework.production.contants.Constants.*;
+import com.brijframework.production.entities.EOEntityObject;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name=EOGLOBAL_CATEGORY ,  uniqueConstraints = { @UniqueConstraint (columnNames = {GROUP_ID, NAME})} )
-public class EOGlobalCategory extends EOEntityObject {
+@Table(name = EOGLOBAL_CATEGORY_GROUP, uniqueConstraints = { @UniqueConstraint(columnNames = { NAME }) })
+public class EOGlobalCategoryGroup extends EOEntityObject {
 
 	/**
 	 * 
@@ -35,9 +39,8 @@ public class EOGlobalCategory extends EOEntityObject {
 	@JoinColumn(name = GLB_IMG_ID)
 	public EOGlobalMediaDetail globalMediaDetail;
 
-	@ManyToOne
-	@JoinColumn(name = GROUP_ID, nullable = false)
-	private EOGlobalCategoryGroup globalCategoryGroup;
+	@OneToMany(mappedBy = GLB_CATEGORY_GROUP)
+	public Set<EOGlobalCategory> globalCategories;
 
 	public String getName() {
 		return name;
@@ -62,7 +65,7 @@ public class EOGlobalCategory extends EOEntityObject {
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
 	}
-	
+
 	public EOGlobalMediaDetail getGlobalMediaDetail() {
 		return globalMediaDetail;
 	}
@@ -71,11 +74,12 @@ public class EOGlobalCategory extends EOEntityObject {
 		this.globalMediaDetail = globalMediaDetail;
 	}
 
-	public EOGlobalCategoryGroup getGlobalCategoryGroup() {
-		return globalCategoryGroup;
+	public Set<EOGlobalCategory> getGlobalCategories() {
+		return globalCategories;
 	}
 
-	public void setGlobalCategoryGroup(EOGlobalCategoryGroup globalCategoryGroup) {
-		this.globalCategoryGroup = globalCategoryGroup;
+	public void setGlobalCategories(Set<EOGlobalCategory> globalCategories) {
+		this.globalCategories = globalCategories;
 	}
+
 }

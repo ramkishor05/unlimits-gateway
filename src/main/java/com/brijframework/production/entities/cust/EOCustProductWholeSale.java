@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.brijframework.production.entities.EOGlobalItem;
+import com.brijframework.production.entities.global.EOGlobalItem;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)

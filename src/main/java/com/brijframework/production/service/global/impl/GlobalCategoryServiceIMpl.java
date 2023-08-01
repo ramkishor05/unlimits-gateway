@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframework.production.entities.EOGlobalCategory;
+import com.brijframework.production.entities.global.EOGlobalCategory;
 import com.brijframework.production.mapper.global.GlobalCategoryRequestMapper;
 import com.brijframework.production.mapper.global.GlobalCategoryResponseMapper;
-import com.brijframework.production.repository.GlobalCategoryRepository;
+import com.brijframework.production.repository.global.GlobalCategoryRepository;
 import com.brijframework.production.rest.global.GlobalCategoryRequest;
 import com.brijframework.production.rest.global.GlobalCategoryResponse;
 import com.brijframework.production.service.global.GlobalCategoryService;

@@ -3,6 +3,7 @@ package com.brijframework.production.contants;
 public class Constants {
 	public static final String CUST_APP_ID = "custAppId";
 	public static final String CUST_APP_ID_URI = "{custAppId}";
+	public static final String VENDOR_APP_ID = "vendorId";
 
 	public static final String SPRING = "spring";
 	public static final String CUST_PROD_APP_ID_ENTITY = "custProductionApp.id";
@@ -31,6 +32,7 @@ public class Constants {
 
 	public static final String COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.global.impl";
 	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.cust.impl";
+	public static final String COM_BRIJFRAMEWORK_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.impl";
 
 	// for entity
 	public static final String EOGLOBAL_UNIT = "EOGLOBAL_UNIT";
@@ -38,6 +40,7 @@ public class Constants {
 	public static final String EOCUST_CATEGORY_GROUP = "EOCUST_CATEGORY_Group";
 	public static final String EOCUST_CATEGORY = "EOCUST_CATEGORY";
 	public static final String CUST_PROD_APP_ID = "CUST_PROD_APP_ID";
+	public static final String CUSTOMER_ID = "CUSTOMER_ID";
 	public static final String GROUP_ID = "GROUP_ID";
 	public static final String BRAND = "BRAND";
 	public static final String GTIN = "GTIN";
@@ -48,8 +51,13 @@ public class Constants {
 	public static final String TYPE = "TYPE";
 	public static final String URL = "URL";
 	public static final String DETAIL = "DETAIL";
+	public static final String PRESENT_ADDRESS = "PRESENT_ADDRESS";
+	public static final String PERMAMENT_ADDRESS = "PERMAMENT_ADDRESS";
+	public static final String EMAIL_ADDRESS = "EMAIL_ADDRESS";
+	public static final String MOBILE_NUMBER = "MOBILE_NUMBER";
+	public static final String PHONE_NUMBER = "PHONE_NUMBER";
 	public static final String GLB_CATEGORY_GROUP = "globalCategoryGroup";
-
+	public static final String VENDOR = "vendor";
 	public static final String CUST_CATEGORY_GROUP = "custCategoryGroup";
 	public static final String EOCUST_COUNT_FREQ = "EOCUST_COUNT_FREQ";
 	public static final String IDEN_NO = "IDEN_NO";
@@ -92,9 +100,16 @@ public class Constants {
 	public static final String ATTRIBUTE_NAME = "ATTRIBUTE_NAME";
 	public static final String SECTION_NAME = "SECTION_NAME";
 	public static final String EOCUST_PRODUCTION_APP = "EOCUST_PRODUCTION_APP";
+	public static final String EOSUPPLIER = "EOSUPPLIER";
+	public static final String EOVENDOR = "EOVENDOR";
+	public static final String EOCUSTOMER = "EOCUSTOMER";
+	public static final String EOBUSINESS = "EOBUSINESS";
 	public static final String CUST_PRODUCTION_APP = "custProductionApp";
 	public static final String CUST_ID = "CUST_ID";
 	public static final String APP_ID = "APP_ID";
+	public static final String VENDOR_ID = "VENDOR_ID";
+	public static final String SUPPLIER_ID = "SUPPLIER_ID";
+
 	public static final String EOCUST_PRODUCTION_LOCATION = "EOCUST_PRODUCTION_LOCATION";
 	public static final String EOCUST_PRODUCT_LOCATION = "EOCUST_PRODUCT_LOCATION";
 	public static final String EOCUST_PRODUCT_RECIPE = "EOCUST_PRODUCT_RECIPE";
@@ -149,5 +164,8 @@ public class Constants {
 	
 	public static final String CUST_PRODUCT_SALE_ID = "CUST_PRODUCT_SALE_ID";
 
+	public static final boolean TRUE = true;
+	public static final boolean FALSE = false;
+	
 
 }

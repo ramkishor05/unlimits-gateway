@@ -18,7 +18,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.brijframework.production.entities.EOEntityObject;
-import com.brijframework.production.entities.EOGlobalMediaDetail;
+import com.brijframework.production.entities.global.EOGlobalMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)

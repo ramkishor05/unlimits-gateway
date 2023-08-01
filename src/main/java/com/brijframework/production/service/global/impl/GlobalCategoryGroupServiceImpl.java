@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.brijframework.production.contants.DataStatus;
 import com.brijframework.production.dto.global.UIGlobalCategoryGroup;
-import com.brijframework.production.entities.EOGlobalCategoryGroup;
+import com.brijframework.production.entities.global.EOGlobalCategoryGroup;
 import com.brijframework.production.mapper.global.GlobalCategoryGroupMapper;
-import com.brijframework.production.repository.GlobalCategoryGroupRepository;
+import com.brijframework.production.repository.global.GlobalCategoryGroupRepository;
 import com.brijframework.production.service.global.GlobalCategoryGroupService;
 
 @Service

@@ -8,8 +8,8 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import com.brijframework.production.entities.cust.EOCustProductionApp;
-import com.brijframework.production.repository.GlobalCountFreqRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
+import com.brijframework.production.repository.global.GlobalCountFreqRepository;
 
 @Component
 public class ProductionMainListener implements ApplicationListener<ContextRefreshedEvent> {

@@ -1,8 +1,11 @@
-package com.brijframework.production.entities;
+package com.brijframework.production.entities.global;
 
 import javax.persistence.Column;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
+
+import com.brijframework.production.entities.EOEntityObject;
+
 import static com.brijframework.production.contants.Constants.*;
 
 @MappedSuperclass

@@ -1,6 +1,6 @@
 package com.brijframework.production.entities.cust;
 
-import static com.brijframework.production.contants.Constants.CUST_PRODUCT_SALE;
+import static com.brijframework.production.contants.Constants.*;
 import static com.brijframework.production.contants.Constants.CUST_PROD_APP_ID;
 import static com.brijframework.production.contants.Constants.DISCOUNTS;
 import static com.brijframework.production.contants.Constants.EOCUST_PRODUCT_SALE;
@@ -16,7 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.brijframework.production.entities.EOGlobalItem;
+import com.brijframework.production.entities.EOCustomer;
+import com.brijframework.production.entities.global.EOGlobalItem;
 
 @Entity
 @Table(name = EOCUST_PRODUCT_SALE)
@@ -36,6 +37,10 @@ public class EOCustProductSale extends EOGlobalItem {
 
 	@Column(name = WHOLE_SALE_TOTALS)
 	private Double wholeSaletotals;
+	
+	@JoinColumn(name = CUSTOMER_ID, nullable = false)
+	@ManyToOne
+	private EOCustomer customer;
 	
 	@JoinColumn(name = CUST_PROD_APP_ID, nullable = false)
 	@ManyToOne

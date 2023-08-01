@@ -3,7 +3,7 @@ package com.brijframework.production.service.global;
 import java.util.List;
 
 import com.brijframework.production.dto.global.UIGlobalUnit;
-import com.brijframework.production.entities.EOGlobalUnitGroup;
+import com.brijframework.production.entities.global.EOGlobalUnitGroup;
 
 public interface GlobalUnitService {
 

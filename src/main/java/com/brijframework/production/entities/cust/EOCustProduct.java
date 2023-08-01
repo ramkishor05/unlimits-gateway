@@ -30,9 +30,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOGlobalItem;
-import com.brijframework.production.entities.EOGlobalManufacturer;
-import com.brijframework.production.entities.EOGlobalMediaDetail;
+import com.brijframework.production.entities.global.EOGlobalItem;
+import com.brijframework.production.entities.global.EOGlobalManufacturer;
+import com.brijframework.production.entities.global.EOGlobalMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)

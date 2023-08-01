@@ -11,12 +11,14 @@ import com.brijframework.production.entities.cust.EOCustProductRetailSale;
 import com.brijframework.production.entities.cust.EOCustProductSale;
 import com.brijframework.production.entities.cust.EOCustProductWholeSale;
 import com.brijframework.production.entities.cust.EOCustProductionApp;
+import com.brijframework.production.entities.cust.EOCustUnit;
 import com.brijframework.production.mapper.cust.CustProductSaleRequestMapper;
 import com.brijframework.production.mapper.cust.CustProductSaleResponseMapper;
 import com.brijframework.production.repository.cust.CustProductRetailSaleRepository;
 import com.brijframework.production.repository.cust.CustProductSaleRepository;
 import com.brijframework.production.repository.cust.CustProductWholeSaleRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
+import com.brijframework.production.repository.cust.CustUnitRepository;
 import com.brijframework.production.rest.cust.CustProductRetailSaleRequest;
 import com.brijframework.production.rest.cust.CustProductSaleRequest;
 import com.brijframework.production.rest.cust.CustProductSaleResponse;
@@ -37,7 +39,10 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 	private CustProductWholeSaleRepository custProductWholeSaleRepository;
 	
 	@Autowired
-	CustProductionAppRepository custProductionAppRepository;
+	private  CustProductionAppRepository custProductionAppRepository;
+	
+	@Autowired
+	private CustUnitRepository custUnitRepository;
 	
 	@Autowired
 	private CustProductSaleRequestMapper custProductSaleRequestMapper;
@@ -64,12 +69,20 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 		
 		for(CustProductRetailSaleRequest custProductRetailSaleUi : custProductRetailSaleList){
 			EOCustProductRetailSale eoCustProductRetailSale = custProductSaleRequestMapper.mapToDAO(custProductRetailSaleUi);
+			EOCustUnit purchaseUnit = custUnitRepository.findById(custProductRetailSaleUi.getPurchaseUnitId()).orElse(null);
+			EOCustUnit retialUnit = custUnitRepository.findById(custProductRetailSaleUi.getRetailUnitId()).orElse(null);
+			eoCustProductRetailSale.setPurchaseUnit(purchaseUnit);
+			eoCustProductRetailSale.setRetailUnit(retialUnit);
 			eoCustProductRetailSale.setCustProductSale(eoCustProductSale);
 			custProductRetailSaleRepository.saveAndFlush(eoCustProductRetailSale);
 		}
 		
 		for (CustProductWholeSaleRequest custProductWholeSaleRequest : custProductWholeSaleList) {
 			EOCustProductWholeSale custProductWholeSale = custProductSaleRequestMapper.mapToDAO(custProductWholeSaleRequest);
+			EOCustUnit purchaseUnit = custUnitRepository.findById(custProductWholeSaleRequest.getPurchaseUnitId()).orElse(null);
+			EOCustUnit wholeUnit = custUnitRepository.findById(custProductWholeSaleRequest.getWholeUnitId()).orElse(null);
+			custProductWholeSale.setPurchaseUnit(purchaseUnit);
+			custProductWholeSale.setWholeUnit(wholeUnit);
 			custProductWholeSale.setCustProductSale(eoCustProductSale);
 			custProductWholeSaleRepository.saveAndFlush(custProductWholeSale);
 		}

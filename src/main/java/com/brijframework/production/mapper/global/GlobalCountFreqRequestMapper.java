@@ -5,7 +5,7 @@ import static com.brijframework.production.contants.Constants.SPRING;
 
 import org.mapstruct.Mapper;
 
-import com.brijframework.production.entities.EOGlobalCountFreq;
+import com.brijframework.production.entities.global.EOGlobalCountFreq;
 import com.brijframework.production.mapper.GenericMapper;
 import com.brijframework.production.rest.global.GlobalCountFreqRequest;
 

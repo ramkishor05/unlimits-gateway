@@ -5,7 +5,7 @@ import static com.brijframework.production.contants.Constants.SPRING;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.brijframework.production.entities.EOGlobalCategory;
+import com.brijframework.production.entities.global.EOGlobalCategory;
 import com.brijframework.production.mapper.GenericMapper;
 import com.brijframework.production.rest.global.GlobalCategoryRequest;
 

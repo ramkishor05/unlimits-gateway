@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframework.production.entities.EOGlobalCountFreq;
+import com.brijframework.production.entities.global.EOGlobalCountFreq;
 import com.brijframework.production.mapper.global.GlobalCountFreqMapper;
 import com.brijframework.production.mapper.global.GlobalCountFreqRequestMapper;
 import com.brijframework.production.mapper.global.GlobalCountFreqResponseMapper;
-import com.brijframework.production.repository.GlobalCountFreqRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
+import com.brijframework.production.repository.global.GlobalCountFreqRepository;
 import com.brijframework.production.rest.global.GlobalCountFreqRequest;
 import com.brijframework.production.rest.global.GlobalCountFreqResponse;
 import com.brijframework.production.service.global.GlobalCountFreqService;
