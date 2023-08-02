@@ -16,4 +16,6 @@ public interface CustomerService {
 	List<UICustomer> getCustomerList(Long vendorId);
 
 	UICustomerDetail getCustomerDetail(Long id);
+
+	List<UICustomer> getCustomerList();
 }

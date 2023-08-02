@@ -36,9 +36,14 @@ public class BusinessController {
 		return businessService.saveBusiness(vendorId, uiBusiness);
 	}
 	
-	@GetMapping
-	public List<UIBusiness> getBusinessDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
+	@GetMapping("/vendors")
+	public List<UIBusiness> getVendorBusinessDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
 		return businessService.getBusinessList(vendorId);
+	}
+	
+	@GetMapping
+	public List<UIBusiness> getBusinessDetailList() {
+		return businessService.getBusinessList();
 	}
 	
 	@DeleteMapping("/{businessId}")

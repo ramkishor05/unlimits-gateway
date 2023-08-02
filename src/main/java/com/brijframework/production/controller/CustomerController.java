@@ -36,10 +36,16 @@ public class CustomerController {
 		return customerService.saveCustomer(vendorId, uiCustomer);
 	}
 	
-	@GetMapping
-	public List<UICustomer> getCustomerDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
+	@GetMapping("/vendors")
+	public List<UICustomer> getVendorCustomerDetailList(@RequestHeader(VENDOR_APP_ID) long vendorId) {
 		return customerService.getCustomerList(vendorId);
 	}
+	
+	@GetMapping
+	public List<UICustomer> getCustomerDetailList() {
+		return customerService.getCustomerList();
+	}
+	
 	
 	@DeleteMapping("/{customerId}")
 	public boolean deleteCustomer(@PathVariable("customerId") long customerId) {

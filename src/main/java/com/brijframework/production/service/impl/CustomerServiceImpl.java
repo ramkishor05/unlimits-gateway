@@ -56,6 +56,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<UICustomer> getCustomerList(Long vendorId) {
 		return customerMapper.mapToDTO( customerRepository.findByVendorId(vendorId).orElseThrow(()-> new RuntimeException("Not fond")) );
 	}
+	
+	@Override
+	public List<UICustomer> getCustomerList() {
+		return customerMapper.mapToDTO( customerRepository.findAll() );
+	}
 
 	@Override
 	public UICustomerDetail getCustomerDetail(Long id) {

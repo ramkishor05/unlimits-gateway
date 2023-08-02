@@ -49,6 +49,11 @@ public class BusinessServiceImpl implements BusinessService {
 	public List<UIBusiness> getBusinessList(Long vendorId) {
 		return businessMapper.mapToDTO( businessRepository.findByVendorId(vendorId).orElseThrow(()-> new RuntimeException("Not fond")) );
 	}
+	
+	@Override
+	public List<UIBusiness> getBusinessList() {
+		return businessMapper.mapToDTO( businessRepository.findAll() );
+	}
 
 	@Override
 	public UIBusinessDetail getBusinessDetail(Long id) {

@@ -16,4 +16,6 @@ public interface BusinessService {
 	List<UIBusiness> getBusinessList(Long vendorId);
 
 	UIBusinessDetail getBusinessDetail(Long id);
+
+	List<UIBusiness> getBusinessList();
 }
