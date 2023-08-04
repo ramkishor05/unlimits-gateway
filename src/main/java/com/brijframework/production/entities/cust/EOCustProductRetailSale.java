@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -54,7 +55,7 @@ public class EOCustProductRetailSale extends EOGlobalItem {
 	private Double discount;
 
 	@JoinColumn(name = CUST_PRODUCT_ID)
-	@OneToOne
+	@ManyToOne
 	private EOCustProduct custProduct;
 	
 	@JoinColumn(name = CUST_PRODUCT_SALE_ID)

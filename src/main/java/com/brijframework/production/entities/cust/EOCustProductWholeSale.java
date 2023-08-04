@@ -52,6 +52,7 @@ public class EOCustProductWholeSale extends EOGlobalItem {
 	private Double discount;
 
 	@JoinColumn(name = CUST_PRODUCT_ID)
+	@ManyToOne
 	private EOCustProduct custProduct;
 
 	@JoinColumn(name = CUST_PRODUCT_SALE_ID)

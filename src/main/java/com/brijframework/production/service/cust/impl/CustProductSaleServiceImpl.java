@@ -89,6 +89,7 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 			eoCustProductRetailSale.setCustProductSale(eoCustProductSale);
 			EOCustProduct eoCustProduct = custProductRepository.findById(custProductRetailSaleUi.getCustProductId()).orElse(null);
 			eoCustProductRetailSale.setCustProduct(eoCustProduct);
+			
 			custProductRetailSaleRepository.saveAndFlush(eoCustProductRetailSale);
 		}
 		
@@ -101,6 +102,7 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 			custProductWholeSale.setCustProductSale(eoCustProductSale);
 			EOCustProduct eoCustProduct = custProductRepository.findById(custProductWholeSaleRequest.getCustProductId()).orElse(null);
 			custProductWholeSale.setCustProduct(eoCustProduct);
+			
 			custProductWholeSaleRepository.saveAndFlush(custProductWholeSale);
 		}
 		
