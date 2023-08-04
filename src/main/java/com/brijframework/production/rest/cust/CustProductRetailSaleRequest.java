@@ -11,6 +11,7 @@ public class CustProductRetailSaleRequest implements Serializable {
 	private Double purchasePrice;
 	private Long purchaseUnitId;
 
+	private Long custProductId;
 	// for sale items
 	private Double retailQnt;
 	private Double retailPrice;
@@ -30,6 +31,16 @@ public class CustProductRetailSaleRequest implements Serializable {
 
 	public void setIdenNo(String idenNo) {
 		this.idenNo = idenNo;
+	}
+	
+	
+
+	public Long getCustProductId() {
+		return custProductId;
+	}
+
+	public void setCustProductId(Long custProductId) {
+		this.custProductId = custProductId;
 	}
 
 	public Double getPurchasePrice() {

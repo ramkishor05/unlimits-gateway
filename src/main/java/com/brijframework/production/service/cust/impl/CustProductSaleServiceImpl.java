@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.brijframework.production.entities.EOCustomer;
+import com.brijframework.production.entities.cust.EOCustProduct;
 import com.brijframework.production.entities.cust.EOCustProductRetailSale;
 import com.brijframework.production.entities.cust.EOCustProductSale;
 import com.brijframework.production.entities.cust.EOCustProductWholeSale;
@@ -16,6 +17,7 @@ import com.brijframework.production.entities.cust.EOCustUnit;
 import com.brijframework.production.mapper.cust.CustProductSaleRequestMapper;
 import com.brijframework.production.mapper.cust.CustProductSaleResponseMapper;
 import com.brijframework.production.repository.CustomerRepository;
+import com.brijframework.production.repository.cust.CustProductRepository;
 import com.brijframework.production.repository.cust.CustProductRetailSaleRepository;
 import com.brijframework.production.repository.cust.CustProductSaleRepository;
 import com.brijframework.production.repository.cust.CustProductWholeSaleRepository;
@@ -45,6 +47,9 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 	
 	@Autowired
 	private CustUnitRepository custUnitRepository;
+	
+	@Autowired
+	private CustProductRepository custProductRepository;
 	
 	@Autowired
 	private CustProductSaleRequestMapper custProductSaleRequestMapper;
@@ -82,6 +87,8 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 			eoCustProductRetailSale.setPurchaseUnit(purchaseUnit);
 			eoCustProductRetailSale.setRetailUnit(retialUnit);
 			eoCustProductRetailSale.setCustProductSale(eoCustProductSale);
+			EOCustProduct eoCustProduct = custProductRepository.findById(custProductRetailSaleUi.getCustProductId()).orElse(null);
+			eoCustProductRetailSale.setCustProduct(eoCustProduct);
 			custProductRetailSaleRepository.saveAndFlush(eoCustProductRetailSale);
 		}
 		
@@ -92,6 +99,8 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 			custProductWholeSale.setPurchaseUnit(purchaseUnit);
 			custProductWholeSale.setWholeUnit(wholeUnit);
 			custProductWholeSale.setCustProductSale(eoCustProductSale);
+			EOCustProduct eoCustProduct = custProductRepository.findById(custProductWholeSaleRequest.getCustProductId()).orElse(null);
+			custProductWholeSale.setCustProduct(eoCustProduct);
 			custProductWholeSaleRepository.saveAndFlush(custProductWholeSale);
 		}
 		
