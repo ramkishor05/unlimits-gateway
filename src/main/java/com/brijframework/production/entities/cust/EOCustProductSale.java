@@ -61,6 +61,14 @@ public class EOCustProductSale extends EOGlobalItem {
 		this.custProductionApp = custProductionApp;
 	}
 
+	public EOCustomer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(EOCustomer customer) {
+		this.customer = customer;
+	}
+
 	public Double getDiscounts() {
 		return discounts;
 	}

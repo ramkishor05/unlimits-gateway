@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframework.production.entities.EOCustomer;
 import com.brijframework.production.entities.cust.EOCustProductRetailSale;
 import com.brijframework.production.entities.cust.EOCustProductSale;
 import com.brijframework.production.entities.cust.EOCustProductWholeSale;
@@ -14,6 +15,7 @@ import com.brijframework.production.entities.cust.EOCustProductionApp;
 import com.brijframework.production.entities.cust.EOCustUnit;
 import com.brijframework.production.mapper.cust.CustProductSaleRequestMapper;
 import com.brijframework.production.mapper.cust.CustProductSaleResponseMapper;
+import com.brijframework.production.repository.CustomerRepository;
 import com.brijframework.production.repository.cust.CustProductRetailSaleRepository;
 import com.brijframework.production.repository.cust.CustProductSaleRepository;
 import com.brijframework.production.repository.cust.CustProductWholeSaleRepository;
@@ -49,6 +51,9 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 	
 	@Autowired
 	private CustProductSaleResponseMapper custProductSaleResponseMapper; 
+	
+	@Autowired
+	private CustomerRepository customerRepository;
 
 	@Override
 	public CustProductSaleResponse saveProductSale(long custAppId, CustProductSaleRequest custProductSaleRequest) {
@@ -63,7 +68,10 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 		custProductSaleRequest.setCustProductRetailSaleList(null);
 		custProductSaleRequest.setCustProductWholeSaleList(null);
 		
+		EOCustomer eoCustomer = customerRepository.findById(custProductSaleRequest.getCustomerId()).orElseThrow(()-> new RuntimeException("Customer not fond"));
+		
 		EOCustProductSale eoCustProductSale = custProductSaleRequestMapper.mapToDAO(custProductSaleRequest);
+		eoCustProductSale.setCustomer(eoCustomer);
 		eoCustProductSale.setCustProductionApp(eoCustProductionApp);
 		eoCustProductSale = custProductSaleRepository.saveAndFlush(eoCustProductSale);
 		

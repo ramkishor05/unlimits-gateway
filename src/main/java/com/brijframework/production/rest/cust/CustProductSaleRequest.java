@@ -16,6 +16,8 @@ public class CustProductSaleRequest {
 	
 	private Long custProductionAppId;
 	
+	private Long customerId;
+	
 	private List<CustProductRetailSaleRequest> custProductRetailSaleList;
 	
 	private List<CustProductWholeSaleRequest> custProductWholeSaleList;
@@ -28,6 +30,14 @@ public class CustProductSaleRequest {
 		this.id = id;
 	}
 	
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
 	public Long getCustProductionAppId() {
 		return custProductionAppId;
 	}
