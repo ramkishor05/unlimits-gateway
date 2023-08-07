@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.brijframework.production.dto.UICustomer;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+@JsonInclude(Include.NON_NULL)
 public class CustProductSaleResponse implements Serializable {
 
 	/**
@@ -87,8 +90,8 @@ public class CustProductSaleResponse implements Serializable {
 	}
 
 	public Double getRetailSaleTotals() {
-		if(retailSaleTotals==null || wholeSaleTotals==0) {
-			return custProductRetailSaleList.stream().collect(Collectors.summarizingDouble(custProductRetailSale->custProductRetailSale.getRetailPrice()*custProductRetailSale.getRetailQnt())).getSum();
+		if(retailSaleTotals==null || retailSaleTotals==0) {
+			retailSaleTotals=custProductRetailSaleList.stream().filter(custProductRetail->custProductRetail.getRetailPrice()!=null && custProductRetail.getRetailQnt()!=null).collect(Collectors.summarizingDouble(custProductRetailSale->custProductRetailSale.getRetailPrice()*custProductRetailSale.getRetailQnt())).getSum();
 		}
 		return retailSaleTotals;
 	}
@@ -99,7 +102,7 @@ public class CustProductSaleResponse implements Serializable {
 
 	public Double getWholeSaletotals() {
 		if(wholeSaleTotals==null || wholeSaleTotals==0) {
-			return custProductWholeSaleList.stream().collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholePrice()*custProductWholeSale.getWholeQnt())).getSum();
+			wholeSaleTotals= custProductWholeSaleList.stream().filter(custProductRetail->custProductRetail.getWholePrice()!=null && custProductRetail.getWholeQnt()!=null).collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholePrice()*custProductWholeSale.getWholeQnt())).getSum();
 		}
 		return wholeSaleTotals;
 	}
@@ -111,7 +114,7 @@ public class CustProductSaleResponse implements Serializable {
 
 	public Double getRetailSaleQnt() {
 		if(retailSaleQnt==null ||retailSaleQnt==0) {
-			return custProductRetailSaleList.stream().collect(Collectors.summarizingDouble(custProductRetail->custProductRetail.getRetailQnt())).getSum();
+			retailSaleQnt= custProductRetailSaleList.stream().filter(custProductRetail->custProductRetail.getRetailQnt()!=null).collect(Collectors.summarizingDouble(custProductRetail->custProductRetail.getRetailQnt())).getSum();
 		}
 		return retailSaleQnt;
 	}
@@ -122,7 +125,7 @@ public class CustProductSaleResponse implements Serializable {
 
 	public Double getWholeSaleQnt() {
 		if(wholeSaleQnt==null ||wholeSaleQnt==0) {
-			return custProductWholeSaleList.stream().collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholeQnt())).getSum();
+			wholeSaleQnt = custProductWholeSaleList.stream().filter(custProductRetail->custProductRetail.getWholeQnt()!=null).collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholeQnt())).getSum();
 		}
 		return wholeSaleQnt;
 	}
