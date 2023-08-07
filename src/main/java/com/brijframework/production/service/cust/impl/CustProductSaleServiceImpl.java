@@ -28,11 +28,14 @@ import com.brijframework.production.rest.cust.CustProductSaleRequest;
 import com.brijframework.production.rest.cust.CustProductSaleResponse;
 import com.brijframework.production.rest.cust.CustProductWholeSaleRequest;
 import com.brijframework.production.service.cust.CustProductSaleService;
+import com.brijframework.production.util.CommanUtil;
 
 @Service
 public class CustProductSaleServiceImpl implements CustProductSaleService {
 	
 	
+	private static final String CSL = "CSL";
+
 	@Autowired
 	private CustProductSaleRepository custProductSaleRepository;
 	
@@ -77,6 +80,7 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 		
 		EOCustProductSale eoCustProductSale = custProductSaleRequestMapper.mapToDAO(custProductSaleRequest);
 		eoCustProductSale.setCustomer(eoCustomer);
+		eoCustProductSale.setIdenNo(CommanUtil. getIdenNo(CSL));
 		eoCustProductSale.setCustProductionApp(eoCustProductionApp);
 		eoCustProductSale = custProductSaleRepository.saveAndFlush(eoCustProductSale);
 		

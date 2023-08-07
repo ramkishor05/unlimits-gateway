@@ -7,6 +7,7 @@ import static com.brijframework.production.contants.Constants.EOCUST_PRODUCT_SAL
 import static com.brijframework.production.contants.Constants.RETAIL_SALE_TOTALS;
 import static com.brijframework.production.contants.Constants.WHOLE_SALE_TOTALS;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import com.brijframework.production.entities.EOCustomer;
 import com.brijframework.production.entities.global.EOGlobalItem;
@@ -29,6 +32,12 @@ public class EOCustProductSale extends EOGlobalItem {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private static final String SALE_DATE = "SALE_DATE";
+
+	private static final String RETAIL_SALE_QNT = "RETAIL_SALE_QNT";
+
+	private static final String WHOLE_SALE_QNT = "WHOLE_SALE_QNT";
+
 	@Column(name = DISCOUNTS)
 	private Double discounts;
 
@@ -36,7 +45,17 @@ public class EOCustProductSale extends EOGlobalItem {
 	private Double retailSaleTotals;
 
 	@Column(name = WHOLE_SALE_TOTALS)
-	private Double wholeSaletotals;
+	private Double wholeSaleTotals;
+	
+	@Column(name = RETAIL_SALE_QNT)
+	private Double retailSaleQnt;
+
+	@Column(name = WHOLE_SALE_QNT)
+	private Double wholeSaleQnt;
+	
+	@Column(name = SALE_DATE)
+	@CreationTimestamp
+	private Date  saleDate;
 	
 	@JoinColumn(name = CUSTOMER_ID, nullable = false)
 	@ManyToOne
@@ -51,7 +70,14 @@ public class EOCustProductSale extends EOGlobalItem {
 
 	@OneToMany(mappedBy = CUST_PRODUCT_SALE)
 	private List<EOCustProductWholeSale> custProductWholeSaleList;
-	
+
+	public Date getSaleDate() {
+		return saleDate;
+	}
+
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
+	}
 
 	public EOCustProductionApp getCustProductionApp() {
 		return custProductionApp;
@@ -85,12 +111,12 @@ public class EOCustProductSale extends EOGlobalItem {
 		this.retailSaleTotals = retailSaleTotals;
 	}
 
-	public Double getWholeSaletotals() {
-		return wholeSaletotals;
+	public Double getWholeSaleTotals() {
+		return wholeSaleTotals;
 	}
 
-	public void setWholeSaletotals(Double wholeSaletotals) {
-		this.wholeSaletotals = wholeSaletotals;
+	public void setWholeSaleTotals(Double wholeSaleTotals) {
+		this.wholeSaleTotals = wholeSaleTotals;
 	}
 
 	public List<EOCustProductRetailSale> getCustProductRetailSaleList() {

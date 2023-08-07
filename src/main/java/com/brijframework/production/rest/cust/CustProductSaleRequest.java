@@ -12,7 +12,11 @@ public class CustProductSaleRequest {
 
 	private Double retailSaleTotals;
 	
-	private Double wholeSaletotals;
+	private Double retailSaleQnt;
+	
+	private Double wholeSaleTotals;
+	
+	private Double wholeSaleQnt;
 	
 	private Long custProductionAppId;
 	
@@ -70,12 +74,28 @@ public class CustProductSaleRequest {
 		this.retailSaleTotals = retailSaleTotals;
 	}
 
-	public Double getWholeSaletotals() {
-		return wholeSaletotals;
+	public Double getWholeSaleTotals() {
+		return wholeSaleTotals;
 	}
 
-	public void setWholeSaletotals(Double wholeSaletotals) {
-		this.wholeSaletotals = wholeSaletotals;
+	public void setWholeSaleTotals(Double wholeSaleTotals) {
+		this.wholeSaleTotals = wholeSaleTotals;
+	}
+	
+	public Double getRetailSaleQnt() {
+		return retailSaleQnt;
+	}
+
+	public void setRetailSaleQnt(Double retailSaleQnt) {
+		this.retailSaleQnt = retailSaleQnt;
+	}
+
+	public Double getWholeSaleQnt() {
+		return wholeSaleQnt;
+	}
+
+	public void setWholeSaleQnt(Double wholeSaleQnt) {
+		this.wholeSaleQnt = wholeSaleQnt;
 	}
 
 	public List<CustProductRetailSaleRequest> getCustProductRetailSaleList() {

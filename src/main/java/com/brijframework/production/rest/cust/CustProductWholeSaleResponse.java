@@ -2,6 +2,7 @@ package com.brijframework.production.rest.cust;
 
 import java.io.Serializable;
 
+import com.brijframework.production.dto.cust.UICustProduct;
 import com.brijframework.production.dto.global.UIGlobalUnit;
 
 public class CustProductWholeSaleResponse implements Serializable {
@@ -17,6 +18,8 @@ public class CustProductWholeSaleResponse implements Serializable {
 	private Double wholeQnt;
 	private Double wholePrice;
 	private UIGlobalUnit wholeUnit;
+	
+	private UICustProduct custProduct;
 
 	public Long getId() {
 		return id;
@@ -74,4 +77,13 @@ public class CustProductWholeSaleResponse implements Serializable {
 		this.wholeUnit = wholeUnit;
 	}
 
+	public UICustProduct getCustProduct() {
+		return custProduct;
+	}
+
+	public void setCustProduct(UICustProduct custProduct) {
+		this.custProduct = custProduct;
+	}
+
+	
 }

@@ -1,7 +1,11 @@
 package com.brijframework.production.rest.cust;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.brijframework.production.dto.UICustomer;
 
 public class CustProductSaleResponse implements Serializable {
 
@@ -15,16 +19,24 @@ public class CustProductSaleResponse implements Serializable {
 	private String idenNo;
 
 	private Double discounts;
+	
+	private Double retailSaleQnt;
 
 	private Double retailSaleTotals;
+	
+	private Double wholeSaleQnt;
 
-	private Double wholeSaletotals;
+	private Double wholeSaleTotals;
 	
 	private Long custProductionAppId;
+	
+	private Date  saleDate;
+	
+	private UICustomer customer;
 
-	private List<CustProductRetailSaleRequest> custProductRetailSaleList;
+	private List<CustProductRetailSaleResponse> custProductRetailSaleList;
 
-	private List<CustProductWholeSaleRequest> custProductWholeSaleList;
+	private List<CustProductWholeSaleResponse> custProductWholeSaleList;
 
 	public Long getId() {
 		return id;
@@ -42,6 +54,22 @@ public class CustProductSaleResponse implements Serializable {
 		this.idenNo = idenNo;
 	}
 	
+	public Date getSaleDate() {
+		return saleDate;
+	}
+
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
+	}
+
+	public UICustomer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(UICustomer customer) {
+		this.customer = customer;
+	}
+
 	public Long getCustProductionAppId() {
 		return custProductionAppId;
 	}
@@ -59,6 +87,9 @@ public class CustProductSaleResponse implements Serializable {
 	}
 
 	public Double getRetailSaleTotals() {
+		if(retailSaleTotals==null || wholeSaleTotals==0) {
+			return custProductRetailSaleList.stream().collect(Collectors.summarizingDouble(custProductRetailSale->custProductRetailSale.getRetailPrice()*custProductRetailSale.getRetailQnt())).getSum();
+		}
 		return retailSaleTotals;
 	}
 
@@ -67,26 +98,52 @@ public class CustProductSaleResponse implements Serializable {
 	}
 
 	public Double getWholeSaletotals() {
-		return wholeSaletotals;
+		if(wholeSaleTotals==null || wholeSaleTotals==0) {
+			return custProductWholeSaleList.stream().collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholePrice()*custProductWholeSale.getWholeQnt())).getSum();
+		}
+		return wholeSaleTotals;
 	}
 
-	public void setWholeSaletotals(Double wholeSaletotals) {
-		this.wholeSaletotals = wholeSaletotals;
+	public void setWholeSaleTotals(Double wholeSaleTotals) {
+		this.wholeSaleTotals = wholeSaleTotals;
+	}
+	
+
+	public Double getRetailSaleQnt() {
+		if(retailSaleQnt==null ||retailSaleQnt==0) {
+			return custProductRetailSaleList.stream().collect(Collectors.summarizingDouble(custProductRetail->custProductRetail.getRetailQnt())).getSum();
+		}
+		return retailSaleQnt;
 	}
 
-	public List<CustProductRetailSaleRequest> getCustProductRetailSaleList() {
+	public void setRetailSaleQnt(Double retailSaleQnt) {
+		this.retailSaleQnt = retailSaleQnt;
+	}
+
+	public Double getWholeSaleQnt() {
+		if(wholeSaleQnt==null ||wholeSaleQnt==0) {
+			return custProductWholeSaleList.stream().collect(Collectors.summarizingDouble(custProductWholeSale->custProductWholeSale.getWholeQnt())).getSum();
+		}
+		return wholeSaleQnt;
+	}
+
+	public void setWholeSaleQnt(Double wholeSaleQnt) {
+		this.wholeSaleQnt = wholeSaleQnt;
+	}
+
+	public List<CustProductRetailSaleResponse> getCustProductRetailSaleList() {
 		return custProductRetailSaleList;
 	}
 
-	public void setCustProductRetailSaleList(List<CustProductRetailSaleRequest> custProductRetailSaleList) {
+	public void setCustProductRetailSaleList(List<CustProductRetailSaleResponse> custProductRetailSaleList) {
 		this.custProductRetailSaleList = custProductRetailSaleList;
 	}
 
-	public List<CustProductWholeSaleRequest> getCustProductWholeSaleList() {
+	public List<CustProductWholeSaleResponse> getCustProductWholeSaleList() {
 		return custProductWholeSaleList;
 	}
 
-	public void setCustProductWholeSaleList(List<CustProductWholeSaleRequest> custProductWholeSaleList) {
+	public void setCustProductWholeSaleList(List<CustProductWholeSaleResponse> custProductWholeSaleList) {
 		this.custProductWholeSaleList = custProductWholeSaleList;
 	}
 }
