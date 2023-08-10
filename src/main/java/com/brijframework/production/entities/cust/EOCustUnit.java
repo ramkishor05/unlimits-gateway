@@ -85,6 +85,13 @@ public class EOCustUnit extends EOEntityObject{
 	public void setCustUnitGroup(EOCustUnitGroup custUnitGroup) {
 		this.custUnitGroup = custUnitGroup;
 	}
-	
+
+	public EOCustProductionApp getCustProductionApp() {
+		return custProductionApp;
+	}
+
+	public void setCustProductionApp(EOCustProductionApp custProductionApp) {
+		this.custProductionApp = custProductionApp;
+	}
 	
 }
