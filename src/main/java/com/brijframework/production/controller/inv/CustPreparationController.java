@@ -1,4 +1,4 @@
-package com.brijframework.production.controller.cust;
+package com.brijframework.production.controller.inv;
 
 import static com.brijframework.production.contants.Constants.CUST_APP_ID;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.production.dto.cust.UICustPreparation;
-import com.brijframework.production.service.cust.CustPreparationService;
+import com.brijframework.production.service.cust.inv.CustPreparationService;
 
 @RestController
 @RequestMapping("/api/cust/preparation")

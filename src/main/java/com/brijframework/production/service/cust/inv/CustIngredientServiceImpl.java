@@ -1,4 +1,4 @@
-package com.brijframework.production.service.cust.impl;
+package com.brijframework.production.service.cust.inv;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +12,6 @@ import com.brijframework.production.entities.cust.EOCustProductionApp;
 import com.brijframework.production.mapper.cust.CustIngredientMapper;
 import com.brijframework.production.repository.cust.CustIngredientRepository;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
-import com.brijframework.production.service.cust.CustIngredientService;
 
 @Service
 public class CustIngredientServiceImpl implements CustIngredientService {

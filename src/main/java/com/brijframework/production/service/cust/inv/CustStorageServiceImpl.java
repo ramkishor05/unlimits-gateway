@@ -1,4 +1,4 @@
-package com.brijframework.production.service.cust.impl;
+package com.brijframework.production.service.cust.inv;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +12,6 @@ import com.brijframework.production.entities.cust.EOCustStorage;
 import com.brijframework.production.mapper.cust.CustStorageMapper;
 import com.brijframework.production.repository.cust.CustProductionAppRepository;
 import com.brijframework.production.repository.cust.CustStorageRepository;
-import com.brijframework.production.service.cust.CustStorageService;
 
 @Service
 public class CustStorageServiceImpl implements CustStorageService {

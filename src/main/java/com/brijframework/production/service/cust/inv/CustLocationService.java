@@ -1,4 +1,4 @@
-package com.brijframework.production.service.cust;
+package com.brijframework.production.service.cust.inv;
 
 import java.util.List;
 

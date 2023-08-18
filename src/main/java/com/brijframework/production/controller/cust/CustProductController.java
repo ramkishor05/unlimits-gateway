@@ -1,5 +1,8 @@
 package com.brijframework.production.controller.cust;
 
+import static com.brijframework.production.contants.Constants.CUST_APP_ID;
+import static com.brijframework.production.contants.Constants.TYPE_ID;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import static com.brijframework.production.contants.Constants.*;
-import com.brijframework.production.dto.cust.UICustProduct;
+
 import com.brijframework.production.rest.cust.CustProductRequest;
 import com.brijframework.production.rest.cust.CustProductResponse;
 import com.brijframework.production.service.cust.CustProductService;
