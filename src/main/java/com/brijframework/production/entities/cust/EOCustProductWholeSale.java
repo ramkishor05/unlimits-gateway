@@ -18,12 +18,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.brijframework.production.entities.global.EOGlobalItem;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_PRODUCT_WHOLE_SALE)
-public class EOCustProductWholeSale extends EOGlobalItem {
+public class EOCustProductWholeSale extends EOCustItem {
 
 	/**
 	 * 

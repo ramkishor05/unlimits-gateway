@@ -18,11 +18,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Table(name = EOCUST_UNIT_GROUP)
-public class EOCustUnitGroup extends EOEntityObject {
+public class EOCustUnitGroup extends EOCustObject {
 
 	/**
 	 * 

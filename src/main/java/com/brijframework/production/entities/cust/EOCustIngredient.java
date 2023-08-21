@@ -1,6 +1,13 @@
 package com.brijframework.production.entities.cust;
 
-import static com.brijframework.production.contants.Constants.*;
+import static com.brijframework.production.contants.Constants.CUST_BASE_UNIT_ID;
+import static com.brijframework.production.contants.Constants.CUST_CATEGORY_ID;
+import static com.brijframework.production.contants.Constants.CUST_INGREDIENT;
+import static com.brijframework.production.contants.Constants.CUST_PROD_APP_ID;
+import static com.brijframework.production.contants.Constants.CUST_RPT_UNIT_ID;
+import static com.brijframework.production.contants.Constants.EOCUST_INGREDIENT;
+import static com.brijframework.production.contants.Constants.GLB_IMG_ID;
+import static com.brijframework.production.contants.Constants.IDEN_NO;
 
 import java.util.Set;
 
@@ -14,13 +21,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.global.EOGlobalItem;
 import com.brijframework.production.entities.global.EOGlobalMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name=EOCUST_INGREDIENT, uniqueConstraints = { @UniqueConstraint(columnNames = {CUST_PROD_APP_ID, IDEN_NO }) })
-public class EOCustIngredient extends EOGlobalItem {
+public class EOCustIngredient extends EOCustItem {
 
 
 	private static final long serialVersionUID = 1L;

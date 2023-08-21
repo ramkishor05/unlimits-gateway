@@ -1,10 +1,14 @@
 package com.brijframework.production.entities.cust;
 
-import static com.brijframework.production.contants.Constants.*;
+import static com.brijframework.production.contants.Constants.CUSTOMER_ID;
+import static com.brijframework.production.contants.Constants.CUST_PRODUCT_SALE;
 import static com.brijframework.production.contants.Constants.CUST_PROD_APP_ID;
 import static com.brijframework.production.contants.Constants.DISCOUNTS;
 import static com.brijframework.production.contants.Constants.EOCUST_PRODUCT_SALE;
+import static com.brijframework.production.contants.Constants.RETAIL_SALE_QNT;
 import static com.brijframework.production.contants.Constants.RETAIL_SALE_TOTALS;
+import static com.brijframework.production.contants.Constants.SALE_DATE;
+import static com.brijframework.production.contants.Constants.WHOLE_SALE_QNT;
 import static com.brijframework.production.contants.Constants.WHOLE_SALE_TOTALS;
 
 import java.sql.Date;
@@ -20,23 +24,16 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.brijframework.production.entities.EOCustomer;
-import com.brijframework.production.entities.global.EOGlobalItem;
 
 @Entity
 @Table(name = EOCUST_PRODUCT_SALE)
-public class EOCustProductSale extends EOGlobalItem {
+public class EOCustProductSale extends EOCustItem {
 
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private static final String SALE_DATE = "SALE_DATE";
-
-	private static final String RETAIL_SALE_QNT = "RETAIL_SALE_QNT";
-
-	private static final String WHOLE_SALE_QNT = "WHOLE_SALE_QNT";
 
 	@Column(name = DISCOUNTS)
 	private Double discounts;

@@ -13,7 +13,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @MappedSuperclass
-public class EOEntityObject implements Serializable {
+public abstract class EOEntityObject implements Serializable {
 	/**
 	 * 
 	 */

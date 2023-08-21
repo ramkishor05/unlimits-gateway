@@ -13,13 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_PREPARATION_LOCATION, uniqueConstraints = { @UniqueConstraint(columnNames = { 
 		CUST_PROD_APP_ID, CUST_PREP_ID, CUST_LOCATION_ID  }) })
-public class EOCustPreparationLocation extends EOEntityObject{
+public class EOCustPreparationLocation extends EOCustObject{
 
 
 	/**

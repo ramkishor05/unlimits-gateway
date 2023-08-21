@@ -1,8 +1,9 @@
 package com.brijframework.production.entities.cust;
 
+import static com.brijframework.production.contants.Constants.CUST_COUNT_FREQ_ID;
+import static com.brijframework.production.contants.Constants.CUST_PRODUCT_ID;
 import static com.brijframework.production.contants.Constants.CUST_PROD_APP_ID;
 import static com.brijframework.production.contants.Constants.EOCUST_PRODUCT_COUNT_FREQ;
-import static com.brijframework.production.contants.Constants.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -13,13 +14,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name=EOCUST_PRODUCT_COUNT_FREQ, uniqueConstraints = { @UniqueConstraint(columnNames = { 
 		CUST_PROD_APP_ID, CUST_PRODUCT_ID, CUST_COUNT_FREQ_ID }) })
-public class EOCustProductCountFreq extends EOEntityObject{
+public class EOCustProductCountFreq extends EOCustObject{
 
 
 	private static final long serialVersionUID = 1L;

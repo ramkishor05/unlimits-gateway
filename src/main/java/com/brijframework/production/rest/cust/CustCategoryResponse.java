@@ -13,8 +13,11 @@ public class CustCategoryResponse implements Serializable {
 	public String name;
 	public String desc;
 	public String typeId;
+	private Long custAppId;
+	
 	public UICustMediaDetail custMediaDetail;
 	public UICustCategoryGroup custCategoryGroup;
+	
 
 	public long getId() {
 		return id;
@@ -54,6 +57,14 @@ public class CustCategoryResponse implements Serializable {
 
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
+	}
+	
+	public Long getCustAppId() {
+		return custAppId;
+	}
+
+	public void setCustAppId(Long custAppId) {
+		this.custAppId = custAppId;
 	}
 
 	public UICustMediaDetail getCustMediaDetail() {

@@ -30,14 +30,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.global.EOGlobalItem;
 import com.brijframework.production.entities.global.EOGlobalManufacturer;
 import com.brijframework.production.entities.global.EOGlobalMediaDetail;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_PRODUCT, uniqueConstraints = { @UniqueConstraint(columnNames = { CUST_PROD_APP_ID, IDEN_NO }) })
-public class EOCustProduct extends EOGlobalItem {
+public class EOCustProduct extends EOCustItem {
 
 	/**
 	 * 

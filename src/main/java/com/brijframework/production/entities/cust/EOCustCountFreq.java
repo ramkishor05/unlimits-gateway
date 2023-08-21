@@ -12,11 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Table(name = EOCUST_COUNT_FREQ, uniqueConstraints = {@UniqueConstraint (columnNames = {CUST_PROD_APP_ID, NAME})})
-public class EOCustCountFreq extends EOEntityObject{
+public class EOCustCountFreq extends EOCustObject{
 	
 
 	private static final long serialVersionUID = 1L;

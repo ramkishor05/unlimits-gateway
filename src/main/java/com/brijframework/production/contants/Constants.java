@@ -153,6 +153,13 @@ public class Constants {
 
 	public static final String DISCOUNTS = "DISCOUNTS";
 	
+
+	public static final String SALE_DATE = "SALE_DATE";
+
+	public static final String RETAIL_SALE_QNT = "RETAIL_SALE_QNT";
+
+	public static final String WHOLE_SALE_QNT = "WHOLE_SALE_QNT";
+	
 	public static final String CUST_PURCHASE_UNIT_ID_ENTITY = "purchaseUnit.id";
 	public static final String CUST_PURCHASE_UNIT_ID_UI = "purchaseUnitId";
 	
@@ -166,6 +173,6 @@ public class Constants {
 
 	public static final boolean TRUE = true;
 	public static final boolean FALSE = false;
-	
+	public static final String ACTIVE = "ACTIVE";
 
 }

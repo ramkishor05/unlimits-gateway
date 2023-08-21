@@ -19,12 +19,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_INGREDIENT_LOCATION, uniqueConstraints = { @UniqueConstraint(columnNames = { CUST_PROD_APP_ID, NAME }) })
-public class EOCustLocation extends EOEntityObject {
+public class EOCustLocation extends EOCustObject {
 
 	private static final long serialVersionUID = 1L;
 	@Column(name = NAME)

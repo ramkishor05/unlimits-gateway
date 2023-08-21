@@ -1,4 +1,4 @@
-package com.brijframework.production.entities.global;
+package com.brijframework.production.entities.cust;
 
 import static com.brijframework.production.contants.Constants.DESC;
 import static com.brijframework.production.contants.Constants.IDEN_NO;
@@ -10,10 +10,10 @@ import javax.persistence.Column;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
-import com.brijframework.production.entities.EOEntityObject;
+import com.brijframework.production.entities.cust.EOCustObject;
 
 @MappedSuperclass
-public abstract class EOGlobalItem extends EOEntityObject{
+public abstract class EOCustItem extends EOCustObject{
 
 	/**
 	 * 

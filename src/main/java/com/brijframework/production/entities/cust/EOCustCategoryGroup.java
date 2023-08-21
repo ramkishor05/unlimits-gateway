@@ -19,12 +19,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_CATEGORY_GROUP, uniqueConstraints = { @UniqueConstraint(columnNames = { CUST_PROD_APP_ID, NAME }) })
-public class EOCustCategoryGroup extends EOEntityObject{
+public class EOCustCategoryGroup extends EOCustObject{
 
 
 	
@@ -73,6 +71,8 @@ public class EOCustCategoryGroup extends EOEntityObject{
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
 	}
+	
+	
 
 	public EOCustProductionApp getCustProductionApp() {
 		return custProductionApp;

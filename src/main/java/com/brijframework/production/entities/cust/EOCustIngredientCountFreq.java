@@ -14,13 +14,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_INGREDIENT_COUNT_FREQ, uniqueConstraints = { @UniqueConstraint(columnNames = { 
 		CUST_PROD_APP_ID, CUST_INGR_ID, CUST_COUNT_FREQ_ID }) })
-public class EOCustIngredientCountFreq extends EOEntityObject {
+public class EOCustIngredientCountFreq extends EOCustObject {
 
 	private static final long serialVersionUID = 1L;
 

@@ -13,10 +13,12 @@ import com.brijframework.production.rest.cust.CustCategoryRequest;
 public interface CustCategoryRequestMapper  extends GenericMapper<EOCustCategory, CustCategoryRequest>{
 
 	@Override
-	@Mapping(target = "custCategoryGroup.id", source = "glbCategoryGroupId")
+	@Mapping(target = "custImageDetail.id", source = "custImageDetailId")
+	@Mapping(target = "custCategoryGroup.id", source = "custCategoryGroupId")
 	EOCustCategory mapToDAO(CustCategoryRequest custCategoryRequest);
 	
 	@Override
-	@Mapping(source = "custCategoryGroup.id", target = "glbCategoryGroupId")
+	@Mapping(source = "custImageDetail.id", target = "custImageDetailId")
+	@Mapping(source = "custCategoryGroup.id", target = "custCategoryGroupId")
 	CustCategoryRequest mapToDTO(EOCustCategory eoCustCategory);
 }

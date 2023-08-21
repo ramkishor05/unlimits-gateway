@@ -14,12 +14,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.brijframework.production.entities.EOEntityObject;
-
 
 @Entity
 @Table(name = EOCUST_UNIT)
-public class EOCustUnit extends EOEntityObject{
+public class EOCustUnit extends EOCustObject{
 
 	/**
 	 * 

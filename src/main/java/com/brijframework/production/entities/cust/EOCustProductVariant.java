@@ -18,14 +18,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.brijframework.production.entities.global.EOGlobalItem;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = EOCUST_PRODUCT_VARIANT, uniqueConstraints = {
 		@UniqueConstraint (columnNames = { 
 				CUST_PROD_APP_ID,CUST_PRODUCT_ID, IDEN_NO })})
-public class EOCustProductVariant extends EOGlobalItem{
+public class EOCustProductVariant extends EOCustItem{
 
 	/**
 	 * 
