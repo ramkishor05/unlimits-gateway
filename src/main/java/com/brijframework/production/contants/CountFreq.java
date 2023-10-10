@@ -1,6 +1,6 @@
 package com.brijframework.production.contants;
 
-import com.brijframework.production.dto.global.UIGlobalCountFreq;
+import com.brijframework.production.global.dto.UIGlobalCountFreq;
 
 public enum CountFreq {
 

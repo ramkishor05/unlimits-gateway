@@ -3,7 +3,7 @@ package com.brijframework.production.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.brijframework.production.dto.global.UIGlobalCategoryGroup;
+import com.brijframework.production.global.dto.UIGlobalCategoryGroup;
 
 public class UICategorySummary {
 

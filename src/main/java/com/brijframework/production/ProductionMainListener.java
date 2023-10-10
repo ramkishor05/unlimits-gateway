@@ -8,33 +8,33 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import com.brijframework.production.entities.cust.EOCustCategory;
-import com.brijframework.production.entities.cust.EOCustCategoryGroup;
-import com.brijframework.production.entities.cust.EOCustCountFreq;
-import com.brijframework.production.entities.cust.EOCustProductionApp;
-import com.brijframework.production.entities.cust.EOCustUnit;
-import com.brijframework.production.entities.cust.EOCustUnitGroup;
-import com.brijframework.production.entities.global.EOGlobalCategory;
-import com.brijframework.production.entities.global.EOGlobalCategoryGroup;
-import com.brijframework.production.entities.global.EOGlobalCountFreq;
-import com.brijframework.production.entities.global.EOGlobalUnit;
-import com.brijframework.production.entities.global.EOGlobalUnitGroup;
+import com.brijframework.production.cust.entities.EOCustCategory;
+import com.brijframework.production.cust.entities.EOCustCategoryGroup;
+import com.brijframework.production.cust.entities.EOCustCountFreq;
+import com.brijframework.production.cust.entities.EOCustProductionApp;
+import com.brijframework.production.cust.entities.EOCustUnit;
+import com.brijframework.production.cust.entities.EOCustUnitGroup;
+import com.brijframework.production.cust.repository.CustCategoryGroupRepository;
+import com.brijframework.production.cust.repository.CustCategoryRepository;
+import com.brijframework.production.cust.repository.CustCountFreqRepository;
+import com.brijframework.production.cust.repository.CustProductionAppRepository;
+import com.brijframework.production.cust.repository.CustUnitGroupRepository;
+import com.brijframework.production.cust.repository.CustUnitRepository;
+import com.brijframework.production.global.entities.EOGlobalCategory;
+import com.brijframework.production.global.entities.EOGlobalCategoryGroup;
+import com.brijframework.production.global.entities.EOGlobalCountFreq;
+import com.brijframework.production.global.entities.EOGlobalUnit;
+import com.brijframework.production.global.entities.EOGlobalUnitGroup;
+import com.brijframework.production.global.repository.GlobalCategoryGroupRepository;
+import com.brijframework.production.global.repository.GlobalCategoryRepository;
+import com.brijframework.production.global.repository.GlobalCountFreqRepository;
+import com.brijframework.production.global.repository.GlobalUnitGroupRepository;
+import com.brijframework.production.global.repository.GlobalUnitRepository;
 import com.brijframework.production.mapper.e2e.CustCategoryGlobalCategoryMapper;
 import com.brijframework.production.mapper.e2e.CustCategoryGroupGlobalCategoryGroupMapper;
 import com.brijframework.production.mapper.e2e.CustCountFreqGlobalCountFreqMapper;
 import com.brijframework.production.mapper.e2e.CustUnitGlobalUnitMapper;
 import com.brijframework.production.mapper.e2e.CustUnitGroupGlobalUnitGroupMapper;
-import com.brijframework.production.repository.cust.CustCategoryGroupRepository;
-import com.brijframework.production.repository.cust.CustCategoryRepository;
-import com.brijframework.production.repository.cust.CustCountFreqRepository;
-import com.brijframework.production.repository.cust.CustProductionAppRepository;
-import com.brijframework.production.repository.cust.CustUnitGroupRepository;
-import com.brijframework.production.repository.cust.CustUnitRepository;
-import com.brijframework.production.repository.global.GlobalCategoryGroupRepository;
-import com.brijframework.production.repository.global.GlobalCategoryRepository;
-import com.brijframework.production.repository.global.GlobalCountFreqRepository;
-import com.brijframework.production.repository.global.GlobalUnitGroupRepository;
-import com.brijframework.production.repository.global.GlobalUnitRepository;
 
 @Component
 public class ProductionMainListener implements ApplicationListener<ContextRefreshedEvent> {
@@ -160,6 +160,8 @@ public class ProductionMainListener implements ApplicationListener<ContextRefres
 	    		Optional<EOCustCategory> findCustCategory = custCategoryRepository.findByCustAppAndName(eoCustProductionApp.getId(), eoGlobalCategory.getName());
 	    		if(!findCustCategory.isPresent()) {
 	    			EOCustCategory eoCustCategory = custCategoryGlobalCategoryMapper.mapToDAO(eoGlobalCategory);
+		    		EOCustCategoryGroup custCategoryGroup = custCategoryGroupRepository.findByCustAppAndName(eoCustProductionApp.getId(), eoGlobalCategory.getGlobalCategoryGroup().getName()).orElse(null);
+		    		eoCustCategory.setCustCategoryGroup(custCategoryGroup);
 	    			eoCustCategory.setCustProductionApp(eoCustProductionApp);
 	    			custCategoryRepository.saveAndFlush(eoCustCategory);
 	    		}

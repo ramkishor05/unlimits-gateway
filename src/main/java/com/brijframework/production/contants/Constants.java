@@ -30,8 +30,8 @@ public class Constants {
 	public static final String CUST_STORAGE_ID_ENTITY = "custStorage.id";
 	public static final String CUST_STORAGE_ID_UI = "custStorageId";
 
-	public static final String COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.global.impl";
-	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.cust.impl";
+	public static final String COM_BRIJFRAMEWORK_GLB_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.global.mapper.impl";
+	public static final String COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.cust.mapper.impl";
 	public static final String COM_BRIJFRAMEWORK_PRODUCTION_MAPPER_IMPL = "com.brijframework.production.mapper.impl";
 
 	// for entity

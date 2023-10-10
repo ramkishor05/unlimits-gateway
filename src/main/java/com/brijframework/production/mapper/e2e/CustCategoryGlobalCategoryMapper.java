@@ -4,8 +4,8 @@ import static com.brijframework.production.contants.Constants.SPRING;
 
 import org.mapstruct.Mapper;
 
-import com.brijframework.production.entities.cust.EOCustCategory;
-import com.brijframework.production.entities.global.EOGlobalCategory;
+import com.brijframework.production.cust.entities.EOCustCategory;
+import com.brijframework.production.global.entities.EOGlobalCategory;
 import com.brijframework.production.mapper.GenericMapper;
 
 @Mapper(componentModel = SPRING, implementationPackage = COM_BRIJFRAMEWORK_CUST_PRODUCTION_MAPPER_IMPL)

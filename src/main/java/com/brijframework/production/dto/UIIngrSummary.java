@@ -3,10 +3,10 @@ package com.brijframework.production.dto;
 import java.io.Serializable;
 import java.util.List;
 
-import com.brijframework.production.dto.cust.UICustIngredient;
-import com.brijframework.production.dto.cust.UICustStorage;
-import com.brijframework.production.dto.global.UIGlobalCountFreq;
-import com.brijframework.production.dto.global.UIGlobalUnitGroup;
+import com.brijframework.production.cust.dto.UICustIngredient;
+import com.brijframework.production.cust.dto.UICustStorage;
+import com.brijframework.production.global.dto.UIGlobalCountFreq;
+import com.brijframework.production.global.dto.UIGlobalUnitGroup;
 
 public class UIIngrSummary implements Serializable{
 

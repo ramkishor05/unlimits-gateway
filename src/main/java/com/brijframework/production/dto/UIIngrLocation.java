@@ -1,6 +1,6 @@
 package com.brijframework.production.dto;
 
-import com.brijframework.production.dto.cust.UICustLocation;
+import com.brijframework.production.cust.dto.UICustLocation;
 
 public class UIIngrLocation extends UICustLocation {
 
