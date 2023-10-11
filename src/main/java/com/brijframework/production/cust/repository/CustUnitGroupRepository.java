@@ -1,5 +1,6 @@
 package com.brijframework.production.cust.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +16,8 @@ public interface CustUnitGroupRepository extends JpaRepository<EOCustUnitGroup, 
 
 	@Query(nativeQuery = true, value = "select * from EOCUST_UNIT_GROUP where CUST_PROD_APP_ID= ?1 and NAME=?2")
 	Optional<EOCustUnitGroup> findByCustAppAndName(Long id, String name);
+
+	@Query(nativeQuery = true, value = "select * from EOCUST_UNIT_GROUP where CUST_PROD_APP_ID= ?1")
+	List<EOCustUnitGroup>  findByCustAppId(long custAppId);
 
 }
