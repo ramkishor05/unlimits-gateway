@@ -43,7 +43,7 @@ public class EOGlobalUnitGroup extends EOEntityObject {
 	public String longDesc;
 	
 	@Column(name=DISPLAY_NAME)
-	public String dispayName;
+	public String displayName;
 
 	@OneToMany(mappedBy = UNIT_GROUP)
 	public Set<EOGlobalUnit> globalUnits;
@@ -80,12 +80,12 @@ public class EOGlobalUnitGroup extends EOEntityObject {
 		this.longDesc = longDesc;
 	}
 
-	public String getDispayName() {
-		return dispayName;
+	public String getDisplayName() {
+		return displayName;
 	}
 
-	public void setDispayName(String dispayName) {
-		this.dispayName = dispayName;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	public Set<EOGlobalUnit> getGlobalUnits() {

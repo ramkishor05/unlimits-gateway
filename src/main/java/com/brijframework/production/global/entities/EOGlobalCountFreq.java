@@ -28,7 +28,7 @@ public class EOGlobalCountFreq extends EOEntityObject {
 	public String name;
 	
 	@Column(name=DESC)
-	public String desc;
+	public String description;
 
 	public String getTypeId() {
 		return typeId;
@@ -46,12 +46,13 @@ public class EOGlobalCountFreq extends EOEntityObject {
 		this.name = name;
 	}
 
-	public String getDesc() {
-		return desc;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
 	
 }

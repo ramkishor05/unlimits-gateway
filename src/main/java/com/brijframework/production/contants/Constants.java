@@ -36,6 +36,8 @@ public class Constants {
 
 	// for entity
 	public static final String EOGLOBAL_UNIT = "EOGLOBAL_UNIT";
+	public static final String EOGLOBAL_UNIT_CONVERSION = "EOGLOBAL_UNIT_CONVERSION";
+	
 
 	public static final String EOCUST_CATEGORY_GROUP = "EOCUST_CATEGORY_Group";
 	public static final String EOCUST_CATEGORY = "EOCUST_CATEGORY";

@@ -18,4 +18,6 @@ public interface GlobalUnitRepository extends JpaRepository<EOGlobalUnit, Long>{
 
 	EOGlobalUnit findOneByUnitGroupIdAndTypeId(long unitgroupId, String typeId);
 
+	int countByTypeId(String typeId);
+
 }

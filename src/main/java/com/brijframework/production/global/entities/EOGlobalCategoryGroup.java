@@ -35,7 +35,7 @@ public class EOGlobalCategoryGroup extends EOEntityObject {
 	@Column(name = TYPE_ID)
 	private String typeId;
 	
-	@OneToOne
+	@OneToOne(optional =  TRUE)
 	@JoinColumn(name = GLB_IMG_ID)
 	public EOGlobalMediaDetail globalMediaDetail;
 

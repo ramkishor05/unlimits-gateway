@@ -1,86 +1,86 @@
 [
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Tsp",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "TSP",
+			"typeId": "TSP",
 			"shortDesc": "Tsp",
 			"longDesc": "Tsp",
-			"friendlyName": "Volume ( Tsp }",
-			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+			"displayName": "Volume ( Tsp }",
+			"unitGroup": "LK@GlobalUnitGroup_Fluid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Tbsp",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "TBSP",
+			"typeId": "TBSP",
 			"shortDesc": "Tbsp",
 			"longDesc": "Tbsp",
-			"friendlyName": "Volume ( Tbsp }",
-			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+			"displayName": "Volume ( Tbsp }",
+			"unitGroup": "LK@GlobalUnitGroup_Fluid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Pt",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "PINT",
+			"typeId": "PINT",
 			"shortDesc": "Pt",
 			"longDesc": "Pint",
-			"friendlyName": "Volume ( Pint }",
-			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+			"displayName": "Volume ( Pint }",
+			"unitGroup": "LK@GlobalUnitGroup_Fluid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Qrt",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "QUART",
+			"typeId": "QUART",
 			"shortDesc": "Qrt",
 			"longDesc": "Quart",
-			"friendlyName": "Volume ( Quart }",
-			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+			"displayName": "Volume ( Quart }",
+			"unitGroup": "LK@GlobalUnitGroup_Fluid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Gl",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "GALLON",
+			"typeId": "GALLON",
 			"shortDesc": "Gl",
 			"longDesc": "Gallon",
-			"friendlyName": "Volume ( Gallon }",
-			"eoUnitGroup": "eoLKUnitGroup_Fluid"
+			"displayName": "Volume ( Gallon }",
+			"unitGroup": "LK@GlobalUnitGroup_Fluid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Kg",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "KILOGRAM",
+			"typeId": "KILOGRAM",
 			"shortDesc": "K G",
 			"longDesc": "Kilo Gram",
-			"friendlyName": " Weight ( Gallon }",
-			"eoUnitGroup": "eoLKUnitGroup_SOLID"
+			"displayName": " Weight ( Gallon }",
+			"unitGroup": "LK@GlobalUnitGroup_Solid"
 		}
 	},
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnit_Gr",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnit",
+		"name": "GlobalUnit",
 		"properties": {
-			"typeID": "GRAM",
+			"typeId": "GRAM",
 			"shortDesc": "Gr",
 			"longDesc": "Gram",
-			"friendlyName": " Weight ( Gram }",
-			"eoUnitGroup": "eoLKUnitGroup_SOLID"
+			"displayName": " Weight ( Gram }",
+			"unitGroup": "LK@GlobalUnitGroup_Solid"
 		}
 	}
 ]

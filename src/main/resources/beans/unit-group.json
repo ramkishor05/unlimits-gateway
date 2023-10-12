@@ -1,26 +1,26 @@
 [
 
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnitGroup_Fluid",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnitGroup",
+		"name": "GlobalUnitGroup",
 		"properties": {
-			"typeID": "FLUID",
+			"typeId": "FLUID",
 			"shortDesc":"Fluid",
 			"longDesc":"Fluid",
-			"friendlyName":"Volume ( Fluid }"
+			"displayName":"Volume ( Fluid }"
 		}
 	}
 	,
 	{
-		"id": "INVERTORY_APP_OWNER",
-		"type": "com.brijframework.application.model.EOAppRole",
-		"name": "appRole",
+		"id": "GlobalUnitGroup_Solid",
+		"type": "com.brijframework.production.global.entities.EOGlobalUnitGroup",
+		"name": "GlobalUnitGroup",
 		"properties": {
-			"typeID": "SOLID",
+			"typeId": "SOLID",
 			"shortDesc":"Solid",
 			"longDesc":"Solid",
-			"friendlyName":"Weight ( Solid }"
+			"displayName":"Weight ( Solid }"
 		}
 	}
 ]

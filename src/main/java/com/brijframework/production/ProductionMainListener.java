@@ -24,10 +24,12 @@ import com.brijframework.production.global.entities.EOGlobalCategory;
 import com.brijframework.production.global.entities.EOGlobalCategoryGroup;
 import com.brijframework.production.global.entities.EOGlobalCountFreq;
 import com.brijframework.production.global.entities.EOGlobalUnit;
+import com.brijframework.production.global.entities.EOGlobalUnitConversion;
 import com.brijframework.production.global.entities.EOGlobalUnitGroup;
 import com.brijframework.production.global.repository.GlobalCategoryGroupRepository;
 import com.brijframework.production.global.repository.GlobalCategoryRepository;
 import com.brijframework.production.global.repository.GlobalCountFreqRepository;
+import com.brijframework.production.global.repository.GlobalUnitConversionRepository;
 import com.brijframework.production.global.repository.GlobalUnitGroupRepository;
 import com.brijframework.production.global.repository.GlobalUnitRepository;
 import com.brijframework.production.mapper.e2e.CustCategoryGlobalCategoryMapper;
@@ -35,12 +37,16 @@ import com.brijframework.production.mapper.e2e.CustCategoryGroupGlobalCategoryGr
 import com.brijframework.production.mapper.e2e.CustCountFreqGlobalCountFreqMapper;
 import com.brijframework.production.mapper.e2e.CustUnitGlobalUnitMapper;
 import com.brijframework.production.mapper.e2e.CustUnitGroupGlobalUnitGroupMapper;
+import com.brijframework.production.schema.factories.JsonSchemaDataFactory;
 
 @Component
 public class ProductionMainListener implements ApplicationListener<ContextRefreshedEvent> {
 	
 	@Autowired
 	private GlobalCountFreqRepository globalCountFreqRepository;
+	
+	@Autowired
+	private GlobalUnitConversionRepository globalUnitConversionRepository;
 	
 	@Autowired
 	private CustCountFreqRepository custCountFreqRepository;
@@ -90,6 +96,55 @@ public class ProductionMainListener implements ApplicationListener<ContextRefres
 	
     @Override
     public void onApplicationEvent(final ContextRefreshedEvent event) {
+    	
+    	JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
+    	
+    	List<EOGlobalCategoryGroup> eoGlobalCategoryGroupJson = instance.getAll(EOGlobalCategoryGroup.class);
+    	
+    	eoGlobalCategoryGroupJson.forEach(eoGlobalCategoryGroup->{
+    		if(glbCategoryGroupRepository.countByTypeId(eoGlobalCategoryGroup.getTypeId())==0) {
+	    		EOGlobalCategoryGroup eoGlobalCategoryGroupSave= glbCategoryGroupRepository.save(eoGlobalCategoryGroup);
+	    		eoGlobalCategoryGroup.setId(eoGlobalCategoryGroupSave.getId());
+    		}
+    	});
+    	
+    	List<EOGlobalUnitGroup> eoGlobalUnitGroupsJson = instance.getAll(EOGlobalUnitGroup.class);
+    	
+    	eoGlobalUnitGroupsJson.forEach(eoGlobalUnitGroup->{
+    		if(glbUnitGroupRepository.countByTypeId(eoGlobalUnitGroup.getTypeId())==0) {
+	    		EOGlobalUnitGroup eoGlobalUnitGroupSave= glbUnitGroupRepository.save(eoGlobalUnitGroup);
+	    		eoGlobalUnitGroup.setId(eoGlobalUnitGroupSave.getId());
+    		}
+    	});
+    	
+
+    	List<EOGlobalUnit> eoGlobalUnitsJson = instance.getAll(EOGlobalUnit.class);
+
+    	eoGlobalUnitsJson.forEach(eoGlobalUnit->{
+    		if(glbUnitRepository.countByTypeId(eoGlobalUnit.getTypeId())==0) {
+	    		EOGlobalUnit eoGlobalUnitSave= glbUnitRepository.save(eoGlobalUnit);
+	    		eoGlobalUnit.setId(eoGlobalUnitSave.getId());
+    		}
+    	});
+    	
+    	List<EOGlobalCountFreq> eoGlobalCountFreqsJson = instance.getAll(EOGlobalCountFreq.class);
+
+    	eoGlobalCountFreqsJson.forEach(eoGlobalCountFreq->{
+    		if(globalCountFreqRepository.countByTypeId(eoGlobalCountFreq.getTypeId())==0) {
+	    		EOGlobalCountFreq eoGlobalCountFreqSave = globalCountFreqRepository.save(eoGlobalCountFreq);
+	    		eoGlobalCountFreq.setId(eoGlobalCountFreqSave.getId());
+    		}
+    	});
+    	
+    	List<EOGlobalUnitConversion> eoGlobalUnitConversions = instance.getAll(EOGlobalUnitConversion.class);
+
+    	eoGlobalUnitConversions.forEach(eoGlobalUnitConversion->{
+    		if(globalUnitConversionRepository.countByTypeId(eoGlobalUnitConversion.getTypeId())==0) {
+	    		EOGlobalUnitConversion eoGlobalUnitConversionSave =globalUnitConversionRepository.save(eoGlobalUnitConversion);
+	    		eoGlobalUnitConversion.setId(eoGlobalUnitConversionSave.getId());
+    		}
+    	});
+    	
     	
     	Optional<EOCustProductionApp> findCustProductionApp = custProductionAppRepository.findById(1L);
     	if(!findCustProductionApp.isPresent()) {

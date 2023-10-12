@@ -9,13 +9,13 @@ error:
     enabled: true
 spring:
    application:
-     name: project-brijframework-production
+     name: point_of_sale_item
    main:
      allow-bean-definition-overriding: true
    sql.init.mode: always
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://localhost:3306/brijframework-production
+     url: jdbc:mysql://localhost:3306/point_of_sale_item
      username: root
      password: root
      show-sql: true
