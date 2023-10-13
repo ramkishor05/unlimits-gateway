@@ -56,4 +56,10 @@ public class GlobalUnitGroupServiceImpl implements GlobalUnitGroupService {
 		return globalUnitGroupMapper.mapToDTO(globalUnitGroupRepository.findAllByTypeId(typeId));
 	}
 
+	@Override
+	public boolean deleteUnitGroup(Long id) {
+		globalUnitGroupRepository.deleteById(id);
+		return true;
+	}
+
 }

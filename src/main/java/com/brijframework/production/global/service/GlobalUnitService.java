@@ -15,4 +15,6 @@ public interface GlobalUnitService {
 
 	UIGlobalUnit updateUnit(Long id, UIGlobalUnit uiUnit);
 
+	boolean deleteUnit(Long id);
+
 }

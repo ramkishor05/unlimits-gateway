@@ -23,8 +23,8 @@ import com.brijframework.production.cust.rest.CustProductSaleResponse;
 import com.brijframework.production.cust.service.CustProductSaleService;
 
 @RestController
-@RequestMapping("/api/cust/product/sale")
-public class CustProductSaleController {
+@RequestMapping("/api/cust/sales")
+public class CustSaleController {
 
 	@Autowired
 	private CustProductSaleService custProductSaleService;
@@ -33,7 +33,6 @@ public class CustProductSaleController {
 	public CustProductSaleResponse addProductSale(@RequestHeader(CUST_APP_ID) long custAppId,@RequestBody CustProductSaleRequest custProductSaleRequest) {
 		return custProductSaleService.saveProductSale(custAppId,custProductSaleRequest);
 	}
-	
 	@PutMapping
 	public CustProductSaleResponse updateProductSale(@RequestHeader(CUST_APP_ID) long custAppId,@RequestBody CustProductSaleRequest custProductSaleRequest) {
 		return custProductSaleService.updateProductSale(custAppId,custProductSaleRequest);

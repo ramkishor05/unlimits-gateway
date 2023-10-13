@@ -80,4 +80,10 @@ public class GlobalUnitServiceImpl implements GlobalUnitService {
 		return inventoryUnitMapper.mapToDTO(inventoryUnitRepository.findAll());
 	}
 
+	@Override
+	public boolean deleteUnit(Long id) {
+		inventoryUnitRepository.deleteById(id);
+		return true;
+	}
+
 }

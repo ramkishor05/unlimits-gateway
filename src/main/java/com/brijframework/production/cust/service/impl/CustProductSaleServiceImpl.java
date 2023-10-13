@@ -86,25 +86,33 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 		
 		for(CustProductRetailSaleRequest custProductRetailSaleUi : custProductRetailSaleList){
 			EOCustProductRetailSale eoCustProductRetailSale = custProductSaleRequestMapper.mapToDAO(custProductRetailSaleUi);
-			EOCustUnit purchaseUnit = custUnitRepository.getOne(custProductRetailSaleUi.getPurchaseUnitId());
-			eoCustProductRetailSale.setPurchaseUnit(purchaseUnit);
-			EOCustUnit retialUnit = custUnitRepository.getOne(custProductRetailSaleUi.getRetailUnitId());
-			eoCustProductRetailSale.setRetailUnit(retialUnit);
-			eoCustProductRetailSale.setCustProductSale(eoCustProductSale);
 			EOCustProduct eoCustProduct = custProductRepository.findById(custProductRetailSaleUi.getCustProductId()).orElse(null);
+
 			eoCustProductRetailSale.setCustProduct(eoCustProduct);
+
+			EOCustUnit purchaseUnit = custUnitRepository.findById(custProductRetailSaleUi.getPurchaseUnitId()).orElse(null);
+			eoCustProductRetailSale.setPurchaseUnit(purchaseUnit);
+			
+			EOCustUnit retialUnit = custUnitRepository.findById(custProductRetailSaleUi.getRetailUnitId()).orElse(null);
+			eoCustProductRetailSale.setRetailUnit(retialUnit);
+			
+			eoCustProductRetailSale.setCustProductSale(eoCustProductSale);
 			
 			custProductRetailSaleRepository.saveAndFlush(eoCustProductRetailSale);
 		}
 		
 		for (CustProductWholeSaleRequest custProductWholeSaleRequest : custProductWholeSaleList) {
 			EOCustProductWholeSale custProductWholeSale = custProductSaleRequestMapper.mapToDAO(custProductWholeSaleRequest);
-			EOCustUnit purchaseUnit = custUnitRepository.getOne(custProductWholeSaleRequest.getPurchaseUnitId());
-			custProductWholeSale.setPurchaseUnit(purchaseUnit);
-			EOCustUnit wholeUnit = custUnitRepository.getOne(custProductWholeSaleRequest.getWholeUnitId());
-			custProductWholeSale.setWholeUnit(wholeUnit);
 			custProductWholeSale.setCustProductSale(eoCustProductSale);
+			
 			EOCustProduct eoCustProduct = custProductRepository.findById(custProductWholeSaleRequest.getCustProductId()).orElse(null);
+
+			EOCustUnit purchaseUnit = custUnitRepository.findById(custProductWholeSaleRequest.getPurchaseUnitId()).orElse(null);
+			custProductWholeSale.setPurchaseUnit(purchaseUnit);
+			
+			EOCustUnit wholeUnit = custUnitRepository.findById(custProductWholeSaleRequest.getWholeUnitId()).orElse(null);
+			custProductWholeSale.setWholeUnit(wholeUnit);
+			
 			custProductWholeSale.setCustProduct(eoCustProduct);
 			
 			custProductWholeSaleRepository.saveAndFlush(custProductWholeSale);

@@ -14,4 +14,6 @@ public interface GlobalUnitGroupService {
 
 	UIGlobalUnitGroup getUnitGroup(String typeId);
 
+	boolean deleteUnitGroup(Long id);
+
 }
