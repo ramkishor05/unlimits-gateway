@@ -10,8 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
-import com.brijframework.production.cust.entities.EOCustObject;
-
 @MappedSuperclass
 public abstract class EOCustItem extends EOCustObject{
 

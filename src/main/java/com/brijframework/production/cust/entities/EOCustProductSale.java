@@ -23,7 +23,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.brijframework.production.entities.EOCustomer;
 
 @Entity
 @Table(name = EOCUST_PRODUCT_SALE)
@@ -54,9 +53,8 @@ public class EOCustProductSale extends EOCustItem {
 	@CreationTimestamp
 	private Date  saleDate;
 	
-	@JoinColumn(name = CUSTOMER_ID, nullable = false)
-	@ManyToOne
-	private EOCustomer customer;
+	@Column(name = CUSTOMER_ID, nullable = false)
+	private Long customerId;
 	
 	@JoinColumn(name = CUST_PROD_APP_ID, nullable = false)
 	@ManyToOne
@@ -84,12 +82,12 @@ public class EOCustProductSale extends EOCustItem {
 		this.custProductionApp = custProductionApp;
 	}
 
-	public EOCustomer getCustomer() {
-		return customer;
+	public Long getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomer(EOCustomer customer) {
-		this.customer = customer;
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 
 	public Double getDiscounts() {

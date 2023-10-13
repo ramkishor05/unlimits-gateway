@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.brijframework.production.dto.UICustomer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -35,7 +34,7 @@ public class CustProductSaleResponse implements Serializable {
 	
 	private Date  saleDate;
 	
-	private UICustomer customer;
+	private long customerId;
 
 	private List<CustProductRetailSaleResponse> custProductRetailSaleList;
 
@@ -65,12 +64,12 @@ public class CustProductSaleResponse implements Serializable {
 		this.saleDate = saleDate;
 	}
 
-	public UICustomer getCustomer() {
-		return customer;
+	public Long getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomer(UICustomer customer) {
-		this.customer = customer;
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 
 	public Long getCustProductionAppId() {

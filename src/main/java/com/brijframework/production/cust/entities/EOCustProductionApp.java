@@ -37,22 +37,10 @@ public class EOCustProductionApp extends EOCustObject {
 	public Set<EOCustCategoryGroup> custCategoryGroups;
 
 	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
-	public Set<EOCustStorage> custStorages;
-
-	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
 	public Set<EOCustCategory> custCategories;
 
 	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
-	public Set<EOCustLocation> custLocations;
-
-	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
 	public Set<EOCustProduct> custProducts;
-
-	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
-	public Set<EOCustIngredient> custIngredients;
-
-	@OneToMany(mappedBy = CUST_PRODUCTION_APP)
-	public Set<EOCustPreparation> custPreparations;
 
 	public long getAppid() {
 		return appid;
@@ -94,28 +82,12 @@ public class EOCustProductionApp extends EOCustObject {
 		this.custCategoryGroups = custCategoryGroups;
 	}
 
-	public Set<EOCustStorage> getCustStorages() {
-		return custStorages;
-	}
-
-	public void setCustStorages(Set<EOCustStorage> custStorages) {
-		this.custStorages = custStorages;
-	}
-
 	public Set<EOCustCategory> getCustCategories() {
 		return custCategories;
 	}
 
 	public void setCustCategories(Set<EOCustCategory> custCategories) {
 		this.custCategories = custCategories;
-	}
-
-	public Set<EOCustLocation> getCustLocations() {
-		return custLocations;
-	}
-
-	public void setCustLocations(Set<EOCustLocation> custLocations) {
-		this.custLocations = custLocations;
 	}
 
 	public Set<EOCustProduct> getCustProducts() {
@@ -126,20 +98,4 @@ public class EOCustProductionApp extends EOCustObject {
 		this.custProducts = custProducts;
 	}
 
-	public Set<EOCustIngredient> getCustIngredients() {
-		return custIngredients;
-	}
-
-	public void setCustIngredients(Set<EOCustIngredient> custIngredients) {
-		this.custIngredients = custIngredients;
-	}
-
-	public Set<EOCustPreparation> getCustPreparations() {
-		return custPreparations;
-	}
-
-	public void setCustPreparations(Set<EOCustPreparation> custPreparations) {
-		this.custPreparations = custPreparations;
-	}
-	
 }

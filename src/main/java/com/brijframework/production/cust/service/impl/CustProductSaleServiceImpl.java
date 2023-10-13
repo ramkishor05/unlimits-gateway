@@ -26,8 +26,6 @@ import com.brijframework.production.cust.rest.CustProductSaleRequest;
 import com.brijframework.production.cust.rest.CustProductSaleResponse;
 import com.brijframework.production.cust.rest.CustProductWholeSaleRequest;
 import com.brijframework.production.cust.service.CustProductSaleService;
-import com.brijframework.production.entities.EOCustomer;
-import com.brijframework.production.repository.CustomerRepository;
 import com.brijframework.production.util.CommanUtil;
 
 @Service
@@ -60,9 +58,6 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 	@Autowired
 	private CustProductSaleResponseMapper custProductSaleResponseMapper; 
 	
-	@Autowired
-	private CustomerRepository customerRepository;
-
 	@Override
 	public CustProductSaleResponse saveProductSale(long custAppId, CustProductSaleRequest custProductSaleRequest) {
 		Optional<EOCustProductionApp> findById = custProductionAppRepository.findById(custAppId);
@@ -76,10 +71,8 @@ public class CustProductSaleServiceImpl implements CustProductSaleService {
 		custProductSaleRequest.setCustProductRetailSaleList(null);
 		custProductSaleRequest.setCustProductWholeSaleList(null);
 		
-		EOCustomer eoCustomer = customerRepository.findById(custProductSaleRequest.getCustomerId()).orElseThrow(()-> new RuntimeException("Customer not fond"));
-		
 		EOCustProductSale eoCustProductSale = custProductSaleRequestMapper.mapToDAO(custProductSaleRequest);
-		eoCustProductSale.setCustomer(eoCustomer);
+		eoCustProductSale.setCustomerId(custProductSaleRequest.getCustomerId());
 		eoCustProductSale.setIdenNo(CommanUtil. getIdenNo(CSL));
 		eoCustProductSale.setCustProductionApp(eoCustProductionApp);
 		eoCustProductSale = custProductSaleRepository.saveAndFlush(eoCustProductSale);

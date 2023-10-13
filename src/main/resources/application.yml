@@ -1,6 +1,6 @@
 # HTTP Server (Tomcat) Port
 server: 
-  port: 3333
+  port: 4444
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own

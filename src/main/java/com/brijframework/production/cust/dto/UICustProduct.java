@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.brijframework.production.dto.UIManufacturer;
-import com.brijframework.production.dto.UIProdLocation;
 import com.brijframework.production.dto.UIProductDetail;
 import com.brijframework.production.dto.UIProductRecipe;
 import com.brijframework.production.dto.UIProductVariant;
@@ -47,8 +46,6 @@ public class UICustProduct implements Serializable {
 	public List<UIProductDetail> productDetails;
 
 	public List<UIProductVariant> productVariants;
-
-	public List<UIProdLocation> productLocations;
 
 	public Long getId() {
 		return id;
@@ -217,15 +214,5 @@ public class UICustProduct implements Serializable {
 	public void setProductVariants(List<UIProductVariant> productVariants) {
 		this.productVariants = productVariants;
 	}
-
-	public List<UIProdLocation> getProductLocations() {
-		return productLocations;
-	}
-
-	public void setProductLocations(List<UIProdLocation> productLocations) {
-		this.productLocations = productLocations;
-	}
-
-	
 
 }

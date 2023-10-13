@@ -98,16 +98,10 @@ public class EOCustProduct extends EOCustItem {
 	public EOCustCategory custCategory;
 
 	@OneToMany(mappedBy = CUST_PRODUCT)
-	public List<EOCustProductRecipe> custProductRecipes;
-
-	@OneToMany(mappedBy = CUST_PRODUCT)
 	public List<EOCustProductDetail> custProductDetails;
 
 	@OneToMany(mappedBy = CUST_PRODUCT)
 	public List<EOCustProductVariant> custProductVariants;
-
-	@OneToMany(mappedBy = CUST_PRODUCT)
-	public List<EOCustProductLocation> custProductLocations;
 
 	public String getTitle() {
 		return title;
@@ -229,14 +223,6 @@ public class EOCustProduct extends EOCustItem {
 		this.custCategory = custCategory;
 	}
 
-	public List<EOCustProductRecipe> getCustProductRecipes() {
-		return custProductRecipes;
-	}
-
-	public void setCustProductRecipes(List<EOCustProductRecipe> custProductRecipes) {
-		this.custProductRecipes = custProductRecipes;
-	}
-
 	public List<EOCustProductDetail> getCustProductDetails() {
 		return custProductDetails;
 	}
@@ -251,14 +237,6 @@ public class EOCustProduct extends EOCustItem {
 
 	public void setCustProductVariants(List<EOCustProductVariant> custProductVariants) {
 		this.custProductVariants = custProductVariants;
-	}
-
-	public List<EOCustProductLocation> getCustProductLocations() {
-		return custProductLocations;
-	}
-
-	public void setCustProductLocations(List<EOCustProductLocation> custProductLocations) {
-		this.custProductLocations = custProductLocations;
 	}
 
 }
