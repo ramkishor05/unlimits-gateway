@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,12 +12,10 @@
 	</parent>
 
 	<groupId>com.brijframework</groupId>
-	<artifactId>project-brijframework-production</artifactId>
+	<artifactId>project-brijframework-inventory</artifactId>
 	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>project-brijframework-production</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -28,7 +27,8 @@
 	</properties>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -82,7 +82,8 @@
 			<version>2.9.2</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>com.microsoft.sqlserver</groupId> <artifactId>mssql-jdbc</artifactId> 
+		<!-- <dependency> <groupId>com.microsoft.sqlserver</groupId>
+		<artifactId>mssql-jdbc</artifactId> 
 			<scope>runtime</scope> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -157,4 +158,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
