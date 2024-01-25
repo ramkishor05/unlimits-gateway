@@ -18,10 +18,9 @@ public class WebResourceConfig {
     }
     
     @Bean
-    public DiscoveryClientRouteDefinitionLocator 
-      discoveryClientRouteLocator(ReactiveDiscoveryClient discoveryClient,
+    public DiscoveryClientRouteDefinitionLocator discoveryClientRouteLocator(
+    		ReactiveDiscoveryClient discoveryClient,
   			DiscoveryLocatorProperties properties) {
- 
         return new DiscoveryClientRouteDefinitionLocator(discoveryClient,properties);
     }
 
