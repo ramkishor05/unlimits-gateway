@@ -35,14 +35,14 @@ public class GlobalRequestFilter implements GlobalFilter, Ordered {
         if(!CollectionUtils.isEmpty(list)) {
         	Map<String, Object> uriVariables=new HashMap<String, Object>();
         	uriVariables.put("api_token", list.get(0));
-        	UserDetailResponse forObject = restTemplate.getForObject(USER_ENDPOINT, UserDetailResponse.class, uriVariables);
+        	/*UserDetailResponse forObject = restTemplate.getForObject(USER_ENDPOINT, UserDetailResponse.class, uriVariables);
             ObjectMapper mapper=new ObjectMapper();
             try {
 				System.out.println(mapper.writeValueAsString(forObject));
 			} catch (JsonProcessingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
         }
         System.out.println("list="+list);
         return chain.filter(exchange);
