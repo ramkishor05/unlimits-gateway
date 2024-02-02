@@ -36,6 +36,18 @@ spring:
             - Path=/item/**
           filters:
             - RewritePath=/item/(?<segment>.*), /$\{segment}
+        - id: point_of_sale_ordering
+          uri: http://localhost:5555/
+          predicates:
+            - Path=/ordering/**
+          filters:
+            - RewritePath=/ordering/(?<segment>.*), /$\{segment}
+        - id: point_of_sale_payment
+          uri: http://localhost:6666/
+          predicates:
+            - Path=/payment/**
+          filters:
+            - RewritePath=/payment/(?<segment>.*), /$\{segment}
 management:
   endpoints:
     web:
