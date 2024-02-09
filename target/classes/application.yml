@@ -19,19 +19,19 @@ spring:
     gateway:
       routes:
         - id: point_of_sale_auth
-          uri: http://localhost:2222/
+          uri: http://localhost:3333/
           predicates:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /$\{segment}
         - id: point_of_sale_crm
-          uri:  http://localhost:3333/
+          uri:  http://localhost:4444/
           predicates:
             - Path=/crm/**
           filters:
             - RewritePath=/crm/(?<segment>.*), /$\{segment}
         - id: point_of_sale_item
-          uri: http://localhost:4444/
+          uri: http://localhost:5555/
           predicates:
             - Path=/item/**
           filters:
