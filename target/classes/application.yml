@@ -10,7 +10,7 @@ error:
 
 spring:
    application:
-     name: point_of_sale_gateway
+     name: unlimits_gateway
    main:
      allow-bean-definition-overriding: true
    cloud:
@@ -18,36 +18,18 @@ spring:
       enabled: true
     gateway:
       routes:
-        - id: point_of_sale_auth
+        - id: unlimits_auth
           uri: http://localhost:3333/
           predicates:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /$\{segment}
-        - id: point_of_sale_crm
+        - id: unlimits_content
           uri:  http://localhost:4444/
           predicates:
-            - Path=/crm/**
+            - Path=/content/**
           filters:
-            - RewritePath=/crm/(?<segment>.*), /$\{segment}
-        - id: point_of_sale_item
-          uri: http://localhost:5555/
-          predicates:
-            - Path=/item/**
-          filters:
-            - RewritePath=/item/(?<segment>.*), /$\{segment}
-        - id: point_of_sale_ordering
-          uri: http://localhost:6666/
-          predicates:
-            - Path=/ordering/**
-          filters:
-            - RewritePath=/ordering/(?<segment>.*), /$\{segment}
-        - id: point_of_sale_payment
-          uri: http://localhost:7777/
-          predicates:
-            - Path=/payment/**
-          filters:
-            - RewritePath=/payment/(?<segment>.*), /$\{segment}
+            - RewritePath=/content/(?<segment>.*), /$\{segment}
 management:
   endpoints:
     web:

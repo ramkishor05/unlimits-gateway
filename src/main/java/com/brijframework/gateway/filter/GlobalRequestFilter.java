@@ -44,7 +44,6 @@ public class GlobalRequestFilter implements GlobalFilter, Ordered {
 				e.printStackTrace();
 			}*/
         }
-        System.out.println("list="+list);
         return chain.filter(exchange);
     }
 
