@@ -23,7 +23,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class GlobalRequestFilter implements GlobalFilter, Ordered {
 	
-	private final static String USER_ENDPOINT="http://localhost:2222/api/user";
+	private final static String USER_ENDPOINT="http://localhost:3333/api/auth/validate";
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -34,15 +34,9 @@ public class GlobalRequestFilter implements GlobalFilter, Ordered {
         List<String> list = request.getHeaders().get("Authorization");
         if(!CollectionUtils.isEmpty(list)) {
         	Map<String, Object> uriVariables=new HashMap<String, Object>();
-        	uriVariables.put("api_token", list.get(0));
-        	/*UserDetailResponse forObject = restTemplate.getForObject(USER_ENDPOINT, UserDetailResponse.class, uriVariables);
-            ObjectMapper mapper=new ObjectMapper();
-            try {
-				System.out.println(mapper.writeValueAsString(forObject));
-			} catch (JsonProcessingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
+        	uriVariables.put("Authorization", list.get(0));
+        	Boolean valid = restTemplate.getForObject(USER_ENDPOINT, Boolean.class, uriVariables);
+        	System.out.println("valid="+valid);
         }
         return chain.filter(exchange);
     }
