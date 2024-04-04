@@ -24,8 +24,14 @@ spring:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /$\{segment}
-        - id: unlimits_content
+        - id: unlimits_forms
           uri:  http://localhost:4444/
+          predicates:
+            - Path=/forms/**
+          filters:
+            - RewritePath=/forms/(?<segment>.*), /$\{segment}
+        - id: unlimits_content
+          uri:  http://localhost:5555/
           predicates:
             - Path=/content/**
           filters:
