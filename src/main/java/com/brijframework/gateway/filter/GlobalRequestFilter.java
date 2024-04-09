@@ -26,14 +26,14 @@ public class GlobalRequestFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        ServerHttpRequest request = exchange.getRequest();
+        /*ServerHttpRequest request = exchange.getRequest();
         List<String> list = request.getHeaders().get("Authorization");
         if(!CollectionUtils.isEmpty(list)) {
         	Map<String, Object> uriVariables=new HashMap<String, Object>();
         	uriVariables.put("Authorization", list.get(0));
         	Boolean valid = restTemplate.getForObject(USER_ENDPOINT, Boolean.class, uriVariables);
         	System.out.println("valid="+valid);
-        }
+        }*/
         return chain.filter(exchange);
     }
 

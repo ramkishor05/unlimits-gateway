@@ -17,6 +17,14 @@ spring:
     metrics:
       enabled: true
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
       routes:
         - id: unlimits_auth
           uri: http://localhost:3333/
@@ -30,6 +38,7 @@ spring:
             - Path=/content/**
           filters:
             - RewritePath=/content/(?<segment>.*), /$\{segment}
+      
 management:
   endpoints:
     web:
