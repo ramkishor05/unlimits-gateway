@@ -1,16 +1,11 @@
 package com.brijframework.gateway.filter;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ServerWebExchange;
 
@@ -27,7 +22,7 @@ public class GlobalRequestFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         /*ServerHttpRequest request = exchange.getRequest();
-        List<String> list = request.getHeaders().get("Authorization");
+        /* List<String> list = request.getHeaders().get("Authorization");
         if(!CollectionUtils.isEmpty(list)) {
         	Map<String, Object> uriVariables=new HashMap<String, Object>();
         	uriVariables.put("Authorization", list.get(0));
