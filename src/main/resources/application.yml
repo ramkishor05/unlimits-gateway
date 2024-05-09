@@ -27,19 +27,13 @@ spring:
               allowedHeaders: "*"
       routes:
         - id: unlimits_auth
-          uri: http://localhost:3333
+          uri: http://localhost:2222
           predicates:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /$\{segment}
-        - id: unlimits_forms
-          uri:  http://localhost:4444
-          predicates:
-            - Path=/forms/**
-          filters:
-            - RewritePath=/forms/(?<segment>.*), /$\{segment}
         - id: unlimits_content
-          uri:  http://localhost:5555
+          uri:  http://localhost:3333
           predicates:
             - Path=/content/**
           filters:
