@@ -38,7 +38,18 @@ spring:
             - Path=/content/**
           filters:
             - RewritePath=/content/(?<segment>.*), /$\{segment}
-      
+        - id: unlimits_integration
+          uri:  http://localhost:4444
+          predicates:
+            - Path=/integration/**
+          filters:
+            - RewritePath=/integration/(?<segment>.*), /$\{segment}
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /api/swagger-ui.html 
 management:
   endpoints:
     web:
