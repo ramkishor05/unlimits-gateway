@@ -45,7 +45,7 @@ spring:
           filters:
             - RewritePath=/integration/(?<segment>.*), /$\{segment}
         - id: unlimits_client
-          url: http://localhost:5555
+          uri:  http://localhost:5555
           predicates:
             - Path=/client/**
           filters:
