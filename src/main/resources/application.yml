@@ -27,23 +27,29 @@ spring:
               allowedHeaders: "*"
       routes:
         - id: unlimits_auth
-          uri: http://localhost:2222
+          uri: http://localhost:2222/
           predicates:
             - Path=/auth/**
           filters:
             - RewritePath=/auth/(?<segment>.*), /$\{segment}
         - id: unlimits_content
-          uri:  http://localhost:3333
+          uri:  http://localhost:3333/
           predicates:
             - Path=/content/**
           filters:
             - RewritePath=/content/(?<segment>.*), /$\{segment}
         - id: unlimits_integration
-          uri:  http://localhost:4444
+          uri:  http://localhost:4444/
           predicates:
             - Path=/integration/**
           filters:
             - RewritePath=/integration/(?<segment>.*), /$\{segment}
+        - id: unlimits_client
+          url: http://localhost:5555/
+          predicates:
+            - Path=/client/**
+          filters:
+            - RewritePath=/client/(?<segment>.*), /$\{segment}
 springdoc:
   api-docs:
     enabled: true
