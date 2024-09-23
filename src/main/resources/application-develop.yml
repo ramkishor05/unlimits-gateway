@@ -1,0 +1,88 @@
+# HTTP Server (Tomcat) Port
+server: 
+  host: 51.79.159.7
+  port: 8082
+  eureka:
+    host: 51.79.159.7
+    port: 1002
+  auth:
+    host: 51.79.159.7
+    port: 2002
+  content:
+    host: 51.79.159.7
+    port: 3002
+  integration:
+    host: 51.79.159.7
+    port: 4002
+  client:
+    host: 51.79.159.7
+    port: 5002
+logging:
+  level:
+     org.hibernate.SQL: DEBUG
+     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled: true
+spring:
+   config:
+     activate:
+        on-profile: develop
+   application:
+     name: unlimits_gateway
+   main:
+     allow-bean-definition-overriding: true
+   cloud:
+    metrics:
+      enabled: true
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+      routes:
+        - id: unlimits_auth
+          uri: http://${server.auth.host}:${server.auth.port}
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /$\{segment}
+        - id: unlimits_content
+          uri:  http://${server.content.host}:${server.content.port}
+          predicates:
+            - Path=/content/**
+          filters:
+            - RewritePath=/content/(?<segment>.*), /$\{segment}
+        - id: unlimits_integration
+          uri:  http://${server.integration.host}:${server.integration.port}
+          predicates:
+            - Path=/integration/**
+          filters:
+            - RewritePath=/integration/(?<segment>.*), /$\{segment}
+        - id: unlimits_client
+          uri:  http://${server.client.host}:${server.client.port}
+          predicates:
+            - Path=/client/**
+          filters:
+            - RewritePath=/client/(?<segment>.*), /$\{segment}
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /api/swagger-ui.html 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# Discovery Server Access
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://${server.eureka.host}:${server.eureka.port}/eureka/
